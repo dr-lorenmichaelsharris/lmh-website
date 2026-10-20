@@ -1,0 +1,7 @@
+---
+import {getCollection} from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+const articles=(await getCollection('articles',e=>import.meta.env.SITE_ENV!=='production'||(e.data.publish&&e.data.approvalStatus==='approved'))).sort((a,b)=>b.data.date.localeCompare(a.data.date));
+---
+<Base reading title="The Journal" description="Personal reflections and archival Bathrobe Moments guest announcements, with original publication dates."><PageIntro title="Stories. Reflections. Perspective." eyebrow="THE JOURNAL" description="A collection of published reflections and conversations from the archive."/><section class="section wrap"><div class="article-list">{articles.map(({data:d})=><article class="article-card"><p class="eyebrow">{d.archive?'ARCHIVE · GUEST NOTE':'REFLECTION'}</p><h2><a href={`/${d.slug}/`}>{d.title}</a></h2><p class="metadata"><time datetime={d.date}>{d.date.slice(0,10)}</time></p><p>{d.excerpt}</p><a href={`/${d.slug}/`}>Read {d.archive?'the archive note':'the reflection'} →</a></article>)}</div></section></Base>

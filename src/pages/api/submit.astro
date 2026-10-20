@@ -1,0 +1,30 @@
+---
+export const prerender=false;
+import Base from '../../layouts/Base.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import {submit, type Values} from '../../lib/forms';
+import {site} from '../../data/site';
+Astro.response.headers.set('Cache-Control','no-store');
+const values:Values={};
+let outcome:{status:number;errors?:Values;message?:string;receipt?:string}={status:405,message:'Use the inquiry form to send a message.'};
+if(Astro.request.method==='POST'){
+ const origin=Astro.request.headers.get('origin');
+ if(origin&&origin!==Astro.url.origin)outcome={status:403,message:'Please submit from this website.'};
+ else if(Number(Astro.request.headers.get('content-length')||0)>20000)outcome={status:413,message:'This submission is too large.'};
+ else{
+  try{
+   const reader=Astro.request.body?.getReader();const chunks:Uint8Array[]=[];let size=0;
+   if(reader){while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>20000){await reader.cancel();throw new Error('Submission too large.');}chunks.push(value);}}
+   const body=Buffer.concat(chunks);
+   const form=await new Request(Astro.request.url,{method:'POST',headers:Astro.request.headers,body}).formData();
+   const keys=['service','email','name','message','package','consent','acknowledgment','company_url','organization','eventDate','location','audience','outcome','occasion','talkLength','deadline','material','scope','phone','website','topic','focus','format'];
+   for(const k of keys){const v=form.get(k);if(typeof v==='string')values[k]=v.trim();}
+   outcome=await submit(values,{ip:Astro.clientAddress,origin:Astro.url.origin,env:{SITE_ENV:import.meta.env.SITE_ENV??process.env.SITE_ENV,FORM_ADAPTER:process.env.FORM_ADAPTER??import.meta.env.FORM_ADAPTER,LOCAL_TEST_MODE:process.env.LOCAL_TEST_MODE??import.meta.env.LOCAL_TEST_MODE,FORMS_APPROVED:process.env.FORMS_APPROVED??import.meta.env.FORMS_APPROVED,INQUIRY_WEBHOOK_URL:process.env.INQUIRY_WEBHOOK_URL??import.meta.env.INQUIRY_WEBHOOK_URL,NEWSLETTER_WEBHOOK_URL:process.env.NEWSLETTER_WEBHOOK_URL??import.meta.env.NEWSLETTER_WEBHOOK_URL,FORM_WEBHOOK_TOKEN:process.env.FORM_WEBHOOK_TOKEN??import.meta.env.FORM_WEBHOOK_TOKEN,LOCAL_TEST_OUTCOME:process.env.LOCAL_TEST_OUTCOME??import.meta.env.LOCAL_TEST_OUTCOME}});
+  }catch{outcome={status:400,message:'The form could not be read. Please return to the inquiry form.'};}
+ }
+}
+if(outcome.receipt){Astro.cookies.set('lmh-receipt',outcome.receipt,{path:'/',httpOnly:true,sameSite:'strict',secure:Astro.url.protocol==='https:',maxAge:600});return Astro.redirect('/thank-you-page/',303);}
+Astro.response.status=outcome.status;
+const service=['speaking','coaching','keynote-writing','program','guest','general'].includes(values.service)?values.service:'general';
+---
+<Base title="Check your inquiry" noindex><section class="wrap reading"><h1>{outcome.errors?'Please check your inquiry.':'Your message has not been sent.'}</h1>{outcome.message&&<p role="alert">{outcome.message}</p>}<p><a href={`mailto:${site.email}`}>Email {site.email}</a> or retry below.</p>{values.service==='newsletter'?<form action="/api/submit/" method="post"><input type="hidden" name="service" value="newsletter"/>{outcome.errors&&<ul>{Object.values(outcome.errors).map(e=><li>{e}</li>)}</ul>}<label for="retry-email">Email address</label><input id="retry-email" type="email" name="email" required maxlength="254" value={values.email}/><label class="check"><input type="checkbox" name="consent" value="yes" required checked={values.consent==='yes'}/>I’d like email updates.</label><button class="button" type="submit">Retry subscription</button></form>:<InquiryForm service={service} values={values} errors={outcome.errors}/>}</section></Base>

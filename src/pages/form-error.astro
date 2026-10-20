@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import {site} from '../data/site';
+---
+<Base title="Inquiry delivery unavailable" noindex><section class="status-panel"><h1>Your message has not been sent.</h1><p>Online delivery is unavailable. Please return to the form or contact Loren by email.</p><a class="button" href={`mailto:${site.email}`}>Email Loren ↗</a><p><a href="/contact/">Return to the inquiry form</a></p></section></Base>

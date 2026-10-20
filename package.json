@@ -1,0 +1,34 @@
+{
+  "name": "lmh-astro-rebuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "check": "astro check",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "verify": "node scripts/verify.mjs",
+    "release:check": "node scripts/release-check.mjs",
+    "test:browser": "node scripts/browser-qa.mjs",
+    "test:http": "node scripts/http-flow-test.mjs",
+    "test:performance": "node scripts/performance.mjs"
+  },
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "dependencies": {
+    "@astrojs/node": "11.1.8",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.4.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "cheerio": "1.2.0",
+    "typescript": "6.0.3"
+  },
+  "packageManager": "pnpm@11.25.0"
+}

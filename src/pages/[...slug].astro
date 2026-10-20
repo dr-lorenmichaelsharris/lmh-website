@@ -1,0 +1,22 @@
+---
+import {getCollection} from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+export async function getStaticPaths(){
+ const articles=await getCollection('articles');const policies=await getCollection('policies');
+ const production=import.meta.env.SITE_ENV==='production';
+ return [...articles.map(e=>({...e,kind:'article'})),...policies.map(e=>({...e,kind:'policy'}))].filter(e=>!production||(e.data.publish&&e.data.approvalStatus==='approved')).map(entry=>({params:{slug:entry.data.slug},props:{entry}}));
+}
+const {entry}=Astro.props;
+const data=entry.data;
+const d={...data,date:'date' in data?data.date:'',author:'author' in data?data.author:'',archive:'archive' in data?data.archive:false,excerpt:'excerpt' in data?data.excerpt:''};
+const article=entry.kind==='article';
+---
+<Base reading title={d.title} description={article?d.excerpt:`${d.title} — Loren Michaels Harris.`}>
+<PageIntro title={d.title} eyebrow={article?(d.archive?'ARCHIVE · GUEST ANNOUNCEMENT':'THE JOURNAL'):'POLICIES & ACCESSIBILITY'}>
+<p class="breadcrumb"><a href="/">Home</a> / <a href={article?'/blog/':'/important-links/'}>{article?'Journal':'Policies & Accessibility'}</a></p>
+{article&&<p class="metadata"><time datetime={d.date}>{new Date(d.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</time> · By {d.author}</p>}
+</PageIntro>
+<div class="wrap"><article class="reading">{article&&d.archive&&<p class="form-note">Historical guest announcement. Time-relative language below belongs to the original publication.</p>}<div set:html={d.body}/>{article?<p><a href="/blog/">← Back to the journal</a></p>:<p><a href="/important-links/">← Policies & Accessibility</a></p>}</article></div>
+{article&&<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:d.title,datePublished:d.date,author:{'@type':'Person',name:d.author},mainEntityOfPage:d.sourceUrl}).replace(/</g,'\\u003c')}/>}
+</Base>
