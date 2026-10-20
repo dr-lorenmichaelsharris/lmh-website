@@ -15,11 +15,12 @@
     "test:performance": "node scripts/performance.mjs"
   },
   "engines": {
-    "node": ">=22.22.0"
+    "node": "24.x"
   },
   "dependencies": {
     "@astrojs/node": "11.1.8",
     "@astrojs/sitemap": "3.7.4",
+    "@astrojs/vercel": "11.0.16",
     "astro": "7.4.1"
   },
   "devDependencies": {

@@ -9,3 +9,6 @@ test-results/
 
 # Local handoff archive
 LMH-Astro-Development-Handoff.zip
+
+# Generated Vercel deployment output and local project link
+.vercel/

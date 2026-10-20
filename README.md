@@ -2,9 +2,17 @@
 
 Local multipage implementation of the 41-entry WordPress migration register. Marketing/archive pages are prerendered; inquiry, guest application, receipt and submission routes use the Node adapter. Nothing has been deployed or changed on WordPress.
 
+## Deploy on Vercel
+
+Import `dr-lorenmichaelsharris/lmh-website` into Vercel. Select production branch `main`, root directory `./`, framework Astro, and Node.js 24.x. Keep the Output Directory override disabled. The committed `vercel.json` supplies install/build commands; no generated folder needs to be uploaded. Future pushes to `main` deploy automatically once the Git integration is connected.
+
+The build automatically selects the Vercel adapter on Vercel; local builds retain the standalone Node adapter. For a local Vercel artifact check, set `DEPLOY_TARGET=vercel` before `pnpm build`. Output is generated in `.vercel/output` and stays untracked.
+
+No environment variables are required for the initial review deployment. It retains the current noindex/review state and honest delivery-unavailable form behavior. Do not set `SITE_ENV=production` merely to deploy: that flag enables the separate editorial release checks. Live form delivery still requires the provider configuration described below. Never enable local test delivery on Vercel.
+
 ## Run locally
 
-Requires Node >=22.22 and pnpm 11.25.0. Dependencies are exact with a lockfile. Astro 7.4.1 and Node adapter 11.1.8 were checked against the registry/current official documentation. TypeScript 6.0.3 is intentional: current `astro check` rejects TypeScript 7.
+Requires Node 24.x and pnpm 11.25.0. Dependencies are exact with a lockfile. Astro 7.4.1 and Node adapter 11.1.8 were checked against the registry/current official documentation. TypeScript 6.0.3 is intentional: current `astro check` rejects TypeScript 7.
 
 ```powershell
 pnpm install --frozen-lockfile
