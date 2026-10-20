@@ -1,0 +1,432 @@
+{
+  "id": 165,
+  "date": "2025-10-21T17:51:36",
+  "date_gmt": "2025-10-21T17:51:36",
+  "guid": {
+    "rendered": "https://wpmuzm.site/?p=165"
+  },
+  "modified": "2025-10-21T17:51:37",
+  "modified_gmt": "2025-10-21T17:51:37",
+  "slug": "windy-meyer",
+  "status": "publish",
+  "type": "post",
+  "link": "https://lorenmichaelsharris.com/windy-meyer/",
+  "title": {
+    "rendered": "Windy Meyer"
+  },
+  "content": {
+    "rendered": "\n<p class=\"wp-block-paragraph\">Tomorrow morning on Bathrobe Moments we chat with Windy Meyer! Windy is a soccer and basketball mom of 4 Girls. Which 1 is an adult now! Also has 7 4 legged animals that she cares for. A loving wife of 14years, Windy owns 2 businesses in health and wellness. Also works part time helping others with cleaning houses. Doing the Peanut Butter Challenge with a partner in WI. Started her own live show called Real Talk every Tuesday night at 8pm central time zone. This go-getter has started a new journey of self growth. Join us at 8am CST&nbsp;♥️</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Tomorrow morning on Bathrobe Moments we chat with Windy Meyer! Windy is a soccer and basketball mom of 4 Girls. [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 166,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "site-sidebar-layout": "default",
+    "site-content-layout": "",
+    "ast-site-content-layout": "default",
+    "site-content-style": "default",
+    "site-sidebar-style": "default",
+    "ast-global-header-display": "",
+    "ast-banner-title-visibility": "",
+    "ast-main-header-display": "",
+    "ast-hfb-above-header-display": "",
+    "ast-hfb-below-header-display": "",
+    "ast-hfb-mobile-header-display": "",
+    "site-post-title": "",
+    "ast-breadcrumbs-content": "",
+    "ast-featured-img": "",
+    "footer-sml-layout": "",
+    "ast-disable-related-posts": "",
+    "theme-transparent-header-meta": "",
+    "adv-header-id-meta": "",
+    "stick-header-meta": "",
+    "header-above-stick-meta": "",
+    "header-main-stick-meta": "",
+    "header-below-stick-meta": "",
+    "astra-migrate-meta-layouts": "default",
+    "ast-page-background-enabled": "default",
+    "ast-page-background-meta": {
+      "desktop": {
+        "background-color": "var(--ast-global-color-5)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "tablet": {
+        "background-color": "",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "mobile": {
+        "background-color": "",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      }
+    },
+    "ast-content-background-meta": {
+      "desktop": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "tablet": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "mobile": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      }
+    },
+    "footnotes": ""
+  },
+  "categories": [
+    1
+  ],
+  "tags": [],
+  "class_list": [
+    "post-165",
+    "post",
+    "type-post",
+    "status-publish",
+    "format-standard",
+    "has-post-thumbnail",
+    "hentry",
+    "category-uncategorized"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts/165",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/comments?post=165"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 1,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts/165/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 167,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts/165/revisions/167"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/media/166"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/media?parent=165"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/categories?post=165"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/tags?post=165"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "_embedded": {
+    "author": [
+      {
+        "id": 2,
+        "name": "Shakil Hossain",
+        "url": "",
+        "description": "",
+        "link": "https://lorenmichaelsharris.com/author/shakil/",
+        "slug": "shakil",
+        "avatar_urls": {
+          "24": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=24&d=mm&r=g",
+          "48": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=48&d=mm&r=g",
+          "96": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=96&d=mm&r=g"
+        },
+        "_links": {
+          "self": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users/2",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "id": 166,
+        "date": "2025-10-21T17:51:32",
+        "slug": "72949455_2700402216853201_7159156547614932992_n-jpg",
+        "type": "attachment",
+        "link": "https://lorenmichaelsharris.com/windy-meyer/72949455_2700402216853201_7159156547614932992_n-jpg/",
+        "title": {
+          "rendered": "72949455_2700402216853201_7159156547614932992_n.jpg"
+        },
+        "author": 2,
+        "featured_media": 0,
+        "caption": {
+          "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image/webp",
+        "media_details": {
+          "width": 595,
+          "height": 960,
+          "file": "2025/10/72949455_2700402216853201_7159156547614932992_n.jpg.webp",
+          "filesize": 67156,
+          "sizes": {
+            "medium": {
+              "file": "72949455_2700402216853201_7159156547614932992_n.jpg-186x300.webp",
+              "width": 186,
+              "height": 300,
+              "filesize": 14066,
+              "mime_type": "image/webp",
+              "source_url": "https://lorenmichaelsharris.com/wp-content/uploads/2025/10/72949455_2700402216853201_7159156547614932992_n.jpg-186x300.webp"
+            },
+            "thumbnail": {
+              "file": "72949455_2700402216853201_7159156547614932992_n.jpg-150x150.webp",
+              "width": 150,
+              "height": 150,
+              "filesize": 6080,
+              "mime_type": "image/webp",
+              "source_url": "https://lorenmichaelsharris.com/wp-content/uploads/2025/10/72949455_2700402216853201_7159156547614932992_n.jpg-150x150.webp"
+            },
+            "full": {
+              "file": "72949455_2700402216853201_7159156547614932992_n.jpg.webp",
+              "width": 595,
+              "height": 960,
+              "mime_type": "image/webp",
+              "source_url": "https://lorenmichaelsharris.com/wp-content/uploads/2025/10/72949455_2700402216853201_7159156547614932992_n.jpg.webp"
+            }
+          },
+          "image_meta": {
+            "aperture": "0",
+            "credit": "",
+            "camera": "",
+            "caption": "",
+            "created_timestamp": "0",
+            "copyright": "",
+            "focal_length": "0",
+            "iso": "0",
+            "shutter_speed": "0",
+            "title": "",
+            "orientation": "0",
+            "keywords": []
+          }
+        },
+        "source_url": "https://lorenmichaelsharris.com/wp-content/uploads/2025/10/72949455_2700402216853201_7159156547614932992_n.jpg.webp",
+        "_links": {
+          "self": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/media/166",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/media"
+            }
+          ],
+          "about": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/types/attachment"
+            }
+          ],
+          "author": [
+            {
+              "embeddable": true,
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users/2"
+            }
+          ],
+          "replies": [
+            {
+              "embeddable": true,
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/comments?post=166"
+            }
+          ],
+          "wp:attached-to": [
+            {
+              "embeddable": true,
+              "post_type": "post",
+              "id": 165,
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts/165"
+            }
+          ],
+          "curies": [
+            {
+              "name": "wp",
+              "href": "https://api.w.org/{rel}",
+              "templated": true
+            }
+          ]
+        }
+      }
+    ],
+    "wp:term": [
+      [
+        {
+          "id": 1,
+          "link": "https://lorenmichaelsharris.com/category/uncategorized/",
+          "name": "Uncategorized",
+          "slug": "uncategorized",
+          "taxonomy": "category",
+          "_links": {
+            "self": [
+              {
+                "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/categories/1",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/posts?categories=1"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ],
+      []
+    ]
+  }
+}

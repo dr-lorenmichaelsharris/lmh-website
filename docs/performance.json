@@ -1,0 +1,38 @@
+{
+  "method": "Single cold Chromium run per page on local built Node server. 390×844, 4× CPU slowdown, 150ms latency, 1.6Mbps download. Lab observations, not field Core Web Vitals; INP not measured.",
+  "results": [
+    {
+      "route": "/",
+      "inlineJavaScriptGzipBytes": 242,
+      "lcp": 1692,
+      "cls": 0,
+      "navigationMs": 1496.5,
+      "externalJsResources": 0
+    },
+    {
+      "route": "/services/speaking/",
+      "inlineJavaScriptGzipBytes": 242,
+      "lcp": 1320,
+      "cls": 0,
+      "navigationMs": 1281.5,
+      "externalJsResources": 0
+    },
+    {
+      "route": "/contact/?service=speaking",
+      "inlineJavaScriptGzipBytes": 542,
+      "lcp": 1088,
+      "cls": 0,
+      "navigationMs": 1050.800000011921,
+      "externalJsResources": 0
+    },
+    {
+      "route": "/these-branches-are-many/",
+      "inlineJavaScriptGzipBytes": 242,
+      "lcp": 1052,
+      "cls": 0,
+      "navigationMs": 997.5,
+      "externalJsResources": 0
+    }
+  ],
+  "allExternalJavaScriptGzipBytes": 0
+}

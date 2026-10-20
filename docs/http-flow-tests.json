@@ -1,0 +1,13 @@
+{
+  "origin": "http://127.0.0.1:4330",
+  "adapter": "local; no mail sent",
+  "passed": [
+    "Guest POST → opaque HTTP-only receipt → local-only status with package",
+    "Duplicate POST returns the original receipt",
+    "Direct/query-string visits cannot assert submission or payment",
+    "Server-side validation returns 422 and preserves fields",
+    "Server rejects forged package ID",
+    "Cross-origin POST rejected",
+    "Newsletter POST accepts explicit consent in local simulation"
+  ]
+}

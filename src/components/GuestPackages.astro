@@ -1,0 +1,4 @@
+---
+import {packages} from '../data/site';
+---
+<div class="package-grid">{packages.map(p=><article class="package"><p class="eyebrow">GUEST INQUIRY</p><h3>{p.name}</h3><p>Request details and discuss fit before making a commitment.</p><a href={`/bathrobe-moments/apply/?package=${p.id}`}>Ask about {p.name} →</a></article>)}</div>

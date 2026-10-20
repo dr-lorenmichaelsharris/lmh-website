@@ -1,0 +1,16 @@
+---
+import {getCollection} from 'astro:content';
+import TestimonialSection from './TestimonialSection.astro';
+interface Props{kind:'testimonials'|'caseStudies'|'episodes'|'downloads'|'programs';}
+const {kind}=Astro.props;
+const approved=(entry:{data:{publish:boolean;approvalStatus:string}})=>entry.data.publish&&entry.data.approvalStatus==='approved';
+const stories=kind==='caseStudies'?await getCollection('caseStudies',approved):[];
+const episodes=kind==='episodes'?await getCollection('episodes',approved):[];
+const downloads=kind==='downloads'?await getCollection('downloads',approved):[];
+const programs=kind==='programs'?await getCollection('programs',approved):[];
+---
+{kind==='testimonials'&&<TestimonialSection/>}
+{stories.length>0&&<section class="section wrap">{stories.map(({data:d})=><article class="reading"><h2>{d.title}</h2><h3>Challenge</h3><p>{d.challenge}</p><h3>Work</h3><p>{d.work}</p><h3>Observed outcome</h3><p>{d.outcome}</p></article>)}</section>}
+{episodes.length>0&&<section class="section wrap"><h2>Conversations to explore.</h2><div class="article-list">{episodes.map(({data:d})=><article class="article-card"><p class="eyebrow">{d.status}</p><h3>{d.title}</h3><p>With {d.guest}{d.date?` · ${d.date}`:''}</p><p>{d.summary}</p><a href={d.watchUrl}>Watch the conversation ↗</a></article>)}</div></section>}
+{downloads.length>0&&<section class="section wrap"><h2>Media downloads.</h2><ul class="policy-list">{downloads.map(({data:d})=><li><a href={d.path} download>{d.title} ({d.format}) ↓</a><p>{d.context}</p></li>)}</ul></section>}
+{programs.map(({data:d})=><section class="section wrap"><h2>The program experience.</h2>{d.durationWeeks&&<p>{d.durationWeeks}-week program</p>}<ul>{d.inclusions.map(i=><li>{i}</li>)}</ul><div class="steps">{d.phases.map(p=><article class="step"><p class="eyebrow">{p.weeks}</p><h3>{p.title}</h3><p>{p.description}</p></article>)}</div>{d.accessTerms&&<p>{d.accessTerms}</p>}</section>)}

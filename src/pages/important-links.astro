@@ -1,0 +1,7 @@
+---
+import {getCollection} from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+const policies=await getCollection('policies',e=>import.meta.env.SITE_ENV!=='production'||(e.data.publish&&e.data.approvalStatus==='approved'));
+---
+<Base reading title="Policies & Accessibility"><PageIntro title="Policies & Accessibility" eyebrow="IMPORTANT LINKS" description="Information about this website and working with Loren."/><section class="wrap reading"><ul class="policy-list">{policies.map(({data:d})=><li><a href={`/${d.slug}/`}>{d.title} →</a></li>)}</ul><p>For a question about these documents, <a href="/contact/">contact Loren</a>.</p></section></Base>

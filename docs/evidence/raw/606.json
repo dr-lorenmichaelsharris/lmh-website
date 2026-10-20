@@ -1,0 +1,248 @@
+{
+  "id": 606,
+  "date": "2025-11-24T16:32:41",
+  "date_gmt": "2025-11-24T16:32:41",
+  "guid": {
+    "rendered": "https://wpmuzm.site/?page_id=606"
+  },
+  "modified": "2025-11-24T16:36:48",
+  "modified_gmt": "2025-11-24T16:36:48",
+  "slug": "refund-cancellation-policy",
+  "status": "publish",
+  "type": "page",
+  "link": "https://lorenmichaelsharris.com/refund-cancellation-policy/",
+  "title": {
+    "rendered": "Refund &amp; Cancellation Policy"
+  },
+  "content": {
+    "rendered": "\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"606\" class=\"elementor elementor-606\" data-elementor-post-type=\"page\">\n\t\t\t\t<div class=\"elementor-element elementor-element-d395aee e-flex e-con-boxed e-con e-parent\" data-id=\"d395aee\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t<div class=\"elementor-element elementor-element-af62df1 elementor-widget elementor-widget-spacer\" data-id=\"af62df1\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"spacer.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-spacer\">\n\t\t\t<div class=\"elementor-spacer-inner\"></div>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-60ac803 elementor-widget elementor-widget-heading\" data-id=\"60ac803\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h1 class=\"elementor-heading-title elementor-size-default\">Refund &amp; Cancellation Policy</h1>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-a87ddbf elementor-widget elementor-widget-text-editor\" data-id=\"a87ddbf\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>This Refund &amp; Cancellation Policy applies to purchases made through <a href=\"https://lorenmichaelsharris.com/\">Home</a> for coaching, speaking, online courses, programs, and digital products offered by LMH, operating as <a href=\"https://lorenmichaelsharris.com/\">Home </a>.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-97cd2c1 elementor-widget elementor-widget-heading\" data-id=\"97cd2c1\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Digital Products and Online Courses</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-ace1c12 elementor-widget elementor-widget-text-editor\" data-id=\"ace1c12\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p data-renderer-start-pos=\"312\">Due to the nature of digital content, access to online courses, digital downloads, and similar products is typically granted immediately after purchase.<br />• Unless otherwise stated at checkout or in specific offer terms, all sales of digital products and online courses are generally final and non-refundable once access is provided.<br />• If a separate guarantee or refund period applies to a specific offer (e.g., a 7- or 14-day money-back guarantee), the terms of that offer will be clearly stated on the sales page or at checkout and will govern that purchase.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-635390b elementor-widget elementor-widget-heading\" data-id=\"635390b\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Coaching Sessions and Programs</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-9ae658a elementor-widget elementor-widget-text-editor\" data-id=\"9ae658a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>For one-on-one or group coaching:<br />• Cancellations or rescheduling usually require at least 24–48 hours&#8217; notice before the scheduled session time.<br />• Sessions canceled with insufficient notice may be forfeited or subject to a fee, as specified in your coaching agreement or program terms.<br />• Coaching packages or programs may be non-refundable once the first session has been used or materials have been accessed, unless otherwise agreed in writing.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-a52dc8b elementor-widget elementor-widget-heading\" data-id=\"a52dc8b\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Live Events and Workshops (Online)</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-e85a93a elementor-widget elementor-widget-text-editor\" data-id=\"e85a93a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>If we offer live online events, webinars, or workshops:<br />• Refund eligibility, if any, and deadlines will be specified on the event registration page or in related terms.<br />• We reserve the right to reschedule or cancel an event due to unforeseen circumstances. In such cases, we will aim to provide an alternative date or a reasonable substitute option.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-5c942a2 elementor-widget elementor-widget-heading\" data-id=\"5c942a2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Speaking Engagements</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-9c83925 elementor-widget elementor-widget-text-editor\" data-id=\"9c83925\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>For speaking engagements arranged by separate contract:<br />• Refund and cancellation terms are governed by the specific written agreement between LMH, operating as <span data-inline-card=\"true\" data-card-url=\"http://lorenmichaelsharris.com\"><span class=\"loader-wrapper\"><a class=\"_1yt4x7n9 _2rko12b0 _v56415x0 _1e0c1nu9 _16d9qvcn _syaz1y58 _1rkwglyw _4cvxmr28 _19it1x13 _bfhkhp5a _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _uizt1kdv _nt751r31 _49pcglyw _1hvw1o36 _1372tlke _7ehicw00 _1j5pglyw _1di629zg\" tabindex=\"0\" role=\"button\" href=\"http://lorenmichaelsharris.com/\" data-testid=\"inline-card-resolved-view\"><span class=\"_19itglyw _vchhusvi _r06hglyw _o5721jtm _1nmz9jpi _16d9qvcn _ca0qv77o _u5f31b66 _n3tdv77o _19bv1b66\" data-testid=\"inline-card-icon-and-title\"><span class=\"_19itglyw _vchhusvi _r06hglyw\">Home</span></span></a></span></span> , and the client or organization and may override this general policy.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-34ed9be elementor-widget elementor-widget-heading\" data-id=\"34ed9be\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">How to Request a Refund (If Applicable)</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-b513fc3 elementor-widget elementor-widget-text-editor\" data-id=\"b513fc3\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p data-renderer-start-pos=\"2100\">If you believe you are eligible for a refund or credit under the terms of your purchase:<br />• Contact us at <a class=\"_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _4bfu1r31 _1hms8stv _ajmmnqa1 _vchhusvi _kqswh2mm _syaz14q2 _ect41gqc _1a3b1r31 _4fpr8stv _5goinqa1 _f8pj14q2 _9oik1r31 _1bnxglyw _jf4cnqa1 _30l314q2 _1nrm1r31 _c2waglyw _1iohnqa1 _9h8h16c2 _1053w7te _1ienw7te _n0fxw7te _1vhvg3x0\" title=\"mailto:hello@lorenmichaelsharris.com\" href=\"mailto:hello@lorenmichaelsharris.com\" data-renderer-mark=\"true\" data-is-router-link=\"false\" data-testid=\"link-with-safety\">hello@lorenmichaelsharris.com</a> and include your full name, purchase details, and reason for your request.<br />• We will review your request and respond within a reasonable time. Approval of any refund is at our discretion and in accordance with the applicable terms.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-ee18fad elementor-widget elementor-widget-heading\" data-id=\"ee18fad\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Chargebacks</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-0c42dea elementor-widget elementor-widget-text-editor\" data-id=\"0c42dea\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p data-renderer-start-pos=\"1970\">You agree not to initiate a chargeback with your payment provider without first attempting to resolve the issue directly with us. Unwarranted chargebacks may result in suspension of access to our Services and may be pursued as a breach of this Policy.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-5e19b17 elementor-widget elementor-widget-heading\" data-id=\"5e19b17\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Changes to This Policy</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-5cc61a1 elementor-widget elementor-widget-text-editor\" data-id=\"5cc61a1\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>We may update this Refund &amp; Cancellation Policy from time to time. The &#8220;Last updated&#8221; date above indicates the latest version. Your continued use of the Website or Services after changes are posted signifies your acceptance of the updated Policy.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-e0c4f51 elementor-widget elementor-widget-heading\" data-id=\"e0c4f51\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h5 class=\"elementor-heading-title elementor-size-default\">Contact</h5>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-1933ce2 elementor-widget elementor-widget-text-editor\" data-id=\"1933ce2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<p>For questions about refunds or cancellations, please contact:<br />• Email: <a class=\"_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _4bfu1r31 _1hms8stv _ajmmnqa1 _vchhusvi _kqswh2mm _syaz14q2 _ect41gqc _1a3b1r31 _4fpr8stv _5goinqa1 _f8pj14q2 _9oik1r31 _1bnxglyw _jf4cnqa1 _30l314q2 _1nrm1r31 _c2waglyw _1iohnqa1 _9h8h16c2 _1053w7te _1ienw7te _n0fxw7te _1vhvg3x0\" title=\"mailto:hello@lorenmichaelsharris.com\" href=\"mailto:hello@lorenmichaelsharris.com\" data-renderer-mark=\"true\" data-is-router-link=\"false\" data-testid=\"link-with-safety\">hello@lorenmichaelsharris.com</a><br />• Alternate email: <a class=\"_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _4bfu1r31 _1hms8stv _ajmmnqa1 _vchhusvi _kqswh2mm _syaz14q2 _ect41gqc _1a3b1r31 _4fpr8stv _5goinqa1 _f8pj14q2 _9oik1r31 _1bnxglyw _jf4cnqa1 _30l314q2 _1nrm1r31 _c2waglyw _1iohnqa1 _9h8h16c2 _1053w7te _1ienw7te _n0fxw7te _1vhvg3x0\" title=\"mailto:lorenmichaelsharris@gmail.com\" href=\"mailto:lorenmichaelsharris@gmail.com\" data-renderer-mark=\"true\" data-is-router-link=\"false\" data-testid=\"link-with-safety\">lorenmichaelsharris@gmail.com</a></p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-6debd6d elementor-widget elementor-widget-spacer\" data-id=\"6debd6d\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"spacer.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-spacer\">\n\t\t\t<div class=\"elementor-spacer-inner\"></div>\n\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Refund &amp; Cancellation Policy This Refund &amp; Cancellation Policy applies to purchases made through Home for coaching, speaking, online courses, [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "site-sidebar-layout": "no-sidebar",
+    "site-content-layout": "",
+    "ast-site-content-layout": "full-width-container",
+    "site-content-style": "default",
+    "site-sidebar-style": "default",
+    "ast-global-header-display": "",
+    "ast-banner-title-visibility": "",
+    "ast-main-header-display": "",
+    "ast-hfb-above-header-display": "",
+    "ast-hfb-below-header-display": "",
+    "ast-hfb-mobile-header-display": "",
+    "site-post-title": "",
+    "ast-breadcrumbs-content": "",
+    "ast-featured-img": "disabled",
+    "footer-sml-layout": "",
+    "ast-disable-related-posts": "",
+    "theme-transparent-header-meta": "",
+    "adv-header-id-meta": "",
+    "stick-header-meta": "",
+    "header-above-stick-meta": "",
+    "header-main-stick-meta": "",
+    "header-below-stick-meta": "",
+    "astra-migrate-meta-layouts": "default",
+    "ast-page-background-enabled": "default",
+    "ast-page-background-meta": {
+      "desktop": {
+        "background-color": "var(--ast-global-color-5)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "tablet": {
+        "background-color": "",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "mobile": {
+        "background-color": "",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      }
+    },
+    "ast-content-background-meta": {
+      "desktop": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "tablet": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      },
+      "mobile": {
+        "background-color": "var(--ast-global-color-4)",
+        "background-image": "",
+        "background-repeat": "repeat",
+        "background-position": "center center",
+        "background-size": "auto",
+        "background-attachment": "scroll",
+        "background-type": "",
+        "background-media": "",
+        "overlay-type": "",
+        "overlay-color": "",
+        "overlay-opacity": "",
+        "overlay-gradient": ""
+      }
+    },
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-606",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "_hostinger_reach_plugin_has_subscription_block": false,
+  "_hostinger_reach_plugin_is_elementor": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/pages/606",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/comments?post=606"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 4,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/pages/606/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 610,
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/pages/606/revisions/610"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/media?parent=606"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "_embedded": {
+    "author": [
+      {
+        "id": 2,
+        "name": "Shakil Hossain",
+        "url": "",
+        "description": "",
+        "link": "https://lorenmichaelsharris.com/author/shakil/",
+        "slug": "shakil",
+        "avatar_urls": {
+          "24": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=24&d=mm&r=g",
+          "48": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=48&d=mm&r=g",
+          "96": "https://secure.gravatar.com/avatar/4c6a98069c96a177e5a247594509e30f4028e29a8b3bd77de12c8c1e3374bca4?s=96&d=mm&r=g"
+        },
+        "_links": {
+          "self": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users/2",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://lorenmichaelsharris.com/wp-json/wp/v2/users"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

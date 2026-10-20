@@ -1,0 +1,66 @@
+[
+  {
+    "id": "speaking",
+    "slug": "speaking",
+    "title": "Speaking",
+    "audience": "Event organizers, leadership teams, educators and community gatherings.",
+    "summary": "Keynotes for teams, educators, and communities, shaped around the people in the room.",
+    "deliverables": [
+      "Discuss the audience and event purpose",
+      "Explore leadership, resilience and personal storytelling",
+      "Shape an engagement around the conversation you want to open"
+    ],
+    "process": [
+      "Share your event",
+      "Explore the fit",
+      "Agree the scope"
+    ],
+    "sourceUrl": "https://lorenmichaelsharris.com/services/speaking/",
+    "approvalStatus": "pending",
+    "publish": false
+  },
+  {
+    "id": "coaching",
+    "slug": "coaching",
+    "title": "Coaching",
+    "audience": "Leaders, founders and emerging speakers developing a clear message.",
+    "summary": "Work on your message, story structure, delivery, and presence. For leaders and emerging speakers.",
+    "deliverables": [
+      "Message clarity",
+      "Story architecture",
+      "Delivery and presence",
+      "An action plan to discuss together"
+    ],
+    "process": [
+      "Start with your goals",
+      "Explore your story",
+      "Identify your next steps"
+    ],
+    "sourceUrl": "https://lorenmichaelsharris.com/services/coaching/",
+    "approvalStatus": "pending",
+    "publish": false
+  },
+  {
+    "id": "keynote-writing",
+    "slug": "keynote-writing",
+    "title": "Keynote Writing",
+    "audience": "Leaders and speakers preparing for an important occasion.",
+    "summary": "Turn your ideas and experience into a structured keynote, with discovery, drafting, and an agreed revision process.",
+    "deliverables": [
+      "Discovery and audience context",
+      "Narrative structure",
+      "Keynote draft and revision scope",
+      "Optional rehearsal discussion"
+    ],
+    "process": [
+      "Discovery",
+      "Narrative",
+      "Draft",
+      "Revisions",
+      "Optional rehearsal"
+    ],
+    "sourceUrl": "https://lorenmichaelsharris.com/services/keynote-writing/",
+    "approvalStatus": "pending",
+    "publish": false
+  }
+]

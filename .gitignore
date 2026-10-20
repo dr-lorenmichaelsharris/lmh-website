@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+.local/
+test-results/
+
+# Local handoff archive
+LMH-Astro-Development-Handoff.zip

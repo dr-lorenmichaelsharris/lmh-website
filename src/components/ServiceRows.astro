@@ -1,0 +1,7 @@
+---
+import {getCollection} from 'astro:content';
+import {site} from '../data/site';
+const services=await getCollection('services');
+const ordered=site.serviceOrder.map(id=>services.find(s=>s.id===id)).filter(s=>s!==undefined);
+---
+{ordered.map(({data:s},i)=><a class="service-row" href={`/services/${s.slug}/`}><span class="number">{String(i+1).padStart(2,'0')}</span><h3>{s.title}</h3><p>{s.summary}</p><span class="arrow" aria-hidden="true">↗</span></a>)}

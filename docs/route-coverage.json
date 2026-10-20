@@ -1,0 +1,295 @@
+{
+  "checkedAt": "2026-10-20T19:29:43.645Z",
+  "routes": 41,
+  "internalReferences": 1375,
+  "failures": [],
+  "coverage": [
+    {
+      "wpId": 1660,
+      "path": "/the-mindset-revolution/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 1490,
+      "path": "/important-links/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 1264,
+      "path": "/thank-you-page/",
+      "status": 200,
+      "implementation": "Server receipt state; direct visit neutral",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 1148,
+      "path": "/bathrobe-moments/apply/",
+      "status": 200,
+      "implementation": "Dedicated server-rendered guest form",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 995,
+      "path": "/bathrobe-moments/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 645,
+      "path": "/vault/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 622,
+      "path": "/testimonials-reviews-policy/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 617,
+      "path": "/e-commerce-shipping-policy/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 611,
+      "path": "/affiliate-disclosure/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 606,
+      "path": "/refund-cancellation-policy/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 601,
+      "path": "/disclaimer/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 596,
+      "path": "/data-processing-protection/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 590,
+      "path": "/accessibility-statement/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 585,
+      "path": "/cookie-policy/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 491,
+      "path": "/terms-and-conditions/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 465,
+      "path": "/contact/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 360,
+      "path": "/faqs/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 358,
+      "path": "/media-kit/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 356,
+      "path": "/blog/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 354,
+      "path": "/resources/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 352,
+      "path": "/case-studies-client-stories/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 224,
+      "path": "/services/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 29,
+      "path": "/testimonials/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 27,
+      "path": "/results/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 25,
+      "path": "/services/speaking/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 23,
+      "path": "/services/keynote-writing/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 21,
+      "path": "/services/coaching/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 19,
+      "path": "/about/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 9,
+      "path": "/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 3,
+      "path": "/privacy-policy/",
+      "status": 200,
+      "implementation": "Implemented page",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 643,
+      "path": "/these-branches-are-many/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 641,
+      "path": "/staying-the-course/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 639,
+      "path": "/the-world-of-podcasting-the-impact-on-todays-entrepreneur/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 637,
+      "path": "/swimming-in-the-shallow-side-of-life/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 635,
+      "path": "/reading-between-the-lines/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 633,
+      "path": "/gathering-the-pennies-of-your-life/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 631,
+      "path": "/a-lifetime-of-forever/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 628,
+      "path": "/one-day-from-tomorrow/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 165,
+      "path": "/windy-meyer/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 162,
+      "path": "/cheryl-angela/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    },
+    {
+      "wpId": 157,
+      "path": "/faith-jordan/",
+      "status": 200,
+      "implementation": "Preserved article body/date/author",
+      "release": "Approval pending"
+    }
+  ]
+}

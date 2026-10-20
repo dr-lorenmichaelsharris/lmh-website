@@ -1,0 +1,7 @@
+---
+export const prerender=false;
+import Base from '../layouts/Base.astro';
+import {readReceipt} from '../lib/forms';
+const receipt=readReceipt(Astro.cookies.get('lmh-receipt')?.value);
+---
+<Base title="Inquiry status" noindex><section class="status-panel"><p class="eyebrow">INQUIRY STATUS</p><h1>{receipt?(receipt.local?'Local test received.':'Your inquiry was accepted.'):'No submission to confirm.'}</h1><p>{receipt?(receipt.local?'This was a local simulation. No email was sent and no subscription, booking or payment was created.':'The delivery service accepted your inquiry. This does not confirm a booking, payment or appearance.'):'A visit to this page does not confirm an application, payment or scheduled appearance.'}</p>{receipt?.package&&<p>Package preference: {receipt.package}. This is not an order.</p>}<div class="actions"><a class="button" href="/contact/">Start an inquiry ↗</a><a href="/">Back to home</a></div></section></Base>

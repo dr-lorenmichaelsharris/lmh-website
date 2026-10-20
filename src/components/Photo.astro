@@ -1,0 +1,8 @@
+---
+import {Image} from 'astro:assets';
+import hero from '../assets/hero.webp';
+import stage from '../assets/portrait.webp';
+interface Props{kind?:'portrait'|'stage';}
+const {kind='portrait'}=Astro.props;
+---
+<figure class:list={['editorial-photo',kind]}><Image src={kind==='portrait'?hero:stage} alt={kind==='portrait'?'Loren Michaels Harris in a navy jacket':'Loren Michaels Harris addressing an audience'} widths={[400,700,1000,1400]} sizes="(max-width:767px) 90vw, 55vw" loading="lazy"/>{kind==='stage'&&<figcaption>Photograph: Scott R. Gane Photography</figcaption>}</figure>
