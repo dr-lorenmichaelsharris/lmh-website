@@ -727,6 +727,14 @@
       "violations": []
     },
     {
+      "route": "/the-mindset-revolution/",
+      "violations": []
+    },
+    {
+      "route": "/bathrobe-moments/",
+      "violations": []
+    },
+    {
       "route": "/services/speaking/",
       "violations": []
     },
@@ -778,6 +786,14 @@
     },
     {
       "name": "No-JavaScript service form",
+      "pass": true
+    },
+    {
+      "name": "All twelve curriculum modules render without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "Curriculum opens with keyboard without JavaScript",
       "pass": true
     }
   ],

@@ -48,8 +48,8 @@ Copy `.env.example` to `.env`, then set `FORM_ADAPTER=local`, `LOCAL_TEST_MODE=t
 - `src/data/services.json`: audiences, summaries, discussion points and process steps, consumed by service details and homepage service ordering.
 - `src/data/articles.json`: 11 body-only API migrations with original URLs/dates/displayed authors and archival guest designation. `docs/evidence/raw` retains API responses. No WordPress runtime dependency or imported menus/comments.
 - `src/data/policies.json`: ten substantive policy bodies. Misplaced guest form removed. Legacy entity substitutions, operational claims and the affiliate refund paragraph remain review issues; no legal facts invented.
-- `src/data/programs.json`: timeline/inclusions/access fields. Empty timing is deliberate until C11 is reconciled. Approved content renders without new page code.
-- `src/data/testimonials.json`: three source-attributed preview-only records authorized for local review. `case-studies.json`, `episodes.json`, `downloads.json`: schema-validated collections awaiting approved records. `ApprovedContent.astro` renders only `publish: true` / `approvalStatus: approved` records.
+- `src/data/programs.json`: the blueprint-backed 12-week schedule, twelve curriculum modules, six deliverables, eight pathways, and qualified support/access terms.
+- `src/data/testimonials.json`: three source-attributed preview-only records authorized for local review. `video-testimonials.json` adds three named, preview-only recordings; `episodes.json` contains six verified public recordings. `case-studies.json` and `downloads.json` remain empty until supported records exist. `ApprovedContent.astro` renders only `publish: true` / `approvalStatus: approved` records.
 - `src/pages`: marketing copy/composition; `src/components`, `src/layouts`, `src/styles/global.css`: shared system. Native menus/FAQs work without JavaScript.
 
 Records require an `id`, `sourceUrl`, `approvalStatus`, `publish` and the fields in `src/content.config.ts`. Approval notes remain under `docs`, outside public output. Never put private evidence or secrets in `public`.
@@ -60,7 +60,7 @@ All 41 original paths remain. The old application redirect is replaced by a dedi
 
 `docs/route-coverage.json` records HTTP/link checks; `docs/route-migration.csv` records implementation status. Articles retain sanitized `content.rendered`, publication metadata and displayed authors. Guest notes are historical announcements.
 
-Images are local and use Astro responsive processing. `docs/asset-usage.json` records the two photographs, origins, credit and pending rights review. The social image is copied unchanged to `public/social.webp`. Event photographs imply no endorsement. No nonexistent download is advertised.
+Images are local and use Astro responsive processing. `docs/asset-usage.json` retains the earlier photograph register. `docs/evidence/media-selections-v2.json` records the new source photographs, video posters, animation, credits, dimensions, placements, and generated derivatives. The social image is copied unchanged to `public/social.webp`. Event photographs imply no endorsement. No nonexistent download is advertised.
 
 `scripts/fetch-sources.mjs` / `scripts/migrate-content.mjs` are intentional source-refresh tools, not build steps. Refreshing requires editorial comparison and may overwrite edits. Original handoff audit tools and ZIP remain preserved.
 
@@ -101,10 +101,16 @@ Official references: [content collections](https://docs.astro.build/en/guides/co
 
 ## Cinematic redesign
 
-The active visual system is `src/styles/cinematic.css`, layered over the existing structural stylesheet. Fonts are self-hosted Barlow Condensed and Manrope; licenses are included under `public/fonts`. The current logo, additional genuine photographs, book cover, and historical show artwork have source records in `docs/asset-usage.json`.
+Shared typography, spacing, forms, header and footer live in `src/styles/global.css`; editorial compositions live in `src/styles/cinematic.css`. The previous conflicting typography overrides have been removed. Fonts are self-hosted Barlow Condensed and Manrope; licenses are included under `public/fonts`. The current logo, additional genuine photographs, book cover, and historical show artwork have source records in `docs/asset-usage.json`.
 
 The homepage and Speaking, Coaching, Writing, About, Results, Testimonials, show, and program pages have distinct compositions. Article bodies and original permalinks are unchanged. Reading routes use warm-white surfaces. Motion respects reduced-motion preferences and never hides essential content when JavaScript is unavailable.
 
 `docs/comparison` contains original/current/before screenshots. `node scripts/cinematic-review.mjs` refreshes original-vs-redesign home and Speaking captures. `docs/screenshots` contains the full responsive QA set.
 
 A pre-edit source/docs/public backup, including the previously untracked files, is stored alongside the workspace as `LMH-before-cinematic-20261020-025751.zip`.
+
+## Media-rich redesign (22 October 2026)
+
+See `docs/REDESIGN-V2-REVIEW.md` for the visual assessment and technical evidence. Home, Program, and Bathrobe Moments have matched before/after captures in `docs/comparison-v2`. The baseline is commit `3153087`; blocked/challenge screenshots of the public WordPress site are not comparison evidence.
+
+`CinemaPlayer.astro` delays third-party players until interaction or eligible desktop visibility. Mobile, data-saving, and reduced-motion visitors start on tap. The local 6.4-second show animation is 285 KB. No 53 MB source export is shipped. Run `node scripts/media-qa.mjs` with `PREVIEW_URL` set to the running preview to check playback and fallbacks.

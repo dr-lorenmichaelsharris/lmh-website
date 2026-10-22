@@ -1,1 +1,247 @@
-[{"id":"mindset","title":"The Mindset Revolution","sourceUrl":"https://lorenmichaelsharris.com/the-mindset-revolution/","approvalStatus":"pending","publish":false,"durationWeeks":null,"phases":[],"inclusions":[],"accessTerms":null}]
+[
+  {
+    "id": "mindset",
+    "title": "The Mindset Revolution",
+    "subtitle": "Masterclass & Coaching Experience",
+    "sourceUrl": "https://lorenmichaelsharris.com/mindset_revolution_program_blueprint.html",
+    "approvalStatus": "approved",
+    "publish": true,
+    "summary": "Understand the story you carry. Clarify what matters to you. Begin building the message, platform, or body of work you want to bring into the world.",
+    "durationWeeks": 12,
+    "classCount": 12,
+    "classesPerWeek": 3,
+    "curriculumWeeks": 4,
+    "coachingCalls": 12,
+    "callMinutes": 60,
+    "phases": [
+      {
+        "id": "personal-transformation",
+        "title": "Personal Transformation",
+        "weeks": "Weeks 1–4",
+        "startWeek": 1,
+        "endWeek": 4,
+        "description": "Examine the language, beliefs, and experiences shaping your decisions. Build a clearer understanding of your story, values, and purpose.",
+        "activities": [
+          "Complete three self-paced classes each week — all 12 classes in the first four weeks.",
+          "Bring your reflections into a private, 60-minute call each week.",
+          "Create the foundations: your language audit, growth contract, and purpose statement."
+        ]
+      },
+      {
+        "id": "purpose-activation",
+        "title": "Purpose Activation",
+        "weeks": "Weeks 5–8",
+        "startWeek": 5,
+        "endWeek": 8,
+        "description": "Choose one primary pathway and give it a clear direction. Define who you want to reach, what you want to say, and the foundations your work needs.",
+        "activities": [
+          "Continue your weekly, 60-minute private coaching call.",
+          "Develop the strategy and foundational assets for your primary pathway.",
+          "Map one optional secondary pathway without dividing your main focus."
+        ]
+      },
+      {
+        "id": "build-the-roadmap",
+        "title": "Build the Roadmap",
+        "weeks": "Weeks 9–12",
+        "startWeek": 9,
+        "endWeek": 12,
+        "description": "Refine your chosen direction and connect the pieces. Leave with a practical roadmap for the work you will carry forward.",
+        "activities": [
+          "Continue weekly private coaching, feedback, and accountability.",
+          "Refine your primary pathway and how it connects with your other ideas.",
+          "Complete your implementation plan and forward-action roadmap."
+        ]
+      }
+    ],
+    "framework": [
+      {
+        "title": "Recognize",
+        "description": "See the language, beliefs, and patterns shaping your present."
+      },
+      {
+        "title": "Reframe",
+        "description": "Look at choices, challenges, and aspirations through a more useful lens."
+      },
+      {
+        "title": "Reclaim",
+        "description": "Recover the values, gifts, and strengths within the life you have lived."
+      },
+      {
+        "title": "Rise",
+        "description": "Bring your insight into action, contribution, and a direction of your own."
+      }
+    ],
+    "modules": [
+      {
+        "number": 1,
+        "group": "Recognize",
+        "title": "The Beginning of Your Next Chapter",
+        "purpose": "Define where you are, what you are seeking, and what may be ready to change.",
+        "exercise": "A personal intention for the program."
+      },
+      {
+        "number": 2,
+        "group": "Recognize",
+        "title": "The Language That Shapes Your Life",
+        "purpose": "Explore how thoughts become words, words influence actions, and repeated language shapes identity.",
+        "exercise": "Identify language that supports or restricts growth."
+      },
+      {
+        "number": 3,
+        "group": "Recognize",
+        "title": "Navigating Life’s Intersections",
+        "purpose": "Recognize crossroads, transitions, uncertainty, and the kind of response each moment requires.",
+        "exercise": "Clarify the current crossroads and next response."
+      },
+      {
+        "number": 4,
+        "group": "Reframe",
+        "title": "Your Personal Contract for Growth",
+        "purpose": "Distinguish wishes from commitments and define the principles governing future choices.",
+        "exercise": "Create a personal growth agreement."
+      },
+      {
+        "number": 5,
+        "group": "Reframe",
+        "title": "Moving from Intention to Action",
+        "purpose": "Move beyond preparation and choose a meaningful step that creates momentum.",
+        "exercise": "Take one aligned action toward an important goal."
+      },
+      {
+        "number": 6,
+        "group": "Reframe",
+        "title": "Listening to the Dream",
+        "purpose": "Explore vision, imagination, intuition, and aspirations that continue asking for attention.",
+        "exercise": "Identify a possibility worth pursuing."
+      },
+      {
+        "number": 7,
+        "group": "Reclaim",
+        "title": "Beyond Ego and External Validation",
+        "purpose": "Examine recognition, disappointment, fear, anger, and the habit of measuring worth externally.",
+        "exercise": "Create a more stable definition of value and success."
+      },
+      {
+        "number": 8,
+        "group": "Reclaim",
+        "title": "The Power of Self-Service and Shared Strength",
+        "purpose": "Balance self-care, contribution, connection, support, and service to others.",
+        "exercise": "Develop a healthier model of care and contribution."
+      },
+      {
+        "number": 9,
+        "group": "Reclaim",
+        "title": "Rewriting the Words That Limit You",
+        "purpose": "Identify habitual language and assumptions that close possibilities before they are explored.",
+        "exercise": "Replace limiting language with language of choice and inquiry."
+      },
+      {
+        "number": 10,
+        "group": "Rise",
+        "title": "Remembering Through a New Lens",
+        "purpose": "Revisit formative experiences with the awareness and perspective available today.",
+        "exercise": "Reframe one experience and recognize the strength within it."
+      },
+      {
+        "number": 11,
+        "group": "Rise",
+        "title": "Reclaiming Your Gifts and Purpose",
+        "purpose": "Identify lessons, values, capabilities, and contributions developed throughout life.",
+        "exercise": "Define the gifts ready to be used intentionally."
+      },
+      {
+        "number": 12,
+        "group": "Rise",
+        "title": "Living from the Power Within",
+        "purpose": "Integrate truth, values, story, direction, and action into an authentic way of living.",
+        "exercise": "Complete a purpose and forward-action plan."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Personal Language Audit",
+        "description": "Identify the words, beliefs, and recurring narratives to retain, revise, or release."
+      },
+      {
+        "title": "Personal Growth Contract",
+        "description": "Set the principles and commitments that guide your choices and accountability."
+      },
+      {
+        "title": "Purpose and Values Statement",
+        "description": "Articulate what matters to you and how you want to contribute."
+      },
+      {
+        "title": "Personal Story Reframe",
+        "description": "Revisit formative experiences and the strengths you can recognize within them."
+      },
+      {
+        "title": "Forward-Action Plan",
+        "description": "Define immediate actions, practices, boundaries, and the support you need."
+      },
+      {
+        "title": "Purpose Activation Roadmap",
+        "description": "Connect your chosen pathway with a practical strategy for the work ahead."
+      }
+    ],
+    "pathways": [
+      {
+        "title": "Purpose and Life Direction",
+        "description": "Clarify your priorities, contribution, and personal definition of meaningful progress."
+      },
+      {
+        "title": "Message and Personal Brand",
+        "description": "Define whom you serve, what you teach, and what you want to be known for."
+      },
+      {
+        "title": "Speaking and Keynote Development",
+        "description": "Shape your central message, stories, audience journey, call to action, and a Marquee Title that speaks to both audiences and event decision-makers."
+      },
+      {
+        "title": "Coaching or Consulting",
+        "description": "Shape your experience into a clear offer, process, audience, and client journey."
+      },
+      {
+        "title": "Book and Thought Leadership",
+        "description": "Develop your concept, ideal reader, title direction, structure, voice, and publication roadmap."
+      },
+      {
+        "title": "Events and Community",
+        "description": "Plan the purpose, participant experience, programming, partnerships, and growth of an event or community."
+      },
+      {
+        "title": "Digital and Multimedia Presence",
+        "description": "Plan your website, positioning, visual brand, speaker materials, video assets, and media presence."
+      },
+      {
+        "title": "Legacy and Impact Strategy",
+        "description": "Connect your story, message, speaking, coaching, book, events, and relationships into a coherent body of work."
+      }
+    ],
+    "inclusions": [
+      "12 self-paced video classes",
+      "12 weekly private, 60-minute coaching calls",
+      "Curriculum exercises and participant tools",
+      "Limited email support during the program",
+      "Permanent curriculum access, subject to written enrollment terms",
+      "Six annual alumni sessions, subject to written enrollment terms and availability"
+    ],
+    "accessTerms": "Permanent curriculum access and ongoing alumni support are subject to the written enrollment terms, including availability and continuity provisions. Review and confirm these terms before enrolling.",
+    "supportTerms": {
+      "active": [
+        "One private, 60-minute call each week for 12 weeks.",
+        "Limited email support for brief clarification, assignments, updates, and scheduling; allow up to two business days for a response.",
+        "Unused weekly calls do not accumulate."
+      ],
+      "alumni": [
+        "Six complimentary, 60-minute Purpose Recalibration Sessions per calendar year after the program.",
+        "Maximum one included alumni session every two months, subject to availability.",
+        "Unused sessions expire and do not roll over.",
+        "Access is personal and non-transferable. Additional sessions may be purchased separately."
+      ],
+      "studio": "Optional production services from Vision Digital Studio — including websites, branding, video, book support, and event production — are separately scoped, contracted, scheduled, and paid. They are not required for enrollment. Your information is shared only with your permission.",
+      "scope": "This is coaching and education, not therapy, medical treatment, addiction treatment, or crisis care. The material may address difficult personal experiences; you may pause or skip material and seek qualified support. Private calls and email are not emergency support.",
+      "opportunities": "Loren may suggest relevant opportunities or selected introductions based on readiness, relevance, consent, and availability. Speaking engagements, media placements, contracts, income, and other outcomes are not guaranteed."
+    }
+  }
+]

@@ -1,0 +1,686 @@
+{
+  "sources": [
+    "https://lorenmichaelsharris.com/",
+    "https://old.lorenmichaelsharris.com/",
+    "https://lorenmichaelsharris.com/mindset_revolution_program_blueprint.html"
+  ],
+  "records": [
+    {
+      "path": "src/assets/loren-raspberry.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/Drl12-min-scaled.jpg",
+      "mediaId": 424,
+      "dimensions": [
+        1600,
+        2400
+      ],
+      "bytes": 466371,
+      "credit": "Photographer not credited at source",
+      "placement": "Home hero",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "loren-raspberry.BFfvEX4i_1wVry6.webp",
+          "dimensions": [
+            1100,
+            1650
+          ],
+          "bytes": 121900
+        },
+        {
+          "file": "loren-raspberry.BFfvEX4i_EYKLL.webp",
+          "dimensions": [
+            500,
+            750
+          ],
+          "bytes": 36616
+        },
+        {
+          "file": "loren-raspberry.BFfvEX4i_k5GiD.webp",
+          "dimensions": [
+            800,
+            1200
+          ],
+          "bytes": 78854
+        },
+        {
+          "file": "loren-raspberry.BFfvEX4i_ZJafcG.webp",
+          "dimensions": [
+            1600,
+            2400
+          ],
+          "bytes": 209212
+        }
+      ]
+    },
+    {
+      "path": "src/assets/loren-blue.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/Drl3-min-scaled.jpg",
+      "mediaId": 432,
+      "dimensions": [
+        1600,
+        2400
+      ],
+      "bytes": 262178,
+      "credit": "Photographer not credited at source",
+      "placement": "Program hero; homepage program feature",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "loren-blue.DPJxsxD4_18qOyM.webp",
+          "dimensions": [
+            800,
+            1200
+          ],
+          "bytes": 43704
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_1kgBz2.webp",
+          "dimensions": [
+            1600,
+            2400
+          ],
+          "bytes": 113164
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_1on2pM.webp",
+          "dimensions": [
+            1000,
+            1500
+          ],
+          "bytes": 58628
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_1xDnqQ.webp",
+          "dimensions": [
+            720,
+            1080
+          ],
+          "bytes": 38464
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_Z1Rxnmx.webp",
+          "dimensions": [
+            480,
+            720
+          ],
+          "bytes": 21868
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_Z21pHh7.webp",
+          "dimensions": [
+            500,
+            750
+          ],
+          "bytes": 23336
+        },
+        {
+          "file": "loren-blue.DPJxsxD4_ZXGlIS.webp",
+          "dimensions": [
+            1100,
+            1650
+          ],
+          "bytes": 66636
+        }
+      ]
+    },
+    {
+      "path": "src/assets/loren-floral.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/Drl7-min-scaled.jpg",
+      "mediaId": 429,
+      "dimensions": [
+        1600,
+        2400
+      ],
+      "bytes": 426255,
+      "credit": "Photographer not credited at source",
+      "placement": "About hero; homepage biography",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "loren-floral.Czoes_YX_1CmW7O.webp",
+          "dimensions": [
+            1600,
+            2400
+          ],
+          "bytes": 196832
+        },
+        {
+          "file": "loren-floral.Czoes_YX_1nVwyR.webp",
+          "dimensions": [
+            1000,
+            1500
+          ],
+          "bytes": 110032
+        },
+        {
+          "file": "loren-floral.Czoes_YX_ZaG2zh.webp",
+          "dimensions": [
+            700,
+            1050
+          ],
+          "bytes": 70792
+        },
+        {
+          "file": "loren-floral.Czoes_YX_ZTUelL.webp",
+          "dimensions": [
+            400,
+            600
+          ],
+          "bytes": 34296
+        }
+      ]
+    },
+    {
+      "path": "src/assets/loren-hat.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/DrL1-min-scaled.jpg",
+      "mediaId": 434,
+      "dimensions": [
+        1600,
+        2400
+      ],
+      "bytes": 404176,
+      "credit": "Photographer not credited at source",
+      "placement": "Bathrobe Moments hero",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "loren-hat.DHvehhLf_J1ilq.webp",
+          "dimensions": [
+            720,
+            1080
+          ],
+          "bytes": 51196
+        },
+        {
+          "file": "loren-hat.DHvehhLf_ohzGu.webp",
+          "dimensions": [
+            480,
+            720
+          ],
+          "bytes": 24774
+        },
+        {
+          "file": "loren-hat.DHvehhLf_Z27gWRg.webp",
+          "dimensions": [
+            1600,
+            2400
+          ],
+          "bytes": 197988
+        },
+        {
+          "file": "loren-hat.DHvehhLf_Z2ttYPM.webp",
+          "dimensions": [
+            960,
+            1440
+          ],
+          "bytes": 82944
+        }
+      ]
+    },
+    {
+      "path": "src/assets/loren-speaking.jpg",
+      "source": "https://old.lorenmichaelsharris.com/wp-content/uploads/2019/11/untitled-1130.jpg",
+      "mediaId": null,
+      "dimensions": [
+        1600,
+        2041
+      ],
+      "bytes": 482956,
+      "credit": "Scott R. Gane; source watermark preserved",
+      "placement": "Speaking hero",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "loren-speaking.CfPeyJIj_28CVSf.webp",
+          "dimensions": [
+            400,
+            510
+          ],
+          "bytes": 18910
+        },
+        {
+          "file": "loren-speaking.CfPeyJIj_2ed6JT.webp",
+          "dimensions": [
+            700,
+            893
+          ],
+          "bytes": 43026
+        },
+        {
+          "file": "loren-speaking.CfPeyJIj_Z2wHzqg.webp",
+          "dimensions": [
+            1600,
+            2041
+          ],
+          "bytes": 237352
+        },
+        {
+          "file": "loren-speaking.CfPeyJIj_Zvj1SA.webp",
+          "dimensions": [
+            1000,
+            1276
+          ],
+          "bytes": 80816
+        }
+      ]
+    },
+    {
+      "path": "src/assets/workshop.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-9.43.45-PM-1.jpeg",
+      "mediaId": 380,
+      "dimensions": [
+        1600,
+        1066
+      ],
+      "bytes": 279362,
+      "credit": "Raducu Popa; source watermark preserved",
+      "placement": "Coaching hero; program coaching section",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "workshop.BhbRHtEw_ii5Yg.webp",
+          "dimensions": [
+            700,
+            466
+          ],
+          "bytes": 32566
+        },
+        {
+          "file": "workshop.BhbRHtEw_Z1xYa1R.webp",
+          "dimensions": [
+            1600,
+            1066
+          ],
+          "bytes": 158250
+        },
+        {
+          "file": "workshop.BhbRHtEw_Z286Sz6.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 78530
+        },
+        {
+          "file": "workshop.BhbRHtEw_Z2pzpbz.webp",
+          "dimensions": [
+            720,
+            480
+          ],
+          "bytes": 34010
+        },
+        {
+          "file": "workshop.BhbRHtEw_Z2uDOes.webp",
+          "dimensions": [
+            400,
+            267
+          ],
+          "bytes": 15168
+        },
+        {
+          "file": "workshop.BhbRHtEw_Ziovn7.webp",
+          "dimensions": [
+            1000,
+            666
+          ],
+          "bytes": 55714
+        },
+        {
+          "file": "workshop.BhbRHtEw_ZQtz1s.webp",
+          "dimensions": [
+            480,
+            320
+          ],
+          "bytes": 19406
+        },
+        {
+          "file": "workshop.BhbRHtEw_ZUybSC.webp",
+          "dimensions": [
+            800,
+            533
+          ],
+          "bytes": 39166
+        }
+      ]
+    },
+    {
+      "path": "src/assets/stage-wide.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/Untitled-design-63.jpg",
+      "mediaId": 503,
+      "dimensions": [
+        770,
+        560
+      ],
+      "bytes": 68582,
+      "credit": "Photographer not credited at source",
+      "placement": "Speaking event photography",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "stage-wide.C2GQKQYe_Z2qFjzv.webp",
+          "dimensions": [
+            770,
+            560
+          ],
+          "bytes": 43356
+        },
+        {
+          "file": "stage-wide.C2GQKQYe_Zpoh81.webp",
+          "dimensions": [
+            400,
+            291
+          ],
+          "bytes": 15208
+        }
+      ]
+    },
+    {
+      "path": "src/assets/interview.jpg",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-31-at-10.12.51-PM.jpeg",
+      "mediaId": 528,
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 343046,
+      "credit": "Photographer not credited at source",
+      "placement": "Keynote writing; voice and story",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "interview.DDGJ7Vzp_BUHhA.webp",
+          "dimensions": [
+            400,
+            300
+          ],
+          "bytes": 30608
+        },
+        {
+          "file": "interview.DDGJ7Vzp_Z1cnTvz.webp",
+          "dimensions": [
+            700,
+            525
+          ],
+          "bytes": 75734
+        },
+        {
+          "file": "interview.DDGJ7Vzp_Z1fSOf2.webp",
+          "dimensions": [
+            1000,
+            750
+          ],
+          "bytes": 135158
+        },
+        {
+          "file": "interview.DDGJ7Vzp_Z1VjM3.webp",
+          "dimensions": [
+            1600,
+            1200
+          ],
+          "bytes": 272832
+        }
+      ]
+    },
+    {
+      "path": "src/assets/bathrobe-logo.png",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2026/05/ChatGPT_Image_May_5_2026_03_03_53_PM.png",
+      "mediaId": null,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 990413,
+      "credit": "Existing published show artwork",
+      "placement": "Bathrobe Moments; homepage show feature",
+      "derivatives": "Astro build: responsive widths, WebP, natural colour; original retained",
+      "optimizedDerivatives": [
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_1EvTmw.webp",
+          "dimensions": [
+            320,
+            320
+          ],
+          "bytes": 13218
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_1N9GYY.webp",
+          "dimensions": [
+            460,
+            460
+          ],
+          "bytes": 20754
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_1YOtzi.webp",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "bytes": 69590
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_2gqwmP.webp",
+          "dimensions": [
+            230,
+            230
+          ],
+          "bytes": 8364
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_kk2GN.webp",
+          "dimensions": [
+            256,
+            256
+          ],
+          "bytes": 9790
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_rGElT.webp",
+          "dimensions": [
+            500,
+            500
+          ],
+          "bytes": 23212
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_Z1pFroR.webp",
+          "dimensions": [
+            128,
+            128
+          ],
+          "bytes": 3668
+        },
+        {
+          "file": "bathrobe-logo.m1hm4Cd1_Z1sVDm0.webp",
+          "dimensions": [
+            700,
+            700
+          ],
+          "bytes": 34972
+        }
+      ]
+    },
+    {
+      "path": "public/media/power-of-we.jpg",
+      "source": "https://i.ytimg.com/vi/4PyakES8UQ0/hqdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=4PyakES8UQ0",
+      "title": "Your chance to experience a bit of The Power of We Symposium 2022 Chicago",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 30788,
+      "placement": "Home event film",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/speaking-reel.jpg",
+      "source": "https://i.ytimg.com/vi/LqGDr7rsLUg/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=LqGDr7rsLUg",
+      "title": "LMH Reel Addicted To Struggle",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 66975,
+      "placement": "Speaking reel",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/goalcast.jpg",
+      "source": "https://i.ytimg.com/vi/NHeQafrmpG8/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=NHeQafrmpG8",
+      "title": "A True Mother's Day Miracle | Loren Michaels-Harris | Goalcast",
+      "credit": "Goalcast",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 89474,
+      "placement": "About story",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/robert.jpg",
+      "source": "https://i.ytimg.com/vi/8d5Nzyy6u0A/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=8d5Nzyy6u0A",
+      "title": "Robert A  Lane Coaching Testimonial",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 58074,
+      "placement": "Robert A. Lane testimonial",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/martha.jpg",
+      "source": "https://i.ytimg.com/vi/60Oe5YNWuHs/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=60Oe5YNWuHs",
+      "title": "Martha Glory Coaching Testimonial",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 117581,
+      "placement": "Martha Glory testimonial",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/amy.jpg",
+      "source": "https://i.ytimg.com/vi/qld-3VtERrA/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=qld-3VtERrA",
+      "title": "Amy Joy Coaching Testimonial 2",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 121648,
+      "placement": "Amy Joy testimonial",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-geoff.jpg",
+      "source": "https://i.ytimg.com/vi/c7tWatGhdVM/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=c7tWatGhdVM",
+      "title": "Bathrobe Moments with Geoff Gunn | Passion, Purpose & the Journey Behind the Plate",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 151363,
+      "placement": "Geoff Gunn",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-mavis.jpg",
+      "source": "https://i.ytimg.com/vi/HJcgTzUXH9s/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=HJcgTzUXH9s",
+      "title": "Awareness, Courage & Love: The Science of Authentic Connection with Mavis Tsai | Bathrobe Moments",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 173338,
+      "placement": "Mavis Tsai",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-lee.jpg",
+      "source": "https://i.ytimg.com/vi/6HZiGPvU9TI/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=6HZiGPvU9TI",
+      "title": "The Meanings We Choose: Helping Children Find Their Wings with Lee Giove | Bathrobe Moments",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 172428,
+      "placement": "Lee Giove",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-brett.jpg",
+      "source": "https://i.ytimg.com/vi/o-IQKiGKTMo/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=o-IQKiGKTMo",
+      "title": "Bathrobe Moments heads to the land down under with Super  inluencer Brett D. Scott",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 174063,
+      "placement": "Brett D. Scott",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-grace.jpg",
+      "source": "https://i.ytimg.com/vi/CLjn0NqRogc/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=CLjn0NqRogc",
+      "title": "Bathrobe Moments sits with the Amazing Grace M. Lovret!",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 156862,
+      "placement": "Grace M. Lovret",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/episode-alice.jpg",
+      "source": "https://i.ytimg.com/vi/BxV7glP7ga4/maxresdefault.jpg",
+      "recording": "https://www.youtube.com/watch?v=BxV7glP7ga4",
+      "title": "Bathrobe Moments sits with the amazing ALICE BRINKS!",
+      "credit": "Dr. Loren Michaels Harris",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 77372,
+      "placement": "Alice Brink",
+      "derivatives": "YouTube poster recompressed to quality 88 JPEG; recording remains hosted by source"
+    },
+    {
+      "path": "public/media/bathrobe-intro.mp4",
+      "source": "https://lorenmichaelsharris.com/wp-content/uploads/2026/05/Bathrobe-Moments-logo-animantion.mp4",
+      "dimensions": [
+        720,
+        720
+      ],
+      "durationSeconds": 6.4,
+      "bytes": 285431,
+      "originalBytes": 4164387,
+      "credit": "Published Bathrobe Moments brand animation",
+      "placement": "Bathrobe Moments introduction",
+      "derivatives": "H.264 CRF25 720 square, faststart, no audio; WebP poster at 4 seconds"
+    }
+  ]
+}

@@ -1,5 +1,178 @@
 ---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import ApprovedContent from '../components/ApprovedContent.astro';
+import VideoEvidence from '../components/VideoEvidence.astro';
+import portrait from '../assets/loren-blue.jpg';
+import workshop from '../assets/workshop.jpg';
+const entry = await getEntry('programs', 'mindset');
+if (!entry) throw new Error('The Mindset Revolution content is missing.');
+const program = entry.data;
+const inquiry = '/contact/?service=program';
+const questions = [
+  {question:'How does the weekly schedule work?',answer:'During weeks 1–4, you complete three self-paced video classes each week and meet Loren for one private, 60-minute coaching call. All 12 classes are completed in that first month. Weekly coaching continues through weeks 5–12 as you develop your chosen pathway and roadmap.'},
+  {question:'Do I need a business idea or a finished message?',answer:'No. You can begin with a personal crossroads or an interest you want to explore. The first phase focuses on your story, values, and direction. You then select one primary pathway; you do not need to pursue all eight.'},
+  {question:'Is the program tied to a particular faith?',answer:'The work may acknowledge faith, intuition, calling, and something greater than ourselves. It does not require a particular spiritual or religious identity.'},
+  {question:'What does permanent access include?',answer:program.accessTerms + ' The alumni offer is six complimentary, 60-minute sessions per calendar year, with a maximum of one every two months. Sessions are subject to availability, personal and non-transferable, and do not roll over.'},
+  {question:'Are websites, books, and other production services included?',answer:program.supportTerms.studio},
+  {question:'What are the boundaries of the coaching?',answer:program.supportTerms.scope + ' ' + program.supportTerms.opportunities},
+  {question:'How do I find out about tuition and availability?',answer:'Start with an enrollment inquiry. Tell Loren a little about your current situation and what you would like to work on. You can discuss fit, tuition, availability, scheduling, and written enrollment terms before making a commitment.'},
+];
 ---
-<Base title="The Mindset Revolution" description="Explore the beliefs and experiences that shape how you lead and live. Ask about The Mindset Revolution with Loren Michaels Harris."><section class="program-opening"><div class="wrap"><p class="eyebrow">A PROGRAM WITH LOREN MICHAELS HARRIS</p><h1>The Mindset<br/><span class="gold-text">Revolution.</span></h1><p class="program-lead">Look at the story you’ve been living.<br/>Decide what you want to carry forward.</p><div class="actions"><a class="button" href="/contact/?service=program" id="application">Ask about the program ↗</a><a class="text-link" href="#experience">Explore the focus ↓</a></div><div class="program-circle" aria-hidden="true"><span>LOOK AGAIN.</span></div></div></section><section class="section wrap" id="experience"><p class="eyebrow">SPACE TO EXAMINE. ROOM TO GROW.</p><h2>Begin with what<br/>you want to understand.</h2><div class="topic-columns"><article><h3>The beliefs you carry</h3><p>Explore the assumptions and experiences that influence how you see yourself and respond to a challenge.</p></article><article><h3>The story you tell</h3><p>Consider how you describe your experience, and what a different perspective might reveal.</p></article><article><h3>The steps you choose</h3><p>Bring your questions about a leadership challenge, a personal transition, or a decision you’re facing.</p></article></div></section><section class="section story-section"><div class="wrap split"><div><p class="eyebrow">BEFORE YOU COMMIT</p><h2>Make sure the<br/>program fits you.</h2></div><div><p>Use the program inquiry to discuss learning format, private-session support, schedule, access, and current enrollment details.</p><p>For focused work on a speech or your delivery, <a href="/services/coaching/">explore coaching</a>.</p><a class="button" href="/contact/?service=program">Start a program conversation ↗</a></div></div></section><ApprovedContent kind="programs"/></Base>
+<Base title="The Mindset Revolution — Masterclass & Coaching" description="12 weeks. 12 self-paced classes. 12 private coaching calls with Loren Michaels Harris. Understand your story and develop a practical direction for what comes next.">
+  <section class="mindset-hero">
+    <div class="wrap mindset-hero-grid">
+      <div class="mindset-hero-copy">
+        <p class="eyebrow">WITH LOREN MICHAELS HARRIS</p>
+        <h1>The Mindset<br/><span>Revolution.</span></h1>
+        <p class="mindset-subtitle">Masterclass & Coaching Experience</p>
+        <p class="mindset-schedule">12 weeks · 12 self-paced classes<br/>12 private, 60-minute coaching calls</p>
+        <p class="mindset-intro">{program.summary}</p>
+        <div class="actions"><a class="button" href={inquiry}>Discuss enrollment <span aria-hidden="true">↗</span></a><a class="text-link" href="#journey">Explore the experience ↓</a></div>
+      </div>
+      <figure class="mindset-hero-photo reveal">
+        <Image src={portrait} alt="Loren Michaels Harris in a blue jacket" widths={[480,720,1000]} sizes="(max-width: 800px) 100vw, 50vw" format="webp" loading="eager" fetchpriority="high"/>
+        <figcaption>YOUR STORY.<br/>YOUR DIRECTION.</figcaption>
+      </figure>
+    </div>
+    <div class="wrap mindset-facts" aria-label="Program at a glance">
+      <p><strong>{program.durationWeeks}</strong><span>weeks of guided work</span></p>
+      <p><strong>{program.classCount}</strong><span>self-paced video classes</span></p>
+      <p><strong>{program.coachingCalls}</strong><span>private, {program.callMinutes}-minute calls</span></p>
+    </div>
+  </section>
+
+  <section class="section light-section mindset-fit">
+    <div class="wrap mindset-fit-grid">
+      <div><p class="eyebrow">WHEN SOMETHING NEEDS TO CHANGE</p><h2>You do not need<br/>every answer<br/><em>to begin.</em></h2></div>
+      <div class="mindset-fit-copy"><p>Maybe your work looks successful, but it no longer feels like you. Maybe you are standing at a crossroads. Or you have a story, idea, or contribution that keeps asking for your attention.</p><p>This is a place to examine that honestly, with a clear learning structure and private coaching that brings the work back to your life.</p><ul class="mindset-audience"><li>People navigating a personal or professional crossroads</li><li>Professionals seeking a clearer sense of direction</li><li>Emerging speakers, coaches, authors, leaders, and creators</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section mindset-journey" id="experience">
+    <div class="wrap" id="journey">
+      <div class="section-heading"><div><p class="eyebrow">THE 12-WEEK JOURNEY</p><h2>Understand.<br/>Choose. <em>Build.</em></h2></div><p class="mindset-section-note">One private, 60-minute call every week.<br/>A different focus as your work develops.</p></div>
+      <div class="mindset-journey-grid">
+        <nav class="mindset-phase-nav" aria-label="Program phases">
+          {program.phases.map((phase,index)=><a href={`#${phase.id}`} data-phase-link={phase.id}><span class="mindset-phase-number">0{index+1}</span><span><small>{phase.weeks}</small>{phase.title}</span><span class="mindset-phase-arrow" aria-hidden="true">↗</span></a>)}
+        </nav>
+        <div class="mindset-phase-content">
+          {program.phases.map((phase,index)=><article id={phase.id} data-program-phase class="mindset-phase reveal"><p class="eyebrow">0{index+1} / {phase.weeks}</p><h3>{phase.title}</h3><p>{phase.description}</p><ul>{phase.activities.map(activity=><li>{activity}</li>)}</ul></article>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section mindset-curriculum" id="curriculum">
+    <div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">THE FIRST FOUR WEEKS</p><h2>Twelve classes.<br/>A closer look at you.</h2></div><p class="mindset-section-note">Three self-paced classes each week, with reflection and a private coaching call to put the learning into practice.</p></div>
+      <div class="mindset-curriculum-groups">
+        {program.framework.map((group,index)=><section class="mindset-curriculum-group" aria-labelledby={`group-${index}`}><div class="mindset-group-heading"><span aria-hidden="true">0{index+1}</span><div><h3 id={`group-${index}`}>{group.title}</h3><p>{group.description}</p></div></div><div class="mindset-module-list">{program.modules.filter(module=>module.group===group.title).map(module=><details class="mindset-module"><summary><span class="mindset-module-number">{String(module.number).padStart(2,'0')}</span><span>{module.title}</span><span class="mindset-detail-mark" aria-hidden="true">+</span></summary><div class="mindset-module-body"><p>{module.purpose}</p><p><strong>Your exercise</strong><br/>{module.exercise}</p></div></details>)}</div></section>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section mindset-deliverables">
+    <div class="wrap"><div class="section-heading"><div><p class="eyebrow">PUT THE WORK ON PAPER</p><h2>More than insight.<br/><em>Something to work with.</em></h2></div><p class="mindset-section-note">You develop six practical tools during the program, bringing reflection into decisions and action.</p></div><div class="mindset-deliverable-grid">{program.deliverables.map((item,index)=><article><span class="mindset-item-number">0{index+1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></div>
+  </section>
+
+  <section class="section light-section mindset-pathways" id="pathways">
+    <div class="wrap"><div class="section-heading"><div><p class="eyebrow">PURPOSE INTO PRACTICE</p><h2>One primary pathway.<br/><em>Your direction.</em></h2></div><p class="mindset-section-note">Actively develop one pathway. You may map one secondary pathway and save other ideas for later. You are not expected to build all eight.</p></div><div class="mindset-pathway-grid">{program.pathways.map((pathway,index)=><article><span class="mindset-item-number">0{index+1}</span><div><h3>{pathway.title}</h3><p>{pathway.description}</p></div></article>)}</div><p class="mindset-boundary-note">{program.supportTerms.opportunities}</p></div>
+  </section>
+
+  <section class="section mindset-coaching" id="working-with-loren">
+    <div class="wrap">
+      <div class="mindset-coaching-grid"><figure class="mindset-workshop reveal"><Image src={workshop} alt="Loren working with participants in a group setting" widths={[480,720,1000]} sizes="(max-width: 800px) 100vw, 50vw" format="webp" loading="lazy"/><figcaption>Loren in conversation with a group. Photograph: Raducu Popa.</figcaption></figure><div><p class="eyebrow">A CONVERSATION THAT GOES DEEPER</p><h2>You do the work.<br/><em>Loren works with you.</em></h2><p>Your private calls connect the curriculum with the decisions in front of you. Bring your questions, unfinished ideas, and the places where you feel stuck.</p><p>Loren provides coaching, strategic direction, feedback, and accountability as you develop your primary pathway.</p><a class="text-link" href="/about/">Meet Loren and explore his story ↗</a></div></div>
+
+    </div>
+  </section>
+
+  <VideoEvidence heading="Hear it in their own words." description="These are accounts of working with Loren. They are not presented as reviews of this specific program."/>
+
+  <section class="section light-section mindset-support" id="access-and-support">
+    <div class="wrap"><div class="section-heading"><div><p class="eyebrow">KNOW WHAT IS INCLUDED</p><h2>Support during the work.<br/>Space to return to it.</h2></div></div><div class="mindset-support-grid"><article><p class="eyebrow">DURING YOUR 12 WEEKS</p><h3>Weekly private coaching</h3><ul>{program.supportTerms.active.map(term=><li>{term}</li>)}</ul></article><article><p class="eyebrow">AFTER YOUR 12 WEEKS</p><h3>Alumni recalibration</h3><ul>{program.supportTerms.alumni.map(term=><li>{term}</li>)}</ul></article></div><div class="mindset-access-note"><h3>Permanent curriculum access</h3><p>{program.accessTerms}</p></div><div class="mindset-studio-note"><h3>When you are ready for production</h3><p>{program.supportTerms.studio}</p></div></div>
+  </section>
+
+  <section class="section mindset-faq" id="program-questions"><div class="wrap mindset-faq-grid"><div><p class="eyebrow">BEFORE YOU ENROLL</p><h2>A few useful<br/>questions.</h2></div><div>{questions.map(item=><details class="mindset-question"><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>
+
+  <section class="mindset-closing"><div class="wrap"><p class="eyebrow">START WITH A CONVERSATION</p><h2>What are you<br/><em>ready to work on?</em></h2><p>Tell Loren where you are and what you want to explore. Discuss the fit, schedule, tuition, and enrollment terms before you commit.</p><a class="button" id="application" href={inquiry}>Discuss enrollment <span aria-hidden="true">↗</span></a></div></section>
+</Base>
+
+<script>
+  const phaseLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-phase-link]'));
+  const phases = Array.from(document.querySelectorAll<HTMLElement>('[data-program-phase]'));
+  if ('IntersectionObserver' in window && phaseLinks.length) {
+    const setCurrent = (id: string) => phaseLinks.forEach(link => {
+      if (link.dataset.phaseLink === id) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.filter(entry => entry.isIntersecting).forEach(entry => setCurrent(entry.target.id));
+    }, {rootMargin:'-15% 0px -55% 0px',threshold:0});
+    phases.forEach(phase => observer.observe(phase));
+  }
+</script>
+
+<style>
+  .mindset-hero{overflow:hidden;background:radial-gradient(ellipse at 12% 15%,#26354280,transparent 65%),var(--ink)}
+  .mindset-hero-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:56px}
+  .mindset-hero-copy{padding-block:20px 48px;position:relative;z-index:1}
+  .mindset-hero h1{font-size:clamp(66px,7.6vw,116px);line-height:.94;margin:0 0 25px;letter-spacing:-.025em}
+  .mindset-hero h1 span{color:var(--gold)}
+  .mindset-subtitle{font-size:clamp(20px,2vw,26px);line-height:1.35;font-weight:600;color:var(--paper);max-width:500px;margin-bottom:22px}
+  .mindset-schedule{font-size:18px;line-height:1.6;color:var(--gold);font-weight:600;margin:0 0 22px}
+  .mindset-intro{max-width:530px;color:#d0ccc3;margin-bottom:30px}
+  .mindset-hero .actions{gap:24px;align-items:center}
+  .mindset-hero-photo{align-self:stretch;position:relative;min-height:600px;background:#253341;overflow:hidden}
+  .mindset-hero-photo img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .mindset-hero-photo:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#0c1116e6);pointer-events:none}
+  .mindset-hero-photo figcaption{position:absolute;bottom:32px;left:32px;z-index:1;font:700 32px/1 'Barlow Condensed',sans-serif;letter-spacing:.02em;color:var(--paper)}
+  .mindset-facts{display:grid;grid-template-columns:repeat(3,1fr);padding-block:32px;border-top:1px solid #ffffff26}
+  .mindset-facts p{margin:0;padding-inline:32px;display:flex;align-items:center;gap:20px;border-right:1px solid #ffffff26}
+  .mindset-facts p:first-child{padding-left:0}.mindset-facts p:last-child{border:0;padding-right:0}
+  .mindset-facts strong{font:700 clamp(48px,5vw,70px)/1 'Barlow Condensed',sans-serif;color:var(--gold)}
+  .mindset-facts span{font-size:18px;line-height:1.5;max-width:190px}
+  .mindset-fit-grid,.mindset-coaching-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,7vw,100px);align-items:center}
+  .mindset-fit h2{margin:0}.mindset-fit-copy p{max-width:650px}
+  .mindset-audience{padding:0;list-style:none;border-top:1px solid #c8c1b4;margin-top:32px}
+  .mindset-audience li{padding:18px 0 18px 30px;position:relative;border-bottom:1px solid #c8c1b4}
+  .mindset-audience li:before{content:'↗';position:absolute;left:0;color:#785c1b}
+  .mindset-section-note{max-width:420px;color:#c6c2b9;margin:0}.light-section .mindset-section-note{color:#504c43}
+  .mindset-journey-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px);margin-top:55px;align-items:start}
+  .mindset-phase-nav{position:sticky;top:30px;display:grid;border-top:1px solid #514a38}
+  .mindset-phase-nav a{display:flex;align-items:center;gap:20px;padding:24px 15px 24px 0;text-decoration:none;border-bottom:1px solid #514a38;color:#bcb7ad;transition:color .2s,background .2s}
+  .mindset-phase-nav a>span:nth-child(2){font:700 27px/1.15 'Barlow Condensed',sans-serif}
+  .mindset-phase-nav small{display:block;font:500 14px/1.5 Manrope,sans-serif;letter-spacing:.04em;margin-bottom:5px}
+  .mindset-phase-number{font-size:16px;color:var(--gold)}.mindset-phase-arrow{margin-left:auto;font-size:22px}
+  .mindset-phase-nav a[aria-current],.mindset-phase-nav a:hover{background:#d6b24d10;color:var(--paper)}
+  .mindset-phase{scroll-margin-top:35px;padding:0 0 46px;margin-bottom:46px;border-bottom:1px solid #514a38}
+  .mindset-phase:last-child{padding-bottom:0;margin:0;border:0}
+  .mindset-phase h3{font-size:clamp(34px,3.5vw,48px);margin-bottom:20px}.mindset-phase p:not(.eyebrow),.mindset-phase li{color:#d0ccc3}
+  .mindset-phase ul{padding-left:22px;margin-top:24px}.mindset-phase li{padding-left:6px;margin-bottom:12px}.mindset-phase li::marker{color:var(--gold)}
+  .mindset-curriculum-groups{margin-top:48px}.mindset-curriculum-group{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;padding-block:38px;border-top:1px solid #c8c1b4}
+  .mindset-group-heading{display:flex;gap:20px;align-items:start}.mindset-group-heading>span{font-size:16px;color:#785c1b;padding-top:6px}.mindset-group-heading h3{font-size:38px;margin:0 0 12px}.mindset-group-heading p{margin:0;max-width:310px;color:#504c43}
+  .mindset-module{border-bottom:1px solid #c8c1b4}.mindset-module:first-child{border-top:1px solid #c8c1b4}
+  .mindset-module summary{display:flex;align-items:start;gap:17px;padding:20px 0;cursor:pointer;font-size:18px;font-weight:600;line-height:1.5;list-style:none}
+  .mindset-module summary::-webkit-details-marker,.mindset-question summary::-webkit-details-marker{display:none}
+  .mindset-module-number{font-size:14px;font-weight:500;color:#6e675a;line-height:27px;flex-shrink:0}
+  .mindset-detail-mark{margin-left:auto;color:#785c1b;flex-shrink:0;font-size:24px;line-height:1.1}
+  .mindset-module[open] .mindset-detail-mark,.mindset-question[open] summary>span{transform:rotate(45deg)}
+  .mindset-module-body{padding:0 34px 12px;color:#504c43}.mindset-module-body strong{color:var(--ink);font-size:16px}
+  .mindset-deliverable-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 40px;margin-top:50px}
+  .mindset-deliverable-grid article{border-top:1px solid #71613a;padding-top:25px}.mindset-item-number{display:block;color:var(--gold);font-size:14px;letter-spacing:.1em;margin-bottom:24px}
+  .mindset-deliverable-grid h3{font-size:32px;max-width:280px}.mindset-deliverable-grid p{color:#c6c2b9;margin-bottom:0}
+  .mindset-pathway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px;margin-top:52px}
+  .mindset-pathway-grid article{display:flex;gap:22px;border-top:1px solid #c8c1b4;padding-block:28px}.mindset-pathway-grid .mindset-item-number{color:#785c1b;margin-top:7px;flex-shrink:0}.mindset-pathway-grid h3{font-size:30px;margin-bottom:12px}.mindset-pathway-grid p{margin:0;color:#504c43}
+  .mindset-boundary-note{border-top:1px solid #c8c1b4;padding-top:26px;margin-top:20px;color:#625b4e;font-size:18px;max-width:960px}
+  .mindset-coaching-grid{grid-template-columns:1.05fr 1fr}.mindset-workshop img{width:100%;height:auto;object-fit:contain}.mindset-workshop figcaption{font-size:14px;color:#bcb7ad;margin-top:14px;line-height:1.5}.mindset-coaching-grid p:not(.eyebrow){color:#c6c2b9}.mindset-coaching-grid .text-link{display:inline-block;margin-top:12px}
+  .mindset-testimony-intro{padding-top:80px;max-width:740px}.mindset-testimony-intro h3{font-size:40px}.mindset-testimony-intro p:not(.eyebrow){color:#bcb7ad;font-size:18px}
+  .mindset-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}.mindset-video-grid h4{font:600 18px/1.5 Manrope,sans-serif;margin:20px 0 4px}.mindset-video-grid article>p{font-size:14px;color:#bcb7ad;margin:0}
+  .mindset-support-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:50px;margin-top:45px}.mindset-support-grid article{border-top:2px solid #a07f31;padding-top:30px}.mindset-support-grid h3{font-size:34px}.mindset-support-grid ul{padding-left:22px}.mindset-support-grid li{padding-left:4px;margin-bottom:14px;color:#504c43}
+  .mindset-access-note{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;background:#e7dfd0;padding:32px;margin-top:35px}.mindset-access-note h3{font-size:30px;margin:0}.mindset-access-note p{margin:0;color:#504c43}.mindset-studio-note{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;padding:32px 0 0}.mindset-studio-note h3{font-size:27px;margin:0}.mindset-studio-note p{font-size:18px;color:#625b4e;margin:0}
+  .mindset-faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.mindset-question{border-top:1px solid #514a38}.mindset-question:last-child{border-bottom:1px solid #514a38}.mindset-question summary{list-style:none;cursor:pointer;display:flex;gap:22px;justify-content:space-between;padding:24px 0;font-size:18px;font-weight:600;line-height:1.5}.mindset-question summary>span{color:var(--gold);font-size:24px;flex-shrink:0}.mindset-question p{color:#c6c2b9;padding:0 35px 20px 0;margin:0}
+  .mindset-closing{padding-block:95px;background:#222b30;border-top:1px solid #ffffff20}.mindset-closing h2{font-size:clamp(48px,6vw,88px);margin-bottom:24px}.mindset-closing p:not(.eyebrow){max-width:650px;color:#d0ccc3;margin-bottom:32px}
+  @media(max-width:1100px){.mindset-hero h1{font-size:clamp(60px,8vw,84px)}.mindset-hero-grid{gap:30px}.mindset-hero .actions{align-items:start;flex-direction:column;gap:20px}.mindset-hero-photo{min-height:610px}.mindset-facts p{padding-inline:22px;gap:15px}.mindset-facts span{font-size:16px}.mindset-curriculum-group{gap:35px}.mindset-phase-nav a>span:nth-child(2){font-size:24px}.mindset-coaching-grid{gap:40px}.mindset-faq-grid{gap:40px}.mindset-video-grid{gap:20px}}
+  @media(max-width:800px){.mindset-hero-grid{grid-template-columns:1fr;padding-top:38px;gap:30px}.mindset-hero-copy{padding:0}.mindset-hero h1{font-size:clamp(60px,13vw,96px)}.mindset-hero .actions{flex-direction:row;align-items:center}.mindset-hero-photo{height:530px;min-height:0;max-width:620px;width:100%;justify-self:center}.mindset-hero-photo img{object-position:center 25%}.mindset-facts{margin-top:30px;gap:22px}.mindset-facts p{display:block;padding-inline:20px}.mindset-facts strong{display:block;margin-bottom:12px}.mindset-facts span{display:block;font-size:16px}.mindset-fit-grid,.mindset-coaching-grid,.mindset-faq-grid{grid-template-columns:1fr;gap:36px}.mindset-journey-grid{grid-template-columns:1fr;gap:35px;margin-top:35px}.mindset-phase-nav{position:static;grid-template-columns:repeat(3,1fr);gap:14px;border:0}.mindset-phase-nav a{display:block;border-top:1px solid #514a38;padding:17px 10px 17px 0}.mindset-phase-number{display:block;margin-bottom:14px}.mindset-phase-nav a>span:nth-child(2){font-size:24px}.mindset-phase-arrow{display:none}.mindset-phase-nav small{font-size:14px}.mindset-phase{padding-bottom:30px;margin-bottom:30px}.mindset-curriculum-group{grid-template-columns:1fr;gap:25px}.mindset-group-heading p{max-width:550px}.mindset-deliverable-grid{grid-template-columns:repeat(2,1fr);gap:34px 30px}.mindset-pathway-grid{gap:0 30px}.mindset-video-grid{grid-template-columns:1fr;gap:35px;max-width:650px}.mindset-testimony-intro{padding-top:60px}.mindset-workshop{max-width:650px}.mindset-support-grid{gap:30px}.mindset-access-note,.mindset-studio-note{grid-template-columns:1fr;gap:20px}.mindset-closing{padding-block:65px}}
+  @media(max-width:540px){.mindset-hero h1{font-size:clamp(51px,14.5vw,76px)}.mindset-hero-grid{padding-top:30px}.mindset-subtitle{font-size:20px}.mindset-hero .actions{align-items:start;flex-direction:column}.mindset-hero-photo{height:430px}.mindset-hero-photo figcaption{font-size:28px;left:24px;bottom:24px}.mindset-facts{gap:15px;padding-block:25px}.mindset-facts p{padding-inline:0 14px}.mindset-facts strong{font-size:48px;margin-bottom:10px}.mindset-facts span{font-size:14px;line-height:1.5}.mindset-phase-nav{grid-template-columns:1fr;gap:0}.mindset-phase-nav a{display:flex;align-items:center;gap:16px;border-top:0;padding-block:14px}.mindset-phase-nav a:first-child{border-top:1px solid #514a38}.mindset-phase-number{margin:0}.mindset-phase-nav a>span:nth-child(2){font-size:23px}.mindset-phase-nav small{display:inline-block;margin:0 12px 0 0;min-width:78px}.mindset-phase-arrow{display:none}.mindset-section-note{max-width:none}.mindset-group-heading{gap:15px}.mindset-group-heading h3{font-size:34px}.mindset-module summary{gap:12px;padding-block:19px}.mindset-module-body{padding-left:27px;padding-right:0}.mindset-deliverable-grid,.mindset-pathway-grid,.mindset-support-grid{grid-template-columns:1fr}.mindset-deliverable-grid h3{max-width:none}.mindset-item-number{margin-bottom:16px}.mindset-pathway-grid{margin-top:35px}.mindset-pathway-grid article{gap:18px}.mindset-access-note{padding:25px}.mindset-support-grid{gap:20px}.mindset-question p{padding-right:0}.mindset-closing h2{font-size:clamp(43px,11vw,60px)}}
+  @media(prefers-reduced-motion:reduce){.mindset-phase-nav a{transition:none}.mindset-phase{scroll-margin-top:20px}}
+</style>

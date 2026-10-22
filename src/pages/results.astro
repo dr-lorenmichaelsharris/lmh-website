@@ -1,6 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
-import PageIntro from '../components/PageIntro.astro';
+import {Image} from 'astro:assets';
+import stage from '../assets/stage-wide.jpg';
 import TestimonialSection from '../components/TestimonialSection.astro';
+import VideoEvidence from '../components/VideoEvidence.astro';
 ---
-<Base title="Audience experiences" description="Read published audience and organizer experiences of Loren Michaels Harris speaking."><PageIntro title="The room has a voice, too." eyebrow="AUDIENCE EXPERIENCES" description="What organizers and audience members have said about working with Loren. Personal accounts, in their own words."/><TestimonialSection compact/><section class="section wrap split"><div><p class="eyebrow">YOUR EVENT HAS ITS OWN CONTEXT</p><h2>Let’s talk about<br/>your people.</h2></div><div><p>Share the audience, the occasion, and the conversation you want to open. Ask about experience relevant to your setting.</p><div class="actions"><a class="button" href="/contact/?service=speaking">Discuss your event ↗</a><a class="text-link" href="/testimonials/">Full testimonials ↗</a></div></div></section></Base>
+<Base title="Experiences working with Loren" description="Watch and read published accounts from people who have worked with Loren Michaels Harris, from individual coaching to the audience experience.">
+<section class="wrap service-hero evidence-hero"><div><p class="eyebrow">AUDIENCE & CLIENT EXPERIENCES</p><h1>The people.<br/><span class="gold-text">Their experiences.</span></h1><p>Hear people describe working with Loren, and read what organizers and audience members have said about the experience of having him in the room.</p><a class="text-link" href="/testimonials/">Explore the full accounts ↗</a></div><figure class="reveal"><Image src={stage} alt="Loren speaking onstage in front of blue curtains" widths={[400,770]} sizes="(max-width:767px) calc(100vw - 40px), 46vw" format="webp" loading="eager"/><figcaption>An onstage moment from Loren’s published collection.</figcaption></figure></section>
+<VideoEvidence/>
+<TestimonialSection compact/>
+<section class="section light-section"><div class="wrap split"><div><p class="eyebrow">YOUR EVENT HAS ITS OWN CONTEXT</p><h2>Let’s talk about<br/>your people.</h2></div><div><p>Share the audience, the occasion, and the conversation you want to open. Ask about experience relevant to your setting.</p><div class="actions"><a class="button" href="/contact/?service=speaking">Discuss your event ↗</a><a class="text-link" href="/services/coaching/">Explore coaching ↗</a></div></div></div></section>
+</Base>
+<style>.evidence-hero h1{font-size:clamp(52px,6vw,88px)}.evidence-hero figure img{height:auto;max-height:none}@media(max-width:767px){.evidence-hero h1{font-size:clamp(48px,12vw,76px)}}</style>

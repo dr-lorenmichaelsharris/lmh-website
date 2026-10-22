@@ -1,0 +1,635 @@
+{
+  "method": "200% desktop reflow equivalence: half CSS viewport and device scale factor 2",
+  "results": [
+    {
+      "name": "home",
+      "physicalWidth": 1024,
+      "cssViewport": 512,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": " SPEAKER. COACH. STORYTELLER.",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "SEE THE CONNECTION",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "FROM THE PEOPLEIN THE ROOM",
+          "size": "14px"
+        },
+        {
+          "class": "attribution",
+          "text": "Deborah Feldman — Chicago, IL",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THREE WAYS TO WORK TOGETHER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "MASTERCLASS & COACHING EXPERIENCE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE PERSON BEHIND THE MESSAGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE PEOPLE IN THE ROOM",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "BEYOND THE STAGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "COME AS YOU ARE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE BOOK",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "LET’S TALK ABOUT YOUR EVENT",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "program",
+      "physicalWidth": 1024,
+      "cssViewport": 512,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "WITH LOREN MICHAELS HARRIS",
+          "size": "14px"
+        },
+        {
+          "class": "mindset-schedule",
+          "text": "12 weeks · 12 self-paced classes12 priva",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "WHEN SOMETHING NEEDS TO CHANGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE 12-WEEK JOURNEY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "01 / Weeks 1–4",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "02 / Weeks 5–8",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "03 / Weeks 9–12",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE FIRST FOUR WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PUT THE WORK ON PAPER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PURPOSE INTO PRACTICE",
+          "size": "14px"
+        },
+        {
+          "class": "mindset-boundary-note",
+          "text": "Loren may suggest relevant opportunities",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "A CONVERSATION THAT GOES DEEPER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "EXPERIENCES WORKING WITH LOREN",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "These are accounts of working with Loren",
+          "size": "16px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "KNOW WHAT IS INCLUDED",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "DURING YOUR 12 WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "AFTER YOUR 12 WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "Optional production services from Vision",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "BEFORE YOU ENROLL",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "START WITH A CONVERSATION",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "show",
+      "physicalWidth": 1024,
+      "cssViewport": 512,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "WITH LOREN MICHAELS HARRIS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PULL UP A CHAIR",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "MORE VOICES. MORE PERSPECTIVES.",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THIS IS BATHROBE MOMENTS",
+          "size": "14px"
+        },
+        {
+          "class": "intro-caption",
+          "text": "A six-second introduction to the show.",
+          "size": "16px"
+        },
+        {
+          "class": "guest-note",
+          "text": "An inquiry does not confirm an appearanc",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "physicalWidth": 1024,
+      "cssViewport": 512,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "CONTACT",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "program",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "Fields marked * are required. Submitting",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "If online delivery is unavailable, email",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "guest",
+      "physicalWidth": 1024,
+      "cssViewport": 512,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "BATHROBE MOMENTS · GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "Fields marked * are required. Submitting",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "A preference is not an order or a paymen",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "If online delivery is unavailable, email",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "physicalWidth": 1440,
+      "cssViewport": 720,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": " SPEAKER. COACH. STORYTELLER.",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "SEE THE CONNECTION",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "FROM THE PEOPLEIN THE ROOM",
+          "size": "14px"
+        },
+        {
+          "class": "attribution",
+          "text": "Deborah Feldman — Chicago, IL",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THREE WAYS TO WORK TOGETHER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "MASTERCLASS & COACHING EXPERIENCE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE PERSON BEHIND THE MESSAGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE PEOPLE IN THE ROOM",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "BEYOND THE STAGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "COME AS YOU ARE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE BOOK",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "LET’S TALK ABOUT YOUR EVENT",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "program",
+      "physicalWidth": 1440,
+      "cssViewport": 720,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "WITH LOREN MICHAELS HARRIS",
+          "size": "14px"
+        },
+        {
+          "class": "mindset-schedule",
+          "text": "12 weeks · 12 self-paced classes12 priva",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "WHEN SOMETHING NEEDS TO CHANGE",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE 12-WEEK JOURNEY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "01 / Weeks 1–4",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "02 / Weeks 5–8",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "03 / Weeks 9–12",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THE FIRST FOUR WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PUT THE WORK ON PAPER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PURPOSE INTO PRACTICE",
+          "size": "14px"
+        },
+        {
+          "class": "mindset-boundary-note",
+          "text": "Loren may suggest relevant opportunities",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "A CONVERSATION THAT GOES DEEPER",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "EXPERIENCES WORKING WITH LOREN",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "These are accounts of working with Loren",
+          "size": "16px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "On working with Loren",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "KNOW WHAT IS INCLUDED",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "DURING YOUR 12 WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "AFTER YOUR 12 WEEKS",
+          "size": "14px"
+        },
+        {
+          "class": "",
+          "text": "Optional production services from Vision",
+          "size": "16px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "BEFORE YOU ENROLL",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "START WITH A CONVERSATION",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "show",
+      "physicalWidth": 1440,
+      "cssViewport": 720,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "WITH LOREN MICHAELS HARRIS",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "PULL UP A CHAIR",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "MORE VOICES. MORE PERSPECTIVES.",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "THIS IS BATHROBE MOMENTS",
+          "size": "14px"
+        },
+        {
+          "class": "intro-caption",
+          "text": "A six-second introduction to the show.",
+          "size": "16px"
+        },
+        {
+          "class": "guest-note",
+          "text": "An inquiry does not confirm an appearanc",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "GUEST INQUIRY",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "physicalWidth": 1440,
+      "cssViewport": 720,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "CONTACT",
+          "size": "14px"
+        },
+        {
+          "class": "eyebrow",
+          "text": "program",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "Fields marked * are required. Submitting",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "If online delivery is unavailable, email",
+          "size": "14px"
+        }
+      ]
+    },
+    {
+      "name": "guest",
+      "physicalWidth": 1440,
+      "cssViewport": 720,
+      "deviceScaleFactor": 2,
+      "overflow": false,
+      "controls": [],
+      "small": [],
+      "bodyBelow18": [
+        {
+          "class": "eyebrow",
+          "text": "BATHROBE MOMENTS · GUEST INQUIRY",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "Fields marked * are required. Submitting",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "A preference is not an order or a paymen",
+          "size": "14px"
+        },
+        {
+          "class": "form-note",
+          "text": "If online delivery is unavailable, email",
+          "size": "14px"
+        }
+      ]
+    }
+  ]
+}
