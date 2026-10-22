@@ -62,3 +62,10 @@ Release validation must distinguish local preview completeness from production r
 The user explicitly authorized reuse of named, already-published testimonials in the local redesign. Three records (Elsa Montoya, Ali P., Deborah Feldman) preserve the original quotation, attribution, and homepage source. Homepage excerpts link to full local quotations. These records have `previewOnly: true`, `publish: false`, and `approvalStatus: pending`. They are excluded when SITE_ENV is production, even if publish/approval fields are changed accidentally. Final publication review remains required.
 
 The about-page narrative references foster care from the existing public About biography. Unsupported tenure, certification, guaranteed results, numerical metrics, pricing, and booking promises remain omitted. Promotional show artwork is explicitly historical, not a current schedule or proof of a published episode.
+
+## 22 October 2026 redesign decisions
+
+- C11 resolved for the preview against the supplied program blueprint: 12 weeks, three classes weekly in weeks 1–4, and one private 60-minute call each week for all 12 weeks. Twelve modules, six deliverables, eight pathways, and written enrollment/support limits are recorded in `src/data/programs.json`. No tuition, start date, checkout, or outcome guarantee is inferred.
+- C06 written testimonials and Robert A. Lane/Martha Glory/Amy Joy video records remain explicitly preview-only. `visibleEvidence` excludes them from production, including accidental publish/approved combinations. Their accounts are not described as this program’s graduate results.
+- Six Bathrobe Moments recordings are matched to official channel URLs and published as watchable archive records. Promotional posters are not treated as episodes without a recording. Guest fee conflicts remain unresolved; application and package preference contracts are preserved without payment activation.
+- New source media and optimized derivatives are registered in `docs/evidence/media-selections-v2.json`. Scott R. Gane and Raducu Popa credits and watermarks are preserved.

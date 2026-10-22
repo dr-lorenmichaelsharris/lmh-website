@@ -2,5 +2,11 @@
 import Base from '../layouts/Base.astro';
 import PageIntro from '../components/PageIntro.astro';
 import TestimonialSection from '../components/TestimonialSection.astro';
+import VideoEvidence from '../components/VideoEvidence.astro';
 ---
-<Base title="In their own words" description="Published testimonials from audience members and event organizers who have worked with Loren Michaels Harris."><PageIntro title="In their own words." eyebrow="TESTIMONIALS" description="Published accounts from people who have been in the room. Read their experiences in full below."/><TestimonialSection/></Base>
+<Base title="In their own words" description="Watch and read published testimonials from people who have worked with Loren Michaels Harris, including coaching clients, audience members, and event organizers.">
+<PageIntro title="In their own words." eyebrow="PERSONAL ACCOUNTS / PUBLISHED TESTIMONIALS" description="The people who worked with Loren tell the story of their experience. Watch their accounts, then read the audience and organizer testimonials in full."/>
+<VideoEvidence heading="Hear the experience directly."/>
+<TestimonialSection/>
+<section class="section light-section"><div class="wrap split"><div><p class="eyebrow">START WITH YOUR CONTEXT</p><h2>What would you<br/>like to work on?</h2></div><div><p>Tell us about your event, message, or coaching goal. Ask for references relevant to the engagement you’re considering.</p><a class="button" href="/contact/">Start a conversation ↗</a></div></div></section>
+</Base>

@@ -1,0 +1,316 @@
+---
+interface Props {
+  title: string;
+  poster: string;
+  videoId?: string;
+  autoplay?: boolean;
+  kind?: 'youtube' | 'local';
+  src?: string;
+  ratio?: string;
+  class?: string;
+}
+const {title, poster, videoId, autoplay = false, kind = 'youtube', src, ratio = '16/9', class: className} = Astro.props;
+const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${videoId}`;
+---
+<cinema-player class:list={['cinema-player', className]} data-kind={kind} data-video-id={videoId} data-src={src} data-title={title} data-autoplay={String(autoplay)} style={`--cinema-ratio:${ratio}`}>
+  <figure>
+    <div class="cinema-screen">
+      <div class="cinema-mount"></div>
+      <a class="cinema-poster" href={watchUrl} target="_blank" rel="noopener noreferrer" aria-label={`Play ${title}`}>
+        <img src={poster} alt="" loading="lazy" decoding="async" width="1280" height="720" />
+        <span class="cinema-play"><span aria-hidden="true">▶</span> Play film</span>
+      </a>
+    </div>
+    <figcaption class="cinema-caption">
+      <div class="cinema-description"><strong>{title}</strong><span class="cinema-status" role="status" aria-live="polite">{autoplay ? 'A moment from the room. Watch with sound when you’re ready.' : 'Press play to watch.'}</span></div>
+      <div class="cinema-controls" hidden>
+        <button class="cinema-toggle" type="button" aria-label={`Play ${title}`}>Play</button>
+        <button class="cinema-sound" type="button" aria-pressed="false" aria-label={`Turn sound on for ${title}`}>Sound on</button>
+      </div>
+      <a class="cinema-watch" href={watchUrl} target="_blank" rel="noopener noreferrer">{kind === 'local' ? 'Open video' : 'Watch on YouTube'} <span aria-hidden="true">↗</span></a>
+    </figcaption>
+  </figure>
+</cinema-player>
+
+<script>
+  import {shouldAutoPlay, youtubeEmbedUrl} from '../lib/media-playback';
+
+  interface YouTubePlayer {
+    playVideo(): void;
+    pauseVideo(): void;
+    mute(): void;
+    unMute(): void;
+    isMuted(): boolean;
+    getPlayerState(): number;
+    destroy(): void;
+  }
+  interface YouTubeApi {
+    Player: new (element: HTMLElement, options: {events: {
+      onReady: (event: {target: YouTubePlayer}) => void;
+      onStateChange: (event: {data: number}) => void;
+      onError: () => void;
+      onAutoplayBlocked: () => void;
+    }}) => YouTubePlayer;
+  }
+  interface MediaWindow extends Window {YT?: YouTubeApi; onYouTubeIframeAPIReady?: () => void}
+  const mediaWindow = window as MediaWindow;
+  let apiPromise: Promise<YouTubeApi> | undefined;
+
+  function loadYouTube(): Promise<YouTubeApi> {
+    if (mediaWindow.YT?.Player) return Promise.resolve(mediaWindow.YT);
+    if (apiPromise) return apiPromise;
+    apiPromise = new Promise((resolve, reject) => {
+      const previousReady = mediaWindow.onYouTubeIframeAPIReady;
+      const script = document.createElement('script');
+      const fail = () => {window.clearTimeout(timer); script.remove(); apiPromise = undefined; reject(new Error('YouTube could not load.'));};
+      const timer = window.setTimeout(fail, 12000);
+      mediaWindow.onYouTubeIframeAPIReady = () => {
+        window.clearTimeout(timer);
+        if (mediaWindow.YT?.Player) resolve(mediaWindow.YT);
+        else fail();
+        previousReady?.();
+      };
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      script.onerror = fail;
+      document.head.append(script);
+    });
+    return apiPromise;
+  }
+
+  class CinemaPlayer extends HTMLElement {
+    private youtube?: YouTubePlayer;
+    private video?: HTMLVideoElement;
+    private observer?: IntersectionObserver;
+    private teardown = new AbortController();
+    private motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    private connection = (navigator as Navigator & {connection?: EventTarget & {saveData?: boolean}}).connection;
+    private ratio = 0;
+    private playing = false;
+    private loading = false;
+    private ready = false;
+    private failed = false;
+    private manualPause = false;
+    private ended = false;
+    private automaticSession = false;
+    private pendingManualPlay = false;
+    private systemPause = false;
+    private soundTimer?: number;
+    private readyTimer?: number;
+    private get mediaTitle() {return this.dataset.title || 'film';}
+    private get status() {return this.querySelector<HTMLElement>('.cinema-status')!;}
+    private get toggle() {return this.querySelector<HTMLButtonElement>('.cinema-toggle')!;}
+    private get sound() {return this.querySelector<HTMLButtonElement>('.cinema-sound')!;}
+    private get poster() {return this.querySelector<HTMLAnchorElement>('.cinema-poster')!;}
+    private get controls() {return this.querySelector<HTMLElement>('.cinema-controls')!;}
+    private get automaticAllowed() {
+      return shouldAutoPlay({autoplayRequested: this.dataset.autoplay === 'true', viewportWidth: window.innerWidth,
+        visibleRatio: this.ratio, reducedMotion: this.motion.matches, saveData: this.connection?.saveData === true,
+        pageHidden: document.hidden, manuallyPaused: this.manualPause, ended: this.ended});
+    }
+    connectedCallback() {
+      const signal = this.teardown.signal;
+      this.poster.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        if (this.failed) return;
+        event.preventDefault();
+        void this.activate(true);
+      }, {signal});
+      this.toggle.addEventListener('click', () => {
+        if (this.playing) {this.manualPause = true; this.automaticSession = false; this.pause(false);}
+        else void this.activate(true);
+      }, {signal});
+      this.sound.addEventListener('click', () => {
+        if (this.video) this.video.muted = !this.video.muted;
+        else if (this.youtube && this.ready) this.youtube.isMuted() ? this.youtube.unMute() : this.youtube.mute();
+        this.syncSound();
+      }, {signal});
+      this.observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          this.ratio = entry.intersectionRatio;
+          if (!entry.isIntersecting) this.pause(true);
+          else if (this.automaticAllowed && !this.playing && !this.failed) void this.activate(false);
+        }
+      }, {threshold: [0, 0.5]});
+      this.observer.observe(this.querySelector('.cinema-screen')!);
+      const preferencesChanged = () => {
+        if (this.automaticSession && !this.automaticAllowed) this.pause(true);
+        else if (this.automaticAllowed && !this.playing && !this.failed) void this.activate(false);
+      };
+      this.motion.addEventListener('change', preferencesChanged, {signal});
+      this.connection?.addEventListener('change', preferencesChanged, {signal});
+      window.addEventListener('resize', preferencesChanged, {signal});
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) this.pause(true);
+        else preferencesChanged();
+      }, {signal});
+    }
+    disconnectedCallback() {
+      this.teardown.abort(); this.observer?.disconnect();
+      window.clearInterval(this.soundTimer); window.clearTimeout(this.readyTimer);
+      this.video?.pause(); this.youtube?.destroy();
+    }
+    private async activate(manual: boolean) {
+      if (this.failed) return;
+      if (manual) {this.manualPause = false; this.ended = false; this.pendingManualPlay = true; this.automaticSession = false;}
+      else if (!this.automaticAllowed) return;
+      else this.automaticSession = true;
+      if (this.ready) {this.play(); return;}
+      if (this.loading) return;
+      this.loading = true;
+      this.status.textContent = 'Loading film…';
+      this.controls.hidden = false;
+      this.toggle.disabled = true; this.sound.disabled = true;
+      this.poster.setAttribute('aria-busy', 'true');
+      this.readyTimer = window.setTimeout(() => this.fail(), 20000);
+      try {
+        if (this.dataset.kind === 'local') this.loadLocal();
+        else {
+          const api = await loadYouTube();
+          if (!this.isConnected || this.failed) return;
+          const iframe = document.createElement('iframe');
+          iframe.src = youtubeEmbedUrl(this.dataset.videoId || '', location.origin);
+          iframe.title = this.mediaTitle;
+          iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          this.querySelector('.cinema-mount')!.append(iframe);
+          this.youtube = new api.Player(iframe, {events: {
+            onReady: event => {this.youtube = event.target; this.youtube.mute(); this.onReady();},
+            onStateChange: event => {
+              if (event.data === 1) this.onPlaying();
+              else if (event.data === 2) this.onPaused();
+              else if (event.data === 0) this.onEnded();
+            },
+            onError: () => this.fail(),
+            onAutoplayBlocked: () => {this.manualPause = true; this.automaticSession = false; this.status.textContent = 'Press play to start the film.'; this.updateControls();},
+          }});
+        }
+      } catch {this.fail();}
+    }
+    private loadLocal() {
+      if (!this.dataset.src) {this.fail(); return;}
+      const video = document.createElement('video');
+      this.video = video;
+      video.src = this.dataset.src;
+      video.poster = this.poster.querySelector('img')?.src || '';
+      video.playsInline = true; video.controls = true; video.muted = true; video.preload = 'metadata';
+      video.setAttribute('aria-label', this.mediaTitle);
+      const signal = this.teardown.signal;
+      video.addEventListener('loadedmetadata', () => this.onReady(), {once: true, signal});
+      video.addEventListener('playing', () => this.onPlaying(), {signal});
+      video.addEventListener('pause', () => this.onPaused(), {signal});
+      video.addEventListener('ended', () => this.onEnded(), {signal});
+      video.addEventListener('volumechange', () => this.syncSound(), {signal});
+      video.addEventListener('error', () => this.fail(), {signal});
+      this.querySelector('.cinema-mount')!.append(video);
+    }
+    private onReady() {
+      if (!this.isConnected || this.failed) return;
+      window.clearTimeout(this.readyTimer);
+      this.ready = true; this.loading = false;
+      const moveFocus = document.activeElement === this.poster;
+      this.poster.hidden = true; this.poster.removeAttribute('aria-busy');
+      this.toggle.disabled = false; this.sound.disabled = false;
+      if (moveFocus) this.toggle.focus({preventScroll: true});
+      this.syncSound();
+      if (this.youtube) this.soundTimer = window.setInterval(() => this.syncSound(), 750);
+      if (!document.hidden && (this.pendingManualPlay || this.automaticAllowed)) this.play();
+      else this.status.textContent = 'Ready when you are. Press play.';
+    }
+    private play() {
+      if (!this.ready || document.hidden) return;
+      if (!this.pendingManualPlay && this.automaticSession && !this.automaticAllowed) return;
+      this.systemPause = false;
+      if (this.automaticSession) {
+        if (this.video) this.video.muted = true;
+        else this.youtube?.mute();
+      }
+      if (this.video) void this.video.play().catch(() => {
+        this.manualPause = true; this.automaticSession = false;
+        this.status.textContent = 'Press play to start the film.';
+        this.updateControls();
+      });
+      else this.youtube?.playVideo();
+    }
+    private pause(automatic: boolean) {
+      this.pendingManualPlay = false;
+      if (!this.ready || !this.playing) return;
+      this.systemPause = automatic;
+      this.video?.pause(); this.youtube?.pauseVideo();
+    }
+    private onPlaying() {
+      this.playing = true; this.pendingManualPlay = false; this.ended = false;
+      if (document.hidden || this.ratio === 0 || (this.automaticSession && !this.automaticAllowed)) {this.pause(true); return;}
+      this.status.textContent = this.isMuted() ? 'Playing · sound off' : 'Playing · sound on';
+      this.updateControls();
+    }
+    private onPaused() {
+      if (!this.systemPause && this.playing) {this.manualPause = true; this.automaticSession = false;}
+      this.systemPause = false; this.playing = false;
+      this.status.textContent = 'Paused';
+      this.updateControls();
+    }
+    private onEnded() {
+      this.ended = true; this.playing = false; this.automaticSession = false;
+      this.status.textContent = 'Film complete. Press play to watch again.';
+      this.updateControls();
+    }
+    private isMuted() {return this.video ? this.video.muted : (this.youtube?.isMuted() ?? true);}
+    private syncSound() {
+      if (!this.ready) return;
+      const muted = this.isMuted();
+      this.sound.textContent = muted ? 'Sound on' : 'Mute';
+      this.sound.setAttribute('aria-pressed', String(!muted));
+      this.sound.setAttribute('aria-label', `${muted ? 'Turn sound on for' : 'Mute'} ${this.mediaTitle}`);
+      if (this.playing) {
+        const message = muted ? 'Playing · sound off' : 'Playing · sound on';
+        if (this.status.textContent !== message) this.status.textContent = message;
+      }
+    }
+    private updateControls() {
+      this.toggle.textContent = this.playing ? 'Pause' : 'Play';
+      this.toggle.setAttribute('aria-label', `${this.playing ? 'Pause' : 'Play'} ${this.mediaTitle}`);
+      this.syncSound();
+    }
+    private fail() {
+      if (this.failed) return;
+      this.failed = true; this.loading = false;
+      window.clearTimeout(this.readyTimer); window.clearInterval(this.soundTimer);
+      this.youtube?.destroy(); this.youtube = undefined;
+      this.video?.pause(); this.video?.remove(); this.video = undefined;
+      this.controls.hidden = true; this.poster.hidden = false; this.poster.removeAttribute('aria-busy');
+      this.status.textContent = this.dataset.kind === 'local' ? 'The film could not load here. Use Open video to watch.' : 'The film could not load here. Watch it on YouTube.';
+    }
+  }
+  if (!customElements.get('cinema-player')) customElements.define('cinema-player', CinemaPlayer);
+</script>
+
+<style>
+  .cinema-player{display:block;width:100%;min-width:0;color:#f5f1e8;background:#101010;border:1px solid #39372f;}
+  .cinema-player figure{margin:0;}
+  .cinema-screen{position:relative;width:100%;min-width:0;aspect-ratio:var(--cinema-ratio,16/9);min-height:200px;background:#080808;overflow:hidden;}
+  .cinema-mount,.cinema-poster{position:absolute;inset:0;width:100%;height:100%;}
+  .cinema-mount :global(iframe),.cinema-mount :global(video){display:block;width:100%;height:100%;border:0;object-fit:contain;}
+  .cinema-poster{display:grid;place-items:center;text-decoration:none!important;color:#101010!important;isolation:isolate;}
+  .cinema-poster[hidden],.cinema-controls[hidden]{display:none;}
+  .cinema-poster img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
+  .cinema-poster::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#0006,#0001);}
+  .cinema-play{display:inline-flex;align-items:center;gap:14px;background:#d6b24d;padding:17px 24px;font:700 16px/1.4 Manrope,sans-serif;box-shadow:0 4px 30px #0004;transition:background .2s,transform .2s;}
+  .cinema-play>span{font-size:20px;}
+  .cinema-poster:hover img{transform:scale(1.025);}
+  .cinema-poster:hover .cinema-play{background:#edcd73;transform:translateY(-2px);}
+  .cinema-caption{display:flex;align-items:center;gap:20px;padding:22px 24px;flex-wrap:wrap;}
+  .cinema-description{flex:1 1 220px;min-width:0;overflow-wrap:anywhere;}
+  .cinema-description strong{display:block;color:#f5f1e8;font:600 18px/1.45 Manrope,sans-serif;}
+  .cinema-status{display:block;color:#c3bfb5;font:400 14px/1.6 Manrope,sans-serif;margin-top:6px;}
+  .cinema-controls{display:flex;gap:8px;flex-wrap:wrap;}
+  .cinema-controls button{min-width:74px;min-height:48px;padding:11px 15px;border:1px solid #a58b46;border-radius:0;background:transparent;color:#f5f1e8;cursor:pointer;font:600 16px/1.5 Manrope,sans-serif;transition:background .2s,color .2s;}
+  .cinema-controls button:hover{background:#d6b24d;color:#101010;}
+  .cinema-controls button:disabled{cursor:wait;opacity:.6;}
+  .cinema-watch{display:inline-flex;align-items:center;gap:8px;min-height:48px;color:#e3c46d!important;text-decoration:underline!important;text-underline-offset:5px;font:500 16px/1.5 Manrope,sans-serif;}
+  .cinema-player a:focus-visible,.cinema-player button:focus-visible{outline:3px solid #f5f1e8;outline-offset:4px;}
+  .cinema-poster:focus-visible{outline-offset:-5px;}
+  @media(max-width:600px){.cinema-caption{padding:18px;gap:12px;}.cinema-description{flex-basis:100%;}.cinema-play{padding:14px 20px;}.cinema-watch{margin-left:auto;}}
+  @media(prefers-reduced-motion:reduce){.cinema-poster img,.cinema-play,.cinema-controls button{transition:none;}.cinema-poster:hover img,.cinema-poster:hover .cinema-play{transform:none;}}
+</style>

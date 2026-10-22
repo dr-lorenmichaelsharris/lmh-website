@@ -6,6 +6,7 @@
     "Duplicate POST returns the original receipt",
     "Direct/query-string visits cannot assert submission or payment",
     "Server-side validation returns 422 and preserves fields",
+    "Program validation retains service context and message",
     "Server rejects forged package ID",
     "Cross-origin POST rejected",
     "Newsletter POST accepts explicit consent in local simulation"
