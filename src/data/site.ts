@@ -1,6 +1,6 @@
 export const site = {
  name: 'Loren Michaels Harris', title: 'Dr. Loren Michaels Harris',
- origin: 'https://lorenmichaelsharris.com', email: 'lorenmichaelsharris@gmail.com',
+ origin: 'https://lorenmichaelsharris.com', email: 'hello@lorenmichaelsharris.com',
  youtube: 'https://www.youtube.com/@LorenMichaelsHarris/streams',
  book: 'https://fromsplinteredtocentered.com/',
  serviceOrder: ['speaking','coaching','keynote-writing'],

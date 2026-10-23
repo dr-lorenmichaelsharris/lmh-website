@@ -1,0 +1,16 @@
+---
+export const prerender=false;
+import Base from '../../layouts/Base.astro';
+import {confirmNewsletter,readNewsletterToken} from '../../lib/newsletter';
+import {site} from '../../data/site';
+Astro.response.headers.set('Cache-Control','no-store');Astro.response.headers.set('Referrer-Policy','no-referrer');
+const env={RESEND_API_KEY:process.env.RESEND_API_KEY,RESEND_FROM:process.env.RESEND_FROM,RECEIPT_SECRET:process.env.RECEIPT_SECRET,NEWSLETTER_SEGMENT_ID:process.env.NEWSLETTER_SEGMENT_ID,FORMS_APPROVED:process.env.FORMS_APPROVED};
+let token=Astro.url.searchParams.get('token')||'';let state='ready';
+if(Astro.request.method==='POST'){
+ if(Astro.request.headers.get('origin')!==Astro.url.origin){state='invalid';Astro.response.status=403;}
+ else if(Number(Astro.request.headers.get('content-length')||0)>4096){state='invalid';Astro.response.status=413;}
+ else{try{const reader=Astro.request.body?.getReader();const chunks:Uint8Array[]=[];let size=0;if(reader){while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>4096){await reader.cancel();throw Error();}chunks.push(value);}}const body=Buffer.concat(chunks).toString();token=new URLSearchParams(body).get('token')||'';state=await confirmNewsletter(token,env);}catch{state='unavailable';}}
+}else if(!readNewsletterToken(token,env.RECEIPT_SECRET||''))state='invalid';
+const copy:Record<string,[string,string]>={ready:['Confirm your email updates.','Choose Confirm below to receive occasional notes from Loren. You can unsubscribe from any newsletter.'],confirmed:['You’re subscribed.','Thank you for joining Loren’s email updates. You can unsubscribe using the link in any newsletter.'],invalid:['This confirmation link has expired or is invalid.','Request a new confirmation email using the newsletter form below.'],unavailable:['Confirmation is temporarily unavailable.','Your subscription has not been confirmed. Please try this link again shortly.'],unsubscribed:['Your unsubscribe preference is preserved.','This address previously unsubscribed. Contact Loren if you would like help changing your preference.']};
+---
+<Base title="Newsletter confirmation" noindex><section class="status-panel"><h1>{copy[state][0]}</h1><p>{copy[state][1]}</p>{state==='ready'&&<form method="post" action="/newsletter/confirm/"><input type="hidden" name="token" value={token}/><button class="button" type="submit">Confirm subscription</button></form>}<p><a href="/">Return home</a> · <a href={`mailto:${site.email}`}>Contact Loren</a></p></section></Base>

@@ -1,0 +1,510 @@
+{
+  "layouts": [
+    {
+      "name": "home",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "services",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "testimonials",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "program",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "show",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "contact",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "resources",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "about",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "services",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "testimonials",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "program",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "show",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "resources",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "about",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "services",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "testimonials",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "program",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "show",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "contact",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "resources",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "about",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "home",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "services",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "testimonials",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "program",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "show",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "contact",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "resources",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "about",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "services",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "testimonials",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "program",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "show",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "contact",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "resources",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    },
+    {
+      "name": "about",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "banner": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "home 320 intact",
+      "ok": true
+    },
+    {
+      "name": "services 320 intact",
+      "ok": true
+    },
+    {
+      "name": "testimonials 320 intact",
+      "ok": true
+    },
+    {
+      "name": "program 320 intact",
+      "ok": true
+    },
+    {
+      "name": "show 320 intact",
+      "ok": true
+    },
+    {
+      "name": "contact 320 intact",
+      "ok": true
+    },
+    {
+      "name": "resources 320 intact",
+      "ok": true
+    },
+    {
+      "name": "about 320 intact",
+      "ok": true
+    },
+    {
+      "name": "home 390 intact",
+      "ok": true
+    },
+    {
+      "name": "services 390 intact",
+      "ok": true
+    },
+    {
+      "name": "testimonials 390 intact",
+      "ok": true
+    },
+    {
+      "name": "program 390 intact",
+      "ok": true
+    },
+    {
+      "name": "show 390 intact",
+      "ok": true
+    },
+    {
+      "name": "contact 390 intact",
+      "ok": true
+    },
+    {
+      "name": "resources 390 intact",
+      "ok": true
+    },
+    {
+      "name": "about 390 intact",
+      "ok": true
+    },
+    {
+      "name": "Mobile services directly visible",
+      "ok": true
+    },
+    {
+      "name": "home 768 intact",
+      "ok": true
+    },
+    {
+      "name": "services 768 intact",
+      "ok": true
+    },
+    {
+      "name": "testimonials 768 intact",
+      "ok": true
+    },
+    {
+      "name": "program 768 intact",
+      "ok": true
+    },
+    {
+      "name": "show 768 intact",
+      "ok": true
+    },
+    {
+      "name": "contact 768 intact",
+      "ok": true
+    },
+    {
+      "name": "resources 768 intact",
+      "ok": true
+    },
+    {
+      "name": "about 768 intact",
+      "ok": true
+    },
+    {
+      "name": "home 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "services 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "testimonials 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "program 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "show 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "contact 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "resources 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "about 1024 intact",
+      "ok": true
+    },
+    {
+      "name": "home 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "services 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "testimonials 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "program 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "show 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "contact 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "resources 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "about 1440 intact",
+      "ok": true
+    },
+    {
+      "name": "Separate service menu opens",
+      "ok": true
+    },
+    {
+      "name": "Escape closes menu",
+      "ok": true
+    },
+    {
+      "name": "Work with Loren navigates",
+      "ok": true
+    },
+    {
+      "name": "Header accessibility",
+      "ok": true
+    },
+    {
+      "name": "All nine testimonials",
+      "ok": true
+    },
+    {
+      "name": "lynne playback with sound",
+      "ok": true
+    },
+    {
+      "name": "client-coaching playback with sound",
+      "ok": true
+    },
+    {
+      "name": "general context",
+      "ok": true
+    },
+    {
+      "name": "speaking context",
+      "ok": true
+    },
+    {
+      "name": "coaching context",
+      "ok": true
+    },
+    {
+      "name": "keynote-writing context",
+      "ok": true
+    },
+    {
+      "name": "program context",
+      "ok": true
+    },
+    {
+      "name": "guest context",
+      "ok": true
+    },
+    {
+      "name": "Nine no-JS recording links",
+      "ok": true
+    },
+    {
+      "name": "Four no-JS service paths",
+      "ok": true
+    }
+  ]
+}

@@ -2,8 +2,8 @@
 import VideoGallery from './VideoGallery.astro';
 import {visibleEvidence} from '../lib/content-visibility';
 import records from '../data/video-testimonials.json';
-interface Props {heading?:string;description?:string;}
-const {heading='The people. Their own words.',description='Hear personal accounts of working with Loren. Each conversation reflects an individual experience.'}=Astro.props;
-const selected=records.filter(record=>visibleEvidence(record,import.meta.env.SITE_ENV==='production'));
+interface Props {heading?:string;description?:string;limit?:number;}
+const {limit,heading='The people. Their own words.',description='Hear personal accounts of working with Loren. Each conversation reflects an individual experience.'}=Astro.props;
+const selected=records.filter(record=>visibleEvidence(record,import.meta.env.SITE_ENV==='production')).slice(0,limit);
 ---
-{selected.length>0&&<VideoGallery portrait title={heading} eyebrow="EXPERIENCES WORKING WITH LOREN" description={description} clips={selected.map(r=>({title:r.name,poster:r.poster,videoId:r.videoId}))}>{selected.some(r=>r.approvalStatus!=='approved')&&<p class="metadata">Preview selection · Publication review pending. <a href={selected[0].sourceUrl}>Published testimonial collection ↗</a></p>}</VideoGallery>}
+{selected.length>0&&<VideoGallery portrait title={heading} eyebrow="EXPERIENCES WORKING WITH LOREN" description={description} clips={selected.map(r=>({title:r.name,poster:r.poster,videoId:r.videoId,src:r.src}))}/>}

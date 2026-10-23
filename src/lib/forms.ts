@@ -1,4 +1,5 @@
 import {createHash,randomBytes,createHmac,timingSafeEqual} from 'node:crypto';
+import {requestNewsletter} from './newsletter.ts';
 import {packages,serviceIntents} from '../data/site.ts';
 export const intents=serviceIntents;
 export const packageIds=packages.map(p=>p.id);
@@ -37,7 +38,7 @@ export function validateHeadshot(file:Headshot|undefined){
  const b=Buffer.from(file.bytes);const jpeg=b[0]===255&&b[1]===216&&b[2]===255;const png=b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]));const webp=b.toString('ascii',0,4)==='RIFF'&&b.toString('ascii',8,12)==='WEBP';
  if(!((file.type==='image/jpeg'&&jpeg)||(file.type==='image/png'&&png)||(file.type==='image/webp'&&webp)))return 'Choose a valid JPEG, PNG, or WebP headshot.';
 }
-export interface FormEnvironment {SITE_ENV?:string;FORM_ADAPTER?:string;LOCAL_TEST_MODE?:string;FORMS_APPROVED?:string;INQUIRY_WEBHOOK_URL?:string;NEWSLETTER_WEBHOOK_URL?:string;FORM_WEBHOOK_TOKEN?:string;LOCAL_TEST_OUTCOME?:string;RESEND_API_KEY?:string;RESEND_FROM?:string;RECEIPT_SECRET?:string;}
+export interface FormEnvironment {SITE_ENV?:string;FORM_ADAPTER?:string;LOCAL_TEST_MODE?:string;FORMS_APPROVED?:string;INQUIRY_WEBHOOK_URL?:string;NEWSLETTER_WEBHOOK_URL?:string;FORM_WEBHOOK_TOKEN?:string;LOCAL_TEST_OUTCOME?:string;RESEND_API_KEY?:string;RESEND_FROM?:string;RECEIPT_SECRET?:string;INQUIRY_TO?:string;NEWSLETTER_SEGMENT_ID?:string;PUBLIC_SITE_URL?:string;}
 export async function submit(values:Values, context:{ip:string;origin:string;env:FormEnvironment;headshot?:Headshot}, delivery:typeof fetch=fetch):Promise<Result>{
  const now=Date.now();
  for(const [key,v] of attempts)if(v.expires<now)attempts.delete(key);
@@ -51,6 +52,7 @@ export async function submit(values:Values, context:{ip:string;origin:string;env
  const key=createHash('sha256').update(context.ip).digest('hex');
  const rate=attempts.get(key)||{count:0,expires:now+windowMs};rate.count++;attempts.set(key,rate);
  if(rate.count>8)return {status:429,message:'Too many attempts. Please try again later or use email.'};
+ const emailKey=createHash('sha256').update('email:'+values.email.toLowerCase()).digest('hex');const emailRate=attempts.get(emailKey)||{count:0,expires:now+windowMs};emailRate.count++;attempts.set(emailKey,emailRate);if(emailRate.count>5||attempts.size>20000)return {status:429,message:'Too many attempts. Please try again later.'};
  const task=(async():Promise<Result>=>{
   const env=context.env;let local=false;
   const secret=receiptKey(env);if(!secret&&['resend','webhook'].includes(env.FORM_ADAPTER||''))return {status:503,message:'Online delivery is unavailable. No message has been sent.'};
@@ -61,20 +63,23 @@ export async function submit(values:Values, context:{ip:string;origin:string;env
    local=true;
    }else if(env.FORM_ADAPTER==='resend'&&env.FORMS_APPROVED==='true'&&values.service!=='newsletter'){
    if(!env.RESEND_API_KEY||!env.RESEND_FROM||!env.RECEIPT_SECRET||env.RECEIPT_SECRET.length<32)return {status:503,message:'Online delivery is unavailable. No message has been sent.'};
+   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(env.INQUIRY_TO||'hello@lorenmichaelsharris.com'))return {status:503,message:'Online delivery is unavailable. Please use email.'};
    try{
     const attachment=context.headshot;const ext=attachment?.type==='image/png'?'png':attachment?.type==='image/webp'?'webp':'jpg';
-    const body={from:env.RESEND_FROM,to:['lorenmichaelsharris@gmail.com'],reply_to:values.email,subject:`LMH inquiry: ${values.service}`,text:Object.entries(values).filter(([key])=>!['company_url'].includes(key)).map(([key,value])=>`${key==='message'&&values.service==='guest'?'Biography':key}: ${value}`).join('\n\n'),...(attachment?{attachments:[{filename:`guest-headshot.${ext}`,content:Buffer.from(attachment.bytes).toString('base64')}]}:{})};
+    const body={from:env.RESEND_FROM,to:[env.INQUIRY_TO||'hello@lorenmichaelsharris.com'],reply_to:values.email,subject:`LMH inquiry: ${values.service}`,text:Object.entries(values).filter(([key])=>!['company_url'].includes(key)).map(([key,value])=>`${key==='message'&&values.service==='guest'?'Biography':key}: ${value}`).join('\n\n'),...(attachment?{attachments:[{filename:`guest-headshot.${ext}`,content:Buffer.from(attachment.bytes).toString('base64')}]}:{})};
     const response=await delivery('https://api.resend.com/emails',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.RESEND_API_KEY}`,'Idempotency-Key':hash},body:JSON.stringify(body),signal:AbortSignal.timeout(10000),redirect:'error'});
-    if(!response.ok)return {status:502,message:'The delivery service could not accept your inquiry. Please retry or use email.'};
-    const result=await response.json() as {id?:string};if(!result.id)return {status:502,message:'Delivery could not be confirmed. Please retry or use email.'};
+    if(!response.ok){console.warn(JSON.stringify({event:'inquiry_provider_rejected',service:values.service,status:response.status}));return {status:502,message:'The delivery service could not accept your inquiry. Please retry or use email.'};}
+    const result=await response.json() as {id?:string};if(result.id)console.info(JSON.stringify({event:'inquiry_accepted',service:values.service,providerId:result.id}));if(!result.id)return {status:502,message:'Delivery could not be confirmed. Please retry or use email.'};
    }catch{return {status:502,message:'The delivery service could not be reached. Please retry or use email.'};}
-  }else if((env.FORM_ADAPTER==='webhook'||(env.FORM_ADAPTER==='resend'&&values.service==='newsletter'))&&env.FORMS_APPROVED==='true'){
+  }else if(env.FORM_ADAPTER==='resend'&&values.service==='newsletter'){
+   if(!await requestNewsletter(values.email,env,delivery))return {status:503,message:'The confirmation email could not be sent. Please try again later. You have not been subscribed.'};
+  }else if((env.FORM_ADAPTER==='webhook')&&env.FORMS_APPROVED==='true'){
    if(values.service==='guest')return {status:503,message:'Guest application delivery is unavailable. Please use email.'};
    const endpoint=values.service==='newsletter'?env.NEWSLETTER_WEBHOOK_URL:env.INQUIRY_WEBHOOK_URL;
    if(!endpoint||!endpoint.startsWith('https://')||!env.FORM_WEBHOOK_TOKEN)return {status:503,message:'Online delivery is unavailable. No message has been sent.'};
    try{
     const response=await delivery(endpoint,{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.FORM_WEBHOOK_TOKEN}`,'Idempotency-Key':hash},body:JSON.stringify({kind:values.service,fields:values}),signal:AbortSignal.timeout(10000),redirect:'error'});
-    if(!response.ok)return {status:502,message:'The delivery service could not accept your inquiry. Please retry or use email.'};
+    if(!response.ok){console.warn(JSON.stringify({event:'inquiry_provider_rejected',service:values.service,status:response.status}));return {status:502,message:'The delivery service could not accept your inquiry. Please retry or use email.'};}
    }catch{return {status:502,message:'The delivery service could not be reached. Please retry or use email.'};}
   }else return {status:503,message:'Online delivery is unavailable. No message has been sent.'};
   const token=signReceipt({service:values.service,package:values.package||'',local,expires:Date.now()+windowMs},secret);

@@ -12,7 +12,9 @@
     "release:check": "node scripts/release-check.mjs",
     "test:browser": "node scripts/browser-qa.mjs",
     "test:http": "node scripts/http-flow-test.mjs",
-    "test:performance": "node scripts/performance.mjs"
+    "test:performance": "node scripts/performance.mjs",
+    "start": "node ./dist/server/entry.mjs",
+    "build:hostinger": "node scripts/build-hostinger.mjs"
   },
   "engines": {
     "node": "24.x"

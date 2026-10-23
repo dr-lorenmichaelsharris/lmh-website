@@ -1,5 +1,102 @@
 [
-  {"id":"robert-a-lane","name":"Robert A. Lane","videoId":"8d5Nzyy6u0A","poster":"/media/robert.jpg","sourceUrl":"https://lorenmichaelsharris.com/testimonials/","recordingUrl":"https://www.youtube.com/watch?v=8d5Nzyy6u0A","approvalStatus":"pending","publish":false,"previewOnly":true},
-  {"id":"martha-glory","name":"Martha Glory","videoId":"60Oe5YNWuHs","poster":"/media/martha.jpg","sourceUrl":"https://lorenmichaelsharris.com/testimonials/","recordingUrl":"https://www.youtube.com/watch?v=60Oe5YNWuHs","approvalStatus":"pending","publish":false,"previewOnly":true},
-  {"id":"amy-joy","name":"Amy Joy","videoId":"qld-3VtERrA","poster":"/media/amy.jpg","sourceUrl":"https://lorenmichaelsharris.com/testimonials/","recordingUrl":"https://www.youtube.com/watch?v=qld-3VtERrA","approvalStatus":"pending","publish":false,"previewOnly":true}
+  {
+    "id": "stephanie",
+    "name": "Stephanie Olson",
+    "videoId": "y5loCBhqAVo",
+    "poster": "/media/testimonial-stephanie.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=y5loCBhqAVo",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "robert",
+    "name": "Robert A. Lane",
+    "videoId": "8d5Nzyy6u0A",
+    "poster": "/media/testimonial-robert.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=8d5Nzyy6u0A",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "michelle",
+    "name": "Dr. Michelle Hannah",
+    "videoId": "PXo1SLplIrg",
+    "poster": "/media/testimonial-michelle.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=PXo1SLplIrg",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "d-grant",
+    "name": "D. Grant",
+    "videoId": "lR6-88x1QTE",
+    "poster": "/media/testimonial-d-grant.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=lR6-88x1QTE",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "amy",
+    "name": "Amy Joy",
+    "videoId": "qld-3VtERrA",
+    "poster": "/media/testimonial-amy.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=qld-3VtERrA",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "martha",
+    "name": "Martha Glory",
+    "videoId": "60Oe5YNWuHs",
+    "poster": "/media/testimonial-martha.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=60Oe5YNWuHs",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "soodabeh",
+    "name": "Soodabeh",
+    "videoId": "rdDGmQY3sxI",
+    "poster": "/media/testimonial-soodabeh.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://www.youtube.com/watch?v=rdDGmQY3sxI",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "lynne",
+    "name": "Dr. Lynne Hurdle-Price",
+    "src": "/media/testimonial-lynne.mp4",
+    "poster": "/media/testimonial-lynne.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://webinar.lorenmichaelsharris.com/wp-content/uploads/2025/05/Dr.-Lynne-Hurdle-Price-Coaching-Testimonial.mp4",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false
+  },
+  {
+    "id": "client-coaching",
+    "name": "Client coaching experience",
+    "src": "/media/testimonial-client-coaching.mp4",
+    "poster": "/media/testimonial-client-coaching.jpg",
+    "sourceUrl": "https://lorenmichaelsharris.com/testimonials/",
+    "recordingUrl": "https://webinar.lorenmichaelsharris.com/wp-content/uploads/2025/05/Dr-Loren-Testimonial.mov",
+    "approvalStatus": "approved",
+    "publish": true,
+    "previewOnly": false,
+    "identityNote": "Source does not identify the speaker; neutral caption retained."
+  }
 ]
