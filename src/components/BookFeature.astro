@@ -10,7 +10,7 @@ try{dismissed=sessionStorage.getItem('lmh-book-seen')==='yes';}catch{}
 const close=()=>dialog.close();dialog.querySelector('.dialog-close')?.addEventListener('click',close);dialog.querySelector('.book-later')?.addEventListener('click',close);
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
 dialog.addEventListener('close',()=>previous?.focus({preventScroll:true}));
-const attempt=()=>{if(dismissed||!elapsed||feature.getBoundingClientRect().bottom>=0||document.hidden||document.querySelector('cinema-player[data-playing="true"]')||document.activeElement?.closest('form,nav,details,dialog'))return;dismissed=true;try{sessionStorage.setItem('lmh-book-seen','yes');}catch{}previous=document.activeElement as HTMLElement;dialog.showModal();};
+const attempt=()=>{if(dismissed||!elapsed||feature.getBoundingClientRect().bottom>=0||document.hidden||document.querySelector('cinema-player[data-playing="true"], .preview-playing, .watch-dialog[open]')||document.activeElement?.closest('form,nav,details,dialog'))return;dismissed=true;try{sessionStorage.setItem('lmh-book-seen','yes');}catch{}previous=document.activeElement as HTMLElement;dialog.showModal();};
 setTimeout(()=>{elapsed=true;attempt();},30000);window.addEventListener('scroll',attempt,{passive:true});document.addEventListener('lmh-media-state',attempt);document.addEventListener('focusout',()=>setTimeout(attempt,0));
 }
 </script>

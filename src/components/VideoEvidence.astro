@@ -1,13 +1,9 @@
 ---
-import CinemaPlayer from './CinemaPlayer.astro';
+import VideoGallery from './VideoGallery.astro';
 import {visibleEvidence} from '../lib/content-visibility';
 import records from '../data/video-testimonials.json';
 interface Props {heading?:string;description?:string;}
 const {heading='The people. Their own words.',description='Hear personal accounts of working with Loren. Each conversation reflects an individual experience.'}=Astro.props;
 const selected=records.filter(record=>visibleEvidence(record,import.meta.env.SITE_ENV==='production'));
 ---
-{selected.length>0&&<section class="section testimonial-films"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">EXPERIENCES WORKING WITH LOREN</p><h2>{heading}</h2></div><p class="section-aside">{description}</p></div><div class="testimonial-row" tabindex="0" aria-label="Video testimonials">{selected.map(record=><article class="testimonial-film"><CinemaPlayer playLabel="Watch story" videoId={record.videoId} title={record.name+' on working with Loren'} poster={record.poster} ratio="4/5"/><div class="testimonial-person"><p class="eyebrow">IN THEIR OWN WORDS</p><h3>{record.name}</h3><a class="text-link" href={record.recordingUrl}>Watch their story ↗</a></div></article>)}</div>{selected.some(r=>r.approvalStatus!=='approved')&&<p class="metadata">Preview selection · Publication review pending. <a href={selected[0].sourceUrl}>Published testimonial collection ↗</a></p>}</div></section>}
-
-<script>
-document.querySelectorAll<HTMLAnchorElement>('.testimonial-person a').forEach(link=>link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;const player=link.closest('article')?.querySelector('cinema-player');const poster=player?.querySelector<HTMLAnchorElement>('.cinema-poster');if(poster){event.preventDefault();poster.click();}}));
-</script>
+{selected.length>0&&<VideoGallery portrait title={heading} eyebrow="EXPERIENCES WORKING WITH LOREN" description={description} clips={selected.map(r=>({title:r.name,poster:r.poster,videoId:r.videoId}))}>{selected.some(r=>r.approvalStatus!=='approved')&&<p class="metadata">Preview selection · Publication review pending. <a href={selected[0].sourceUrl}>Published testimonial collection ↗</a></p>}</VideoGallery>}

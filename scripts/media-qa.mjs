@@ -35,14 +35,14 @@ async function visit(ctx, route) {
   page.on('pageerror', error => report.errors.push({route, message: error.message}));
   await page.goto(origin + route, {waitUntil: 'domcontentloaded'});
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForFunction(() => customElements.get('cinema-player'));
+  if(await page.locator('cinema-player').count())await page.waitForFunction(() => customElements.get('cinema-player'));
   return page;
 }
 const state = player => player.evaluate(element => element.youtube?.getPlayerState?.());
 
-await check('Episodes and program testimonials do not load embeds before interaction', async () => {
+await check('About films do not load embeds before interaction', async () => {
   const ctx = await context();
-  for (const route of ['/bathrobe-moments/', '/the-mindset-revolution/']) {
+  for (const route of ['/about/']) {
     const page = await visit(ctx, route);
     for (const player of await page.locator('cinema-player').all()) await player.scrollIntoViewIfNeeded();
     assert(await page.locator('cinema-player iframe, cinema-player video').count() === 0, `${route}: eagerly loaded media`);
@@ -54,7 +54,7 @@ await check('Episodes and program testimonials do not load embeds before interac
 
 await check('Keyboard playback, focus transfer, mute, pause and resume call the YouTube API', async () => {
   const ctx = await context({}, true);
-  const page = await visit(ctx, '/the-mindset-revolution/');
+  const page = await visit(ctx, '/about/');
   const player = page.locator('cinema-player').first();
   await player.scrollIntoViewIfNeeded();
   await player.locator('.cinema-poster').focus();
@@ -98,13 +98,13 @@ await check('Supplied speaker reel plays, pauses and mutes using the real media 
 await check('Blocked YouTube network restores poster and retains external watch link', async () => {
   const ctx = await context();
   await ctx.route('https://www.youtube.com/iframe_api', route => route.abort('blockedbyclient'));
-  const page = await visit(ctx, '/bathrobe-moments/');
+  const page = await visit(ctx, '/about/');
   const player = page.locator('cinema-player').first();
   await player.locator('.cinema-poster').click();
   await player.locator('.cinema-status').filter({hasText: 'could not load'}).waitFor();
   assert(await player.locator('.cinema-poster').isVisible(), 'Fallback poster hidden');
   assert(await player.locator('.cinema-watch').isVisible(), 'External watch link hidden');
-  assert(await player.locator('.cinema-watch').getAttribute('href') === 'https://www.youtube.com/watch?v=c7tWatGhdVM', 'External recording link incorrect');
+  assert(await player.locator('.cinema-watch').getAttribute('href') === 'https://www.youtube.com/watch?v=NHeQafrmpG8', 'External recording link incorrect');
   await ctx.close();
 });
 
@@ -112,11 +112,11 @@ await check('No-JavaScript visitors retain poster links and readable media title
   const ctx = await context({javaScriptEnabled: false});
   const page = await ctx.newPage();
   await page.goto(origin + '/bathrobe-moments/', {waitUntil: 'domcontentloaded'});
-  assert(await page.locator('cinema-player').count() === 6, 'Expected six verified recordings');
-  assert(await page.locator('cinema-player iframe, cinema-player video').count() === 0, 'Unexpected media embeds');
-  for (const player of await page.locator('cinema-player').all()) {
-    assert(await player.locator('.cinema-poster').getAttribute('href'), 'Poster destination missing');
-    assert(await player.locator('.cinema-description strong').textContent(), 'Media title missing');
+  assert(await page.locator('.story-card').count() === 6, 'Expected six verified recordings');
+  assert(await page.locator('.story-card iframe, .story-card video').count() === 0, 'Unexpected media embeds');
+  for (const player of await page.locator('.story-card').all()) {
+    assert(await player.locator('.story-watch').getAttribute('href'), 'Poster destination missing');
+    assert(await player.locator('h3').textContent(), 'Media title missing');
   }
   await ctx.close();
 });
@@ -193,8 +193,8 @@ await check('A hidden document pauses playback', async () => {
 
 for (const scenario of [
   {route: '/', id: '4PyakES8UQ0', automatic: true},
-  {route: '/bathrobe-moments/', id: 'c7tWatGhdVM'},
-  {route: '/the-mindset-revolution/', id: '8d5Nzyy6u0A'},
+  // Bathrobe uses the preview/dialog gallery, covered by gallery-media-qa.mjs.
+  {route: '/about/', id: 'NHeQafrmpG8'},
 ]) {
   const result = {route: scenario.route, videoId: scenario.id, mode: scenario.automatic ? 'desktop automatic' : 'explicit play'};
   const ctx = await context();
@@ -249,6 +249,6 @@ for (const scenario of [
 }
 
 await browser.close();
-await fs.writeFile('docs/media-qa-v3.json', JSON.stringify(report, null, 2) + '\n');
+await fs.writeFile('docs/media-qa-v4.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({passed: report.checks.filter(check => check.passed).length, failed: report.checks.filter(check => !check.passed).length, realYouTube: report.realYouTube, errors: report.errors}, null, 2));
 process.exitCode = report.checks.some(check => !check.passed) || report.realYouTube.some(check => check.outcome !== 'playing') || report.errors.length ? 1 : 0;

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "services 320 no overflow",
+    "ok": true
+  },
+  {
+    "name": "testimonials 320 no overflow",
+    "ok": true
+  },
+  {
+    "name": "conversations 320 no overflow",
+    "ok": true
+  },
+  {
+    "name": "services 390 no overflow",
+    "ok": true
+  },
+  {
+    "name": "testimonials 390 no overflow",
+    "ok": true
+  },
+  {
+    "name": "conversations 390 no overflow",
+    "ok": true
+  },
+  {
+    "name": "services 768 no overflow",
+    "ok": true
+  },
+  {
+    "name": "testimonials 768 no overflow",
+    "ok": true
+  },
+  {
+    "name": "conversations 768 no overflow",
+    "ok": true
+  },
+  {
+    "name": "services 1024 no overflow",
+    "ok": true
+  },
+  {
+    "name": "testimonials 1024 no overflow",
+    "ok": true
+  },
+  {
+    "name": "conversations 1024 no overflow",
+    "ok": true
+  },
+  {
+    "name": "services 1440 no overflow",
+    "ok": true
+  },
+  {
+    "name": "services accessibility",
+    "ok": true
+  },
+  {
+    "name": "testimonials 1440 no overflow",
+    "ok": true
+  },
+  {
+    "name": "testimonials accessibility",
+    "ok": true
+  },
+  {
+    "name": "conversations 1440 no overflow",
+    "ok": true
+  },
+  {
+    "name": "conversations accessibility",
+    "ok": true
+  },
+  {
+    "name": "Both service rows move",
+    "ok": true
+  },
+  {
+    "name": "Only hovered row pauses",
+    "ok": true
+  },
+  {
+    "name": "Drag preserves page",
+    "ok": true
+  },
+  {
+    "name": "Drag moves row",
+    "ok": true
+  },
+  {
+    "name": "Watch opens dialog",
+    "ok": true
+  },
+  {
+    "name": "Full video has sound requested",
+    "ok": true
+  },
+  {
+    "name": "Close removes player",
+    "ok": true
+  },
+  {
+    "name": "Focus restored",
+    "ok": true
+  },
+  {
+    "name": "No JS links available",
+    "ok": true
+  }
+]

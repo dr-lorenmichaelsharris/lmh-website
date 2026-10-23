@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Heading does not pause rows",
+    "passed": true
+  },
+  {
+    "name": "Row 1 drags",
+    "passed": true
+  },
+  {
+    "name": "Row 2 drags",
+    "passed": true
+  },
+  {
+    "name": "Conversation next arrow advances",
+    "passed": true
+  }
+]

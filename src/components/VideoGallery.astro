@@ -1,0 +1,18 @@
+---
+interface Clip {title:string;poster:string;videoId?:string;source?:string;}
+interface Props {title:string;eyebrow:string;description?:string;clips:Clip[];portrait?:boolean;}
+const {title,eyebrow,description,clips,portrait=false}=Astro.props;
+---
+<section class:list={['section video-gallery',{'portrait-gallery':portrait,'conversation-gallery':!portrait}]} data-carousel={portrait?'manual':'auto'}>
+<div class="wrap section-heading"><div><p class="eyebrow">{eyebrow}</p><h2>{title}</h2>{description&&<p class="video-gallery-description">{description}</p>}</div><div class="gallery-actions"><button data-preview-pause class="text-button" hidden aria-pressed="false">Pause previews</button>{!portrait&&<button data-carousel-pause class="text-button" hidden aria-pressed="false">Pause motion</button>}<button data-carousel-step="-1" class="round-control" hidden aria-label="Previous videos">←</button><button data-carousel-step="1" class="round-control" hidden aria-label="Next videos">→</button></div></div>
+<div class="video-row" data-carousel-row tabindex="0" aria-label={title}><div class="video-track">{clips.map(clip=><article class="story-card" data-carousel-card data-video-id={clip.videoId} data-video-title={clip.title}>
+<div class="story-visual"><img src={clip.poster} alt="" loading="lazy" width={portrait?365:640} height={portrait?460:360}/><div class="silent-preview" aria-hidden="true"></div></div>
+<a class="story-expand" data-watch href={`https://www.youtube.com/watch?v=${clip.videoId}`} aria-label={`Watch ${clip.title}`}><span aria-hidden="true">↗</span></a>
+<div class="story-caption"><p class="eyebrow">{clip.source||'IN THEIR OWN WORDS'}</p><h3>{clip.title}</h3><a class="story-watch" data-watch href={`https://www.youtube.com/watch?v=${clip.videoId}`}>{portrait?'Watch their story':'Watch conversation'} <span aria-hidden="true">▶</span></a></div>
+</article>)}</div></div><div class="wrap"><p class="metadata">Silent desktop previews · Drag or use the arrows to explore · Select a story to watch with sound</p><slot/></div>
+</section>
+<script>
+import {setupCarousels} from '../scripts/carousels';
+import {setupVideoCards} from '../scripts/video-cards';
+setupCarousels();setupVideoCards();
+</script>

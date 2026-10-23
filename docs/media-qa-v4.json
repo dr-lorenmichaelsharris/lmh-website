@@ -1,0 +1,86 @@
+{
+  "origin": "http://127.0.0.1:4321",
+  "checkedAt": "2026-10-23T09:59:27.152Z",
+  "checks": [
+    {
+      "name": "About films do not load embeds before interaction",
+      "passed": true
+    },
+    {
+      "name": "Keyboard playback, focus transfer, mute, pause and resume call the YouTube API",
+      "passed": true,
+      "engine": "simulated YouTube API; real rendered component"
+    },
+    {
+      "name": "Supplied speaker reel plays, pauses and mutes using the real media element",
+      "passed": true,
+      "durationSeconds": 19.017007
+    },
+    {
+      "name": "Blocked YouTube network restores poster and retains external watch link",
+      "passed": true
+    },
+    {
+      "name": "No-JavaScript visitors retain poster links and readable media titles",
+      "passed": true
+    },
+    {
+      "name": "Desktop homepage autoplay stays muted and preserves manual pause",
+      "passed": true,
+      "engine": "simulated YouTube API; real rendered component"
+    },
+    {
+      "name": "Mobile: homepage film waits for a tap",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion: homepage film waits for a tap",
+      "passed": true
+    },
+    {
+      "name": "Data saving: homepage film waits for a tap",
+      "passed": true
+    },
+    {
+      "name": "Changing to reduced motion stops an automatic film and leaves manual playback available",
+      "passed": true,
+      "engine": "simulated YouTube API; real preference change"
+    },
+    {
+      "name": "A hidden document pauses playback",
+      "passed": true,
+      "engine": "simulated YouTube API and document visibility event"
+    }
+  ],
+  "realYouTube": [
+    {
+      "route": "/",
+      "videoId": "4PyakES8UQ0",
+      "mode": "desktop automatic",
+      "outcome": "playing",
+      "message": "Playing · sound off",
+      "requestFailures": [],
+      "mutedInitially": true,
+      "playbackAdvanced": true,
+      "pauseConfirmed": true,
+      "soundConfirmed": true,
+      "resumeConfirmed": true,
+      "offscreenPauseConfirmed": true
+    },
+    {
+      "route": "/about/",
+      "videoId": "NHeQafrmpG8",
+      "mode": "explicit play",
+      "outcome": "playing",
+      "message": "Playing · sound off",
+      "requestFailures": [],
+      "mutedInitially": true,
+      "playbackAdvanced": true,
+      "pauseConfirmed": true,
+      "soundConfirmed": true,
+      "resumeConfirmed": true,
+      "offscreenPauseConfirmed": true
+    }
+  ],
+  "errors": []
+}

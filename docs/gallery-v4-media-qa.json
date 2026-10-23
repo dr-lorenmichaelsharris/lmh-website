@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Muted previews active; maximum three",
+    "ok": true
+  },
+  {
+    "name": "Pause previews stops playback",
+    "ok": true
+  },
+  {
+    "name": "Full player stops all previews",
+    "ok": true
+  },
+  {
+    "name": "Offscreen previews stop",
+    "ok": true
+  },
+  {
+    "name": "Reduced motion keeps posters",
+    "ok": true
+  },
+  {
+    "name": "services actual 200% zoom",
+    "ok": true
+  },
+  {
+    "name": "testimonials actual 200% zoom",
+    "ok": true
+  },
+  {
+    "name": "conversations actual 200% zoom",
+    "ok": true
+  }
+]
