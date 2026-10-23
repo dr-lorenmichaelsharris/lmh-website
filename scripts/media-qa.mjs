@@ -1,7 +1,7 @@
 import {chromium} from '@playwright/test';
 import fs from 'node:fs/promises';
 
-const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:4323';
+const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:4321';
 const previewResponse = await fetch(origin, {signal: AbortSignal.timeout(10000)});
 if (!previewResponse.ok) throw new Error(`Preview is unavailable: HTTP ${previewResponse.status}`);
 const browser = await chromium.launch({channel: 'chrome', headless: true});
@@ -75,9 +75,9 @@ await check('Keyboard playback, focus transfer, mute, pause and resume call the 
   return {engine: 'simulated YouTube API; real rendered component'};
 });
 
-await check('Local show introduction plays, pauses and mutes using the real media element', async () => {
+await check('Supplied speaker reel plays, pauses and mutes using the real media element', async () => {
   const ctx = await context();
-  const page = await visit(ctx, '/bathrobe-moments/');
+  const page = await visit(ctx, '/services/speaking/');
   const player = page.locator('cinema-player[data-kind="local"]');
   await player.scrollIntoViewIfNeeded();
   await player.locator('.cinema-poster').click();
@@ -112,7 +112,7 @@ await check('No-JavaScript visitors retain poster links and readable media title
   const ctx = await context({javaScriptEnabled: false});
   const page = await ctx.newPage();
   await page.goto(origin + '/bathrobe-moments/', {waitUntil: 'domcontentloaded'});
-  assert(await page.locator('cinema-player').count() === 7, 'Expected 6 recordings and one introduction');
+  assert(await page.locator('cinema-player').count() === 6, 'Expected six verified recordings');
   assert(await page.locator('cinema-player iframe, cinema-player video').count() === 0, 'Unexpected media embeds');
   for (const player of await page.locator('cinema-player').all()) {
     assert(await player.locator('.cinema-poster').getAttribute('href'), 'Poster destination missing');
@@ -249,6 +249,6 @@ for (const scenario of [
 }
 
 await browser.close();
-await fs.writeFile('docs/media-qa.json', JSON.stringify(report, null, 2) + '\n');
+await fs.writeFile('docs/media-qa-v3.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({passed: report.checks.filter(check => check.passed).length, failed: report.checks.filter(check => !check.passed).length, realYouTube: report.realYouTube, errors: report.errors}, null, 2));
 process.exitCode = report.checks.some(check => !check.passed) || report.realYouTube.some(check => check.outcome !== 'playing') || report.errors.length ? 1 : 0;

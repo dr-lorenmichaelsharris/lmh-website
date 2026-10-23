@@ -1,6 +1,7 @@
 ---
 interface Props {
   title: string;
+  playLabel?: string;
   poster: string;
   videoId?: string;
   autoplay?: boolean;
@@ -9,7 +10,7 @@ interface Props {
   ratio?: string;
   class?: string;
 }
-const {title, poster, videoId, autoplay = false, kind = 'youtube', src, ratio = '16/9', class: className} = Astro.props;
+const {title, playLabel='Play film', poster, videoId, autoplay = false, kind = 'youtube', src, ratio = '16/9', class: className} = Astro.props;
 const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${videoId}`;
 ---
 <cinema-player class:list={['cinema-player', className]} data-kind={kind} data-video-id={videoId} data-src={src} data-title={title} data-autoplay={String(autoplay)} style={`--cinema-ratio:${ratio}`}>
@@ -18,7 +19,7 @@ const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${vid
       <div class="cinema-mount"></div>
       <a class="cinema-poster" href={watchUrl} target="_blank" rel="noopener noreferrer" aria-label={`Play ${title}`}>
         <img src={poster} alt="" loading="lazy" decoding="async" width="1280" height="720" />
-        <span class="cinema-play"><span aria-hidden="true">▶</span> Play film</span>
+        <span class="cinema-play"><span aria-hidden="true">▶</span> {playLabel}</span>
       </a>
     </div>
     <figcaption class="cinema-caption">
@@ -110,6 +111,7 @@ const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${vid
     }
     connectedCallback() {
       const signal = this.teardown.signal;
+      document.addEventListener('lmh-play', event => {if((event as CustomEvent).detail !== this) {this.manualPause = true; this.automaticSession = false; this.pause(true);}}, {signal});
       this.poster.addEventListener('click', event => {
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         if (this.failed) return;
@@ -208,7 +210,7 @@ const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${vid
     private onReady() {
       if (!this.isConnected || this.failed) return;
       window.clearTimeout(this.readyTimer);
-      this.ready = true; this.loading = false;
+      this.ready = true; this.loading = false; this.dataset.ready = 'true';
       const moveFocus = document.activeElement === this.poster;
       this.poster.hidden = true; this.poster.removeAttribute('aria-busy');
       this.toggle.disabled = false; this.sound.disabled = false;
@@ -240,18 +242,21 @@ const watchUrl = kind === 'local' ? src : `https://www.youtube.com/watch?v=${vid
       this.video?.pause(); this.youtube?.pauseVideo();
     }
     private onPlaying() {
+      this.dataset.playing = 'true'; document.dispatchEvent(new CustomEvent('lmh-play',{detail:this})); document.dispatchEvent(new Event('lmh-media-state'));
       this.playing = true; this.pendingManualPlay = false; this.ended = false;
       if (document.hidden || this.ratio === 0 || (this.automaticSession && !this.automaticAllowed)) {this.pause(true); return;}
       this.status.textContent = this.isMuted() ? 'Playing · sound off' : 'Playing · sound on';
       this.updateControls();
     }
     private onPaused() {
+      this.dataset.playing = 'false'; document.dispatchEvent(new Event('lmh-media-state'));
       if (!this.systemPause && this.playing) {this.manualPause = true; this.automaticSession = false;}
       this.systemPause = false; this.playing = false;
       this.status.textContent = 'Paused';
       this.updateControls();
     }
     private onEnded() {
+      this.dataset.playing = 'false'; document.dispatchEvent(new Event('lmh-media-state'));
       this.ended = true; this.playing = false; this.automaticSession = false;
       this.status.textContent = 'Film complete. Press play to watch again.';
       this.updateControls();

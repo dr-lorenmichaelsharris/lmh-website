@@ -1,0 +1,18 @@
+[
+  {
+    "mode": "desktop",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "passed": true
+  },
+  {
+    "mode": "reduced",
+    "passed": true
+  },
+  {
+    "mode": "Starting the supplied reel pauses the YouTube player",
+    "passed": true
+  }
+]

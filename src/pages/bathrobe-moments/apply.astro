@@ -3,8 +3,9 @@ export const prerender=false;
 import Base from '../../layouts/Base.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
+import GuestOffer from '../../components/GuestOffer.astro';
 import {packages} from '../../data/site';
 const selected=Astro.url.searchParams.get('package')||'';
 const preference=packages.some(p=>p.id===selected)?selected:'';
 ---
-<Base title="Guest inquiry | Bathrobe Moments"><PageIntro title="Bring your story to the conversation." eyebrow="BATHROBE MOMENTS · GUEST INQUIRY" description="Introduce yourself and the topic you’d like to explore with Loren."/><section class="section wrap inquiry-layout"><aside><h2>A thoughtful introduction.</h2><p>Tell us who you are, what you’d like to discuss and why it matters to you.</p><p>An inquiry is an expression of interest. It does not confirm acceptance, payment or a scheduled appearance.</p><a href="/bathrobe-moments/">← Back to the show</a></aside><InquiryForm service="guest" values={{package:preference}}/></section></Base>
+<Base title="Guest inquiry | Bathrobe Moments"><PageIntro title="Bring your story to the conversation." eyebrow="BATHROBE MOMENTS · GUEST INQUIRY" description="Introduce yourself and the topic you’d like to explore with Loren."/><section class="section wrap inquiry-layout"><aside><GuestOffer/><h2>A thoughtful introduction.</h2><p>Tell us who you are, what you’d like to discuss and why it matters to you.</p><p>An inquiry is an expression of interest. It does not confirm acceptance, payment or a scheduled appearance.</p><a href="/bathrobe-moments/">← Back to the show</a></aside><InquiryForm service="guest" values={{package:preference}}/></section></Base>

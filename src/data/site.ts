@@ -4,6 +4,7 @@ export const site = {
  youtube: 'https://www.youtube.com/@LorenMichaelsHarris/streams',
  book: 'https://fromsplinteredtocentered.com/',
  serviceOrder: ['speaking','coaching','keynote-writing'],
+ calendly: 'https://calendly.com/lorenmichaelsharris',
  bookingEvents: {} as Record<string,string>,
 };
 export const packages = [

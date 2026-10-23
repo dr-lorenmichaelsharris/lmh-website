@@ -1,0 +1,7 @@
+---
+import CinemaPlayer from './CinemaPlayer.astro';
+interface Clip {title:string;poster:string;videoId?:string;src?:string;source:string;}
+interface Props {title:string;eyebrow?:string;clips:Clip[];}
+const {title,eyebrow='MEET LOREN IN MOTION',clips}=Astro.props;
+---
+<section class="section motion-gallery"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">{eyebrow}</p><h2>{title}</h2></div><p class="section-aside">A voice. A perspective. A conversation worth making time for.</p></div><div class="film-row" tabindex="0" aria-label={title}>{clips.map(clip=><article class="film-card"><p class="eyebrow">{clip.source}</p><CinemaPlayer title={clip.title} poster={clip.poster} kind={clip.src?'local':'youtube'} src={clip.src} videoId={clip.videoId}/></article>)}</div><p class="metadata">Scroll to explore. Select a film to watch.</p></div></section>

@@ -1,0 +1,218 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "route": "/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 320,
+      "route": "/bathrobe-moments/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 320,
+      "route": "/about/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 320,
+      "route": "/services/speaking/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 320,
+      "route": "/contact/?service=guest",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 320,
+      "route": "/results/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/bathrobe-moments/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/about/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/services/speaking/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/contact/?service=guest",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 390,
+      "route": "/results/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/bathrobe-moments/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/about/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/services/speaking/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/contact/?service=guest",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 768,
+      "route": "/results/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/bathrobe-moments/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/about/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/services/speaking/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/contact/?service=guest",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "route": "/results/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/bathrobe-moments/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/about/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/services/speaking/",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/contact/?service=guest",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "route": "/results/",
+      "overflow": false,
+      "broken": []
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    },
+    {
+      "route": "/bathrobe-moments/",
+      "violations": []
+    },
+    {
+      "route": "/about/",
+      "violations": []
+    },
+    {
+      "route": "/services/speaking/",
+      "violations": []
+    },
+    {
+      "route": "/contact/?service=guest",
+      "violations": []
+    },
+    {
+      "route": "/results/",
+      "violations": []
+    }
+  ],
+  "checks": [
+    "Topic switching keeps common details and service drafts; inactive required fields are disabled.",
+    "Every inquiry type submits only active service fields.",
+    "Desktop navigation exposes Keynote Speaking and keyboard-accessible Keynote Writing.",
+    "Book popup waits for time and scroll, closes with Escape, and stays dismissed for the visit.",
+    "No-JavaScript contact selector, guest form, and introduction fallback remain usable.",
+    "Gallery supports manual pause and removes motion with reduced-motion preference."
+  ]
+}

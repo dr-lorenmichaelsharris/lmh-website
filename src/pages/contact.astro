@@ -1,10 +1,6 @@
 ---
 export const prerender=false;
-import Base from '../layouts/Base.astro';
-import PageIntro from '../components/PageIntro.astro';
-import InquiryForm from '../components/InquiryForm.astro';
-import {site,serviceIntents} from '../data/site';
-const requested=Astro.url.searchParams.get('service')||'general';
-const service=serviceIntents.includes(requested as typeof serviceIntents[number])&&!['guest','newsletter'].includes(requested)?requested:'general';
+import Base from '../layouts/Base.astro';import PageIntro from '../components/PageIntro.astro';import InquiryForm from '../components/InquiryForm.astro';import {site,serviceIntents} from '../data/site';
+const requested=Astro.url.searchParams.get('service')||'general';const service=serviceIntents.includes(requested as typeof serviceIntents[number])&&requested!=='newsletter'?requested:'general';
 ---
-<Base title="Start a conversation"><PageIntro title="Tell us what you’re planning." eyebrow="CONTACT" description="Share your event, coaching goal, or writing project. Choose an inquiry type below to get started."/><section class="section wrap inquiry-layout"><aside class="inquiry-sidebar"><h2>Start here.</h2><nav aria-label="Inquiry type"><ul><li><a href="?service=speaking">Event & speaking</a></li><li><a href="?service=coaching">Coaching</a></li><li><a href="?service=keynote-writing">Keynote Writing</a></li><li><a href="?service=program">The Mindset Revolution</a></li><li><a href="/bathrobe-moments/apply/">Bathrobe Moments guest</a></li><li><a href="?service=general">General & media</a></li></ul></nav><p>Prefer email?<br/><a href={`mailto:${site.email}`}>{site.email}</a></p></aside><div><p class="eyebrow">{service==='general'?'GENERAL & MEDIA':service.replaceAll('-',' ')}</p><InquiryForm service={service}/></div></section></Base>
+<Base title="Start a conversation"><PageIntro title="Let’s start with you." eyebrow="CONTACT" description="An event, a message, a story you’re ready to share. Choose what brings you here and tell Loren a little more."/><section class="section wrap contact-shell"><InquiryForm service={service} dynamic/><aside class="contact-aside"><p class="eyebrow">PREFER TO TALK?</p><h2>A conversation is a good place to begin.</h2><p>Open Loren’s calendar to explore available appointments.</p><a class="button" href={site.calendly}>Schedule a Call ↗</a><p class="metadata">Scheduling a call does not confirm a speaking engagement or show appearance.</p><p>Prefer email?<br/><a href={`mailto:${site.email}`}>{site.email}</a></p></aside></section></Base>

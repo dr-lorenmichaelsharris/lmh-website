@@ -2,7 +2,8 @@
   "origin": "http://127.0.0.1:4330",
   "adapter": "local; no mail sent",
   "passed": [
-    "Guest POST → opaque HTTP-only receipt → local-only status with package",
+    "Guest POST → signed HTTP-only receipt → local-only status with package",
+    "Invalid headshot is rejected and guest text is preserved for retry",
     "Duplicate POST returns the original receipt",
     "Direct/query-string visits cannot assert submission or payment",
     "Server-side validation returns 422 and preserves fields",

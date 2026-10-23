@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-23",
+  "selections": [
+    {"file":"public/media/book-showcase.webp","source":"User-supplied From_Splintered_to_Centered_Book_Showcase.png","dimensions":"1916x821","placement":"Home book feature and once-per-visit popup","treatment":"WebP derivative; CSS crops the book panel, with live HTML text and controls. Original supplied artwork remains unchanged."},
+    {"file":"public/media/loren-speaker-reel.mp4","source":"User-supplied dr-lore-speaker-reel.mp4","dimensions":"1920x1080","durationSeconds":19.02,"placement":"Speaking, Media Kit, About gallery","treatment":"H264 30fps, AAC audio, faststart; poster from approximately 15 seconds."},
+    {"file":"public/media/bathrobe-hero.mp4","source":"https://lorenmichaelsharris.com/wp-content/uploads/2026/06/dr-loren.mp4","dimensions":"1280x720","placement":"Bathrobe Moments hero","treatment":"24fps H264 silent loop, about 2.1MB; 4-second branding poster. The source includes the fiery logo introduction followed by a conversation montage."},
+    {"file":"public/media/power-of-we.jpg","source":"https://www.youtube.com/watch?v=4PyakES8UQ0","timestampSeconds":16.5,"dimensions":"1278x720","placement":"Home event film and About gallery","treatment":"Verified audience frame captured from the official embedded film. Player UI excluded; original film content retained."}
+  ],
+  "reusedMedia": "Existing credited portrait, workshop, interview, episode, and testimonial assets retain their v2 source register. No new ratings, quotations, or performance claims were invented."
+}

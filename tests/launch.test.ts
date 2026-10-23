@@ -1,0 +1,13 @@
+import {test,beforeEach} from 'node:test';
+import assert from 'node:assert/strict';
+import {guestCampaignActive} from '../src/lib/guest-campaign.ts';
+import {submit,validateHeadshot,readReceipt,resetTestState} from '../src/lib/forms.ts';
+const base={service:'guest',name:'Guest',email:'guest@example.test',message:'A biography for the show.',topic:'A story about finding my voice.',acknowledgment:'yes'};
+const file={name:'portrait.jpg',type:'image/jpeg',bytes:new Uint8Array([255,216,255,1])};
+const env={FORM_ADAPTER:'resend',FORMS_APPROVED:'true',RESEND_API_KEY:'test-key',RESEND_FROM:'LMH <forms@example.test>',RECEIPT_SECRET:'a-test-secret-that-is-not-for-production'};
+const ctx={ip:'test',origin:'https://example.test',env,headshot:file};
+beforeEach(resetTestState);
+test('free appearance offer ends after January 1 in Chicago',()=>{assert.equal(guestCampaignActive(new Date('2027-01-02T05:59:59Z')),true);assert.equal(guestCampaignActive(new Date('2027-01-02T06:00:00Z')),false);});
+test('headshots require allowed matching signatures and a 2MB limit',()=>{assert.ok(validateHeadshot(undefined));assert.ok(validateHeadshot({...file,type:'image/png'}));assert.ok(validateHeadshot({...file,bytes:new Uint8Array(2097153)}));assert.equal(validateHeadshot(file),undefined);});
+test('Resend attaches headshot, uses fixed recipient and signs portable receipt',async()=>{let sent:any;const provider=(async(_url:any,init:any)=>{sent=JSON.parse(init.body);assert.ok(init.headers['Idempotency-Key']);return new Response(JSON.stringify({id:'test-accepted'}),{status:200});}) as typeof fetch;const r=await submit(base,ctx,provider);assert.equal(r.status,303);assert.deepEqual(sent.to,['lorenmichaelsharris@gmail.com']);assert.equal(sent.reply_to,base.email);assert.equal(sent.attachments[0].filename,'guest-headshot.jpg');assert.match(sent.text,/Biography:/);resetTestState();assert.equal(readReceipt(r.receipt,env.RECEIPT_SECRET)?.service,'guest');assert.equal(readReceipt(r.receipt,'wrong'),undefined);assert.equal(readReceipt(r.receipt+'x',env.RECEIPT_SECRET),undefined);});
+test('missing credentials, rejected delivery and missing headshot cannot succeed',async()=>{assert.equal((await submit(base,{...ctx,headshot:undefined})).status,422);assert.equal((await submit(base,{...ctx,env:{...env,RESEND_API_KEY:''}})).status,503);assert.equal((await submit(base,ctx,(async()=>new Response('{}',{status:500})) as typeof fetch)).status,502);assert.equal((await submit(base,ctx,(async()=>new Response('{}',{status:200})) as typeof fetch)).status,502);});

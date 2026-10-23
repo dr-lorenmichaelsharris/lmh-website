@@ -10,7 +10,7 @@ test('server validates required fields, lengths, consent and package IDs',()=>{
  assert.ok(validate({service:'newsletter',email:'test@example.test'}).consent);
 });
 test('local receipt retains guest preference without payment or scheduling',async()=>{
- const r=await submit({...base,service:'guest',package:'silver'},ctx);assert.equal(r.status,303);assert.ok(r.receipt);
+ const r=await submit({...base,service:'guest',package:'silver',topic:'My experience developing a message.'},{...ctx,headshot:{name:'test.jpg',type:'image/jpeg',bytes:new Uint8Array([255,216,255,1])}});assert.equal(r.status,303);assert.ok(r.receipt);
  const receipt=readReceipt(r.receipt);assert.equal(receipt?.package,'silver');assert.equal(receipt?.local,true);assert.equal(paymentBoundary().enabled,false);
  assert.equal(readReceipt('paid=true'),undefined);
 });

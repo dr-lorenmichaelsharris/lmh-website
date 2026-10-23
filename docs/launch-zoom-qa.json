@@ -1,0 +1,41 @@
+{
+  "method": "Actual Chrome Page zoom set to 200% in an isolated QA profile; 1440px window, no device emulation.",
+  "results": [
+    {
+      "route": "/",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    },
+    {
+      "route": "/bathrobe-moments/",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    },
+    {
+      "route": "/about/",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    },
+    {
+      "route": "/services/speaking/",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    },
+    {
+      "route": "/contact/?service=guest",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    },
+    {
+      "route": "/results/",
+      "width": 712,
+      "dpr": 2,
+      "overflow": false
+    }
+  ]
+}
