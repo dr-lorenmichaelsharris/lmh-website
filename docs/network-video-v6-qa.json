@@ -1,0 +1,29 @@
+{
+  "testedAt": "2026-10-23T20:00:04.728Z",
+  "results": [
+    {
+      "path": "/about/",
+      "playing": 3,
+      "iframes": 2,
+      "local": [
+        {
+          "playing": true,
+          "time": 11.548739
+        }
+      ]
+    },
+    {
+      "path": "/bathrobe-moments/",
+      "playing": 1,
+      "iframes": 3,
+      "local": []
+    },
+    {
+      "path": "/the-mindset-revolution/",
+      "playing": 3,
+      "iframes": 4,
+      "local": []
+    }
+  ],
+  "errors": []
+}

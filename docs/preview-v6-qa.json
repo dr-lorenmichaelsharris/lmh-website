@@ -1,0 +1,29 @@
+{
+  "testedAt": "2026-10-23T19:59:01.177Z",
+  "method": "Controlled YouTube API: duration initially unavailable, then 3600 seconds",
+  "passed": [
+    "duration readiness retry",
+    "distinct stable 35–65% seeks",
+    "20-second preview loop",
+    "maximum three selected previews",
+    "unified motion/preview pause and resume",
+    "full recording starts without preview offset",
+    "full-playback suppression"
+  ],
+  "state": [
+    {
+      "t": 2012.0399999999997,
+      "seeks": [
+        2012.0399999999997
+      ],
+      "playing": true
+    },
+    {
+      "t": 1668.6,
+      "seeks": [
+        1668.6
+      ],
+      "playing": true
+    }
+  ]
+}

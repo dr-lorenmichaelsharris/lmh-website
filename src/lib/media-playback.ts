@@ -20,6 +20,6 @@ export function shouldAutoPlay(environment: PlaybackEnvironment): boolean {
 export function youtubeEmbedUrl(videoId: string, origin: string): string {
   if (!/^[a-zA-Z0-9_-]{11}$/.test(videoId)) throw new Error('Invalid YouTube video ID.');
   const url = new URL(`https://www.youtube-nocookie.com/embed/${videoId}`);
-  url.search = new URLSearchParams({enablejsapi: '1', origin, playsinline: '1', rel: '0', autoplay: '0', mute: '1'}).toString();
+  url.search = new URLSearchParams({enablejsapi: '1', origin, playsinline: '1', rel: '0', controls:'1', autoplay: '0', mute: '1'}).toString();
   return url.href;
 }

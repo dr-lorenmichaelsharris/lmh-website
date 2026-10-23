@@ -87,7 +87,7 @@ const questions = [
     </div>
   </section>
 
-  <VideoEvidence limit={3} heading="Hear it in their own words." description="These are accounts of working with Loren. They are not presented as reviews of this specific program."/>
+  <VideoEvidence heading="Hear it in their own words." description="These are accounts of working with Loren. They are not presented as reviews of this specific program."/>
 
   <section class="section light-section mindset-support" id="access-and-support">
     <div class="wrap"><div class="section-heading"><div><p class="eyebrow">KNOW WHAT IS INCLUDED</p><h2>Support during the work.<br/>Space to return to it.</h2></div></div><div class="mindset-support-grid"><article><p class="eyebrow">DURING YOUR 12 WEEKS</p><h3>Weekly private coaching</h3><ul>{program.supportTerms.active.map(term=><li>{term}</li>)}</ul></article><article><p class="eyebrow">AFTER YOUR 12 WEEKS</p><h3>Alumni recalibration</h3><ul>{program.supportTerms.alumni.map(term=><li>{term}</li>)}</ul></article></div><div class="mindset-access-note"><h3>Permanent curriculum access</h3><p>{program.accessTerms}</p></div><div class="mindset-studio-note"><h3>When you are ready for production</h3><p>{program.supportTerms.studio}</p></div></div>

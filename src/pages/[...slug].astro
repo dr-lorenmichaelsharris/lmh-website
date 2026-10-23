@@ -13,10 +13,10 @@ const d={...data,date:'date' in data?data.date:'',author:'author' in data?data.a
 const article=entry.kind==='article';
 ---
 <Base reading title={d.title} description={article?d.excerpt:`${d.title} — Loren Michaels Harris.`}>
-<PageIntro title={d.title} eyebrow={article?(d.archive?'ARCHIVE · GUEST ANNOUNCEMENT':'THE JOURNAL'):'POLICIES & ACCESSIBILITY'}>
-<p class="breadcrumb"><a href="/">Home</a> / <a href={article?'/blog/':'/important-links/'}>{article?'Journal':'Policies & Accessibility'}</a></p>
+<PageIntro title={d.title} eyebrow={article?(d.archive?'ARCHIVE · GUEST ANNOUNCEMENT':'THE BLOG'):'POLICIES & ACCESSIBILITY'}>
+<p class="breadcrumb"><a href="/">Home</a> / <a href={article?'/blog/':'/important-links/'}>{article?'Blog':'Policies & Accessibility'}</a></p>
 {article&&<p class="metadata"><time datetime={d.date}>{new Date(d.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</time> · By {d.author}</p>}
 </PageIntro>
-<div class="wrap"><article class="reading">{article&&d.archive&&<p class="form-note">Historical guest announcement. Time-relative language below belongs to the original publication.</p>}<div set:html={d.body}/>{article?<p><a href="/blog/">← Back to the journal</a></p>:<p><a href="/important-links/">← Policies & Accessibility</a></p>}</article></div>
+<div class="wrap"><article class="reading">{article&&d.archive&&<p class="form-note">Historical guest announcement. Time-relative language below belongs to the original publication.</p>}<div set:html={d.body}/>{article?<p><a href="/blog/">← Back to the blog</a></p>:<p><a href="/important-links/">← Policies & Accessibility</a></p>}</article></div>
 {article&&<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:d.title,datePublished:d.date,author:{'@type':'Person',name:d.author},mainEntityOfPage:d.sourceUrl}).replace(/</g,'\\u003c')}/>}
 </Base>

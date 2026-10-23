@@ -7,13 +7,13 @@ export function setupCarousels() {
     let paused=false;
     const pause=root.querySelector<HTMLButtonElement>('[data-carousel-pause]');
     pause?.removeAttribute('hidden');
-    pause?.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume motion':'Pause motion';pause.setAttribute('aria-pressed',String(paused));});
+    pause?.addEventListener('click',()=>{paused=!paused;const label=pause.hasAttribute('data-media-pause')?`${paused?'Resume':'Pause'} gallery and previews`:`${paused?'Resume':'Pause'} motion`;if(pause.hasAttribute('data-media-pause')){pause.setAttribute('aria-label',label);pause.title=label;root.dataset.previewPaused=String(paused);document.dispatchEvent(new Event('lmh-gallery-state'));}else pause.textContent=label;pause.setAttribute('aria-pressed',String(paused));});
     rows.forEach((row,index)=>{
       const track=row.firstElementChild as HTMLElement;
       const automatic=root.dataset.carousel==='auto';
       const originals=[...track.children] as HTMLElement[];
       let period=0,hover=false,focused=false,visible=false,dragging=false,moved=false,startX=0,lastX=0,suppressUntil=0,navigationUntil=0;
-      if(automatic){originals.forEach(card=>{const clone=card.cloneNode(true) as HTMLElement;clone.dataset.clone='true';clone.setAttribute('aria-hidden','true');clone.querySelectorAll<HTMLElement>('a,button,[tabindex]').forEach(el=>el.tabIndex=-1);if(clone.matches('a'))clone.tabIndex=-1;track.append(clone);});}
+      if(automatic){for(let copy=0;copy<2;copy++)originals.forEach(card=>{const clone=card.cloneNode(true) as HTMLElement;clone.dataset.clone='true';clone.setAttribute('aria-hidden','true');clone.querySelectorAll<HTMLElement>('a,button,[tabindex]').forEach(el=>el.tabIndex=-1);if(clone.matches('a'))clone.tabIndex=-1;track.append(clone);});}
       function updateArrows(){if(index||automatic)return;root.querySelectorAll<HTMLButtonElement>('[data-carousel-step]').forEach(button=>button.disabled=Number(button.dataset.carouselStep)<0?row.scrollLeft<=1:row.scrollLeft>=row.scrollWidth-row.clientWidth-1);}
       row.addEventListener('scroll',updateArrows,{passive:true});
       function measure(){period=automatic?(track.children[originals.length] as HTMLElement).offsetLeft-originals[0].offsetLeft:0;updateArrows();}

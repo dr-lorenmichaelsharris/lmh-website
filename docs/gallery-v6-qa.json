@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-23T19:59:03.838Z",
+  "base": "http://127.0.0.1:4321",
+  "results": [
+    "320px: eight routes, no horizontal overflow; books, Blog, nine testimonials and clean controls verified",
+    "390px: eight routes, no horizontal overflow; books, Blog, nine testimonials and clean controls verified",
+    "768px: eight routes, no horizontal overflow; books, Blog, nine testimonials and clean controls verified",
+    "1024px: eight routes, no horizontal overflow; books, Blog, nine testimonials and clean controls verified",
+    "1440px: eight routes, no horizontal overflow; books, Blog, nine testimonials and clean controls verified",
+    "Desktop gallery advances continuously",
+    "Single pause button and card-only hover pause work",
+    "Dragging does not activate playback",
+    "Local full video dialog, preview suppression, Escape and focus restoration pass",
+    "Desktop service menu supports Escape",
+    "200% equivalent viewport uses readable collapsed navigation",
+    "No-JavaScript galleries retain recording links and posters"
+  ]
+}
