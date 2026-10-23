@@ -36,4 +36,20 @@ Create a dedicated newsletter segment in Resend and set NEWSLETTER_SEGMENT_ID. S
 2. Configure secrets and verified sender. Submit a clearly labelled inquiry and guest application to the owner inbox, then verify arrival, Reply-To and attachment. A provider acceptance response alone is not proof of inbox arrival.
 3. Use an owner-controlled address to verify newsletter confirmation, segment membership, and unsubscribe suppression. Do not test with visitor addresses.
 4. Verify HTTPS, final-domain confirmation links, secure cookies, and all migration routes before DNS cutover.
-5. Keep the existing Vercel deployment and prior DNS values for rollback. No Hostinger credentials or Resend secrets were supplied during implementation, so live delivery and hosted acceptance remain unverified.
+5. Keep the existing Vercel deployment and prior DNS values for rollback.
+
+## Activation verified — 24 October 2026
+
+The Node app is deployed at https://darkslategray-ant-276867.hostingersite.com/ and connected to the repository's main branch with automatic deployment enabled. A Git push of e8f5005 deployed successfully without re-entering environment settings.
+
+Resend verified send.lorenmichaelsharris.com using a dedicated DKIM TXT record and two sending CNAME records. Existing website and Titan mailbox records were preserved. The active provider key and receipt-signing secret are stored in Hostinger environment settings, not this repository. The unused initial key was revoked.
+
+Live acceptance checks completed:
+
+- A labelled general inquiry arrived in hello@lorenmichaelsharris.com.
+- A labelled guest application arrived with separate biography/topic content and guest-headshot.jpg attached privately. The website confirmation offered the pre-show discovery-call link.
+- The newsletter confirmation email arrived, its explicit confirmation succeeded, and the address appeared in the dedicated confirmed-subscriber segment. No campaign was sent.
+- Provider rejection displayed an honest failure and preserved entered text before the credential transfer was repaired.
+- The runtime header image rendered successfully after making Sharp an explicit dependency.
+
+The original domain has not been switched to this new app. The temporary deployment remains staging/noindex. At domain cutover, update PUBLIC_SITE_URL to the final HTTPS origin, complete the existing publication review, and recheck confirmation links and delivery. Environment settings persist across ordinary Git pushes; a new hosting project or credential rotation requires configuring the corresponding settings again.
