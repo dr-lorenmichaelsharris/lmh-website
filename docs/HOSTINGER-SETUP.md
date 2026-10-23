@@ -4,7 +4,7 @@ The site is an Astro application with a Node server, not a static upload. Vercel
 
 ## Hostinger Business/Cloud
 
-Connect the existing GitHub repository as a Node.js web application. Use Node 24, install with `pnpm install --frozen-lockfile`, build with `pnpm build:hostinger`, and start with `pnpm start`. The entry point is `dist/server/entry.mjs`; retain both `dist/server` and `dist/client`. The server reads Hostinger's PORT and must bind to HOST=0.0.0.0. Do not upload only dist/client.
+Connect the existing GitHub repository as a Node.js web application. Use Node 24, install with `pnpm install --frozen-lockfile`, build with `pnpm build:hostinger`, and start with `pnpm start`. For the hPanel build settings, set Output directory to `dist` and Entry file to `server/entry.mjs` (relative to that output directory). The repository start command remains `node ./dist/server/entry.mjs`; retain both `dist/server` and `dist/client`. The server reads Hostinger's PORT and must bind to HOST=0.0.0.0. Do not upload only dist/client.
 
 Set DEPLOY_TARGET=hostinger. PUBLIC_SITE_URL=https://lorenmichaelsharris.com controls newsletter confirmation destinations. If reviewing on a Hostinger temporary domain, set PUBLIC_SITE_URL to that exact HTTPS origin and HOSTINGER_PREVIEW_HOST to its hostname before building. Replace these with the final domain before cutover. Existing www and apex domains are allowed. HTTPS is required for secure receipt cookies.
 

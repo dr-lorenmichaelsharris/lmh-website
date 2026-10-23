@@ -23,7 +23,8 @@
     "@astrojs/node": "11.1.8",
     "@astrojs/sitemap": "3.7.4",
     "@astrojs/vercel": "11.0.16",
-    "astro": "7.4.1"
+    "astro": "7.4.1",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
