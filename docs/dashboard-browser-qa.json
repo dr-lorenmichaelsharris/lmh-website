@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-24T04:29:16.107Z",
+  "testedAt": "2026-10-24T05:04:24.912Z",
   "adapter": "localhost SQLite and local mail simulation; QA episode remains unpublished",
   "results": [
     "Private dashboard requires an authorized single-use sign-in",

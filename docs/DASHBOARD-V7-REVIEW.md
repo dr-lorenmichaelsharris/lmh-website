@@ -20,3 +20,14 @@ This is an implementer visual/usability review, not user-testing evidence.
 - Actual Calendly embed loaded in the mobile review; no mock was used for that rendering check.
 
 Hosted database, credential, cron and booking verification are recorded during preview rollout. Do not describe a hosted integration as active based solely on these local results.
+
+## Hosted preview verification (October 24, 2026)
+
+- Dedicated MySQL tables initialized successfully, without changing the existing WordPress databases; automatic migration then disabled.
+- Single-use administrator sign-in email arrived in the Hostinger inbox and created an authenticated session.
+- Read-only Calendly credential verified both broadcast and discovery event types; guest booking enabled.
+- A clearly labelled setup application was accepted, saved, and delivered to the Hostinger inbox with its private WebP attachment. Its separate resume email also arrived.
+- Application-to-calendar handoff and private resume rendered the real Calendly widget. Hosted review corrected iframe sizing and prefilled fallback tracking.
+- An unpublished setup draft and optimized banner were stored privately; anonymous episode access returns 404. Private backup export downloaded successfully.
+- Public Home, show, schedule, archive and guest Contact returned 200. Six genuine source conversations remain public; setup content remains unpublished.
+- Hostinger cron saved as every 15 minutes using the Node 24 runtime and private environment file. Actual run and temporary reservation lifecycle are verified before final release.
