@@ -31,3 +31,7 @@ Hosted database, credential, cron and booking verification are recorded during p
 - An unpublished setup draft and optimized banner were stored privately; anonymous episode access returns 404. Private backup export downloaded successfully.
 - Public Home, show, schedule, archive and guest Contact returned 200. Six genuine source conversations remain public; setup content remains unpublished.
 - Hostinger cron saved as every 15 minutes using the Node 24 runtime and private environment file. Actual run and temporary reservation lifecycle are verified before final release.
+- Live temporary show reservation was independently found through its application tracking reference and attendee email. The dashboard recorded the show at 10 AM Chicago, December 22, and discovery before it on December 18, as separate verified active states.
+- Added private Calendly reschedule/cancel actions so the team can manage actual reservations without confusing episode-publication changes with calendar changes.
+- Both temporary reservations were cancelled in Calendly; the website independently synchronized both canceled states. The setup application was closed with internal notes, and its episode remains unpublished.
+- Hostinger deployment retains the compiled output below `nodejs/dist/`; the cron command was corrected to `nodejs/dist/server/reconcile-job.mjs` after the first run exposed the missing-path error.

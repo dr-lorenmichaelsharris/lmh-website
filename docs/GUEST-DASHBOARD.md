@@ -35,7 +35,7 @@ The dedicated dashboard database is separate from existing WordPress databases. 
 
 The build packages `server/reconcile-job.mjs`. Run it every 15 minutes using Hostinger's Node runtime and private environment file. The command's paths must match the deployed hosting account:
 
-`/opt/alt/alt-nodejs24/root/bin/node --env-file=/home/ACCOUNT/domains/DOMAIN/hbuilds/config/.env /home/ACCOUNT/domains/DOMAIN/hbuilds/current/nodejs/server/reconcile-job.mjs`
+`/opt/alt/alt-nodejs24/root/bin/node --env-file=/home/ACCOUNT/domains/DOMAIN/hbuilds/config/.env /home/ACCOUNT/domains/DOMAIN/hbuilds/current/nodejs/dist/server/reconcile-job.mjs`
 
 The job calls a signed internal endpoint without exposing credentials on its command line. The endpoint rejects stale/invalid signatures. It discovers external/no-JavaScript bookings by the application tracking ID, verifies saved reservations, and follows Calendly rescheduling references. Cancellations and discovery conflicts remain visible for the team. Only metadata is logged; no biographies, messages, attachments or tokens.
 
