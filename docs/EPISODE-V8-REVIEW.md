@@ -23,3 +23,7 @@ Use Add an episode directly; no guest application or Calendly booking is require
 Move to Trash opens a named confirmation. It removes public visibility but retains the row, slug, banner and audit trail. Restore as draft never republishes automatically. There is no permanent deletion or automatic purge. Calendar reservations remain independently managed in Calendly.
 
 No database migration or credential change is required: the optional Trash fields live in existing episode JSON payloads. Backups include these records. Dynamic banner responses use no-store so removed publication permission is checked on each new request. Already downloaded copies cannot be recalled.
+
+## Hosted preview
+
+A fresh private backup downloaded successfully before rollout. The feature build completed on Hostinger. The authenticated inventory retained all eight episodes (two drafts and six published), including the user's manually created draft; all filters and Trash links rendered. No real publication states were changed. Matching empty-state/source-episode comparisons are retained separately from the populated local-fixture demonstrations (`populated-*`). Keyboard week navigation and 200% equivalent viewport reflow also passed.
