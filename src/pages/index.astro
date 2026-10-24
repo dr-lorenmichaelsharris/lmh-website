@@ -1,4 +1,6 @@
 ---
+export const prerender=false;
+import WeeklyLineup from '../components/WeeklyLineup.astro';
 import Base from '../layouts/Base.astro';
 import {Image} from 'astro:assets';
 import portrait from '../assets/loren-raspberry.jpg';
@@ -25,6 +27,7 @@ const proof=(await getCollection('testimonials',e=>e.id==='deborah-feldman'&&vis
 <VideoEvidence/>
 <TestimonialSection compact/>
 <section class="section wrap"><div class="section-heading"><div><p class="eyebrow">BEYOND THE STAGE</p><h2>Keep the conversation going.</h2></div></div><div class="beyond-grid show-only"><article class="show-feature"><Image src={showLogo} alt="Bathrobe Moments show logo" widths={[230,460]} sizes="230px" loading="lazy"/><div><p class="eyebrow">COME AS YOU ARE</p><h3>Bathrobe Moments</h3><p>Honest conversations about the lives, lessons, and work behind the person. Settle in and meet someone new.</p><a class="text-link" href="/bathrobe-moments/">Watch a conversation ↗</a></div></article></div></section>
+<WeeklyLineup compact/>
 <section class="section wrap home-blog"><div class="section-heading"><div><p class="eyebrow">FROM THE BLOG</p><h2>Stories worth<br/><em>sitting with.</em></h2></div><a class="text-link" href="/blog/">Visit the Blog ↗</a></div><div class="home-blog-grid">{featuredArticles.map(({data:article})=><article><time class="metadata" datetime={article.date}>{article.date.slice(0,10)}</time><h3><a href={`/${article.slug}/`}>{article.title}</a></h3><p>{article.excerpt}</p><a class="text-link" href={`/${article.slug}/`}>Read the article ↗</a></article>)}</div></section>
 <section class="section closing-inquiry light-section"><div class="wrap split"><div><p class="eyebrow">LET’S TALK ABOUT YOUR EVENT</p><h2>Who’s in the room?<br/>What do they <em>need?</em></h2></div><div><p>Share your audience, timing, and the reason you’re bringing people together. Start a conversation about the message that fits.</p><a class="button" href="/contact/?service=speaking">Discuss your event ↗</a></div></div></section>
 </Base>

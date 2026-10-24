@@ -1,0 +1,6 @@
+---
+export const prerender=false;
+import Base from '../../layouts/Base.astro';import WeeklyLineup from '../../components/WeeklyLineup.astro';
+Astro.response.headers.set('Cache-Control','no-store');
+---
+<Base title="Bathrobe Moments weekly schedule" description="Meet this week’s and next week’s Bathrobe Moments guests. New conversations Monday–Friday at 10 AM Chicago time."><section class="section wrap schedule-intro"><p class="eyebrow">BATHROBE MOMENTS</p><h1>Your weekly<br/><em>lineup.</em></h1><p>Meet the guests, explore their stories, and save a conversation to your calendar.</p><nav class="section-jumps" aria-label="Show navigation"><a href="/bathrobe-moments/">About the show</a><a href="/bathrobe-moments/episodes/">Episode archive</a><a href="/bathrobe-moments/#application">Apply to be a guest</a></nav></section><WeeklyLineup standalone/></Base>

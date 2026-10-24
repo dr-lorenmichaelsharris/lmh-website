@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-10-24T04:29:16.107Z",
+  "adapter": "localhost SQLite and local mail simulation; QA episode remains unpublished",
+  "results": [
+    "Private dashboard requires an authorized single-use sign-in",
+    "Draft episode and uploaded banner remain private; authenticated preview works",
+    "Publication exposes episode/banner and serves a correctly zoned calendar download",
+    "Cross-origin administrator mutation is rejected",
+    "Rescheduling preserves URL and records the change across DST",
+    "Unpublishing removes public episode and banner access",
+    "320px: schedule, archive, episode and dashboard have no horizontal overflow",
+    "390px: schedule, archive, episode and dashboard have no horizontal overflow",
+    "768px: schedule, archive, episode and dashboard have no horizontal overflow",
+    "1024px: schedule, archive, episode and dashboard have no horizontal overflow",
+    "1440px: schedule, archive, episode and dashboard have no horizontal overflow",
+    "Guest application is saved and accepted before revealing Calendly on the same page; private resume link works",
+    "No page JavaScript errors observed"
+  ]
+}

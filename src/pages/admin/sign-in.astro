@@ -1,0 +1,6 @@
+---
+export const prerender=false;
+import Admin from '../../layouts/Admin.astro';import {consumeLogin} from '../../lib/dashboard/auth';
+Astro.response.headers.set('Cache-Control','no-store');Astro.response.headers.set('Referrer-Policy','strict-origin');const token=Astro.url.searchParams.get('token')||'';let error='';if(Astro.request.method==='POST'){if(Astro.request.headers.get('origin')!==Astro.url.origin)error='Please sign in from this website.';else{try{const session=await consumeLogin(token);if(session){Astro.cookies.set('lmh-admin',session,{httpOnly:true,secure:Astro.url.protocol==='https:',sameSite:'strict',path:'/',maxAge:8*3600});return Astro.redirect('/admin/',303);}error='This sign-in link has expired or was already used.';}catch{error='Sign-in is temporarily unavailable. Please retry or request a new link.';}}}
+---
+<Admin title="Confirm sign-in"><section class="admin-login"><h1>Open your dashboard.</h1>{error?<p role="alert">{error} <a href="/admin/login/">Request a new link</a>.</p>:<form method="post"><p>Continue to sign in. Your link can be used once.</p><button class="admin-button primary">Sign in</button></form>}</section></Admin>

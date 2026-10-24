@@ -1,0 +1,3 @@
+import {migrate,query} from '../../src/lib/dashboard/db.ts';import {legacyEpisodes} from '../../src/lib/dashboard/public.ts';import {saveEpisode} from '../../src/lib/dashboard/store.ts';
+if(process.env.DASHBOARD_LOCAL_DB!=='true'&&process.env.DASHBOARD_MIGRATE_APPROVED!=='true')throw new Error('Back up the database and set DASHBOARD_MIGRATE_APPROVED=true before migration.');
+await migrate();for(const e of legacyEpisodes){const old=await query('SELECT id FROM lmh_episodes WHERE id = ?',[e.id]);if(!old.length)await saveEpisode(e);}console.log('Dashboard schema ready; six source conversations preserved.');process.exit(0);

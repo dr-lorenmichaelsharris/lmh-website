@@ -1,0 +1,3 @@
+import type {APIRoute} from 'astro';import {publicEpisodes} from '../../../../lib/dashboard/public';import {broadcastStart,calendarFile} from '../../../../lib/dashboard/time';
+export const prerender=false;
+export const GET:APIRoute=async({params})=>{const {items}=await publicEpisodes();const e=items.find(e=>e.slug===params.slug);if(!e?.date||e.cancelled)return new Response('Calendar unavailable',{status:404});return new Response(calendarFile(e.title,broadcastStart(e.date),`https://lorenmichaelsharris.com/bathrobe-moments/episodes/${e.slug}/`),{headers:{'Content-Type':'text/calendar; charset=utf-8','Content-Disposition':'attachment; filename="bathrobe-moments.ics"','Cache-Control':'no-store'}});};

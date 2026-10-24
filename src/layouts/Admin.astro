@@ -1,0 +1,6 @@
+---
+import '../styles/global.css';import '../styles/dashboard.css';
+interface Props {title:string;}
+const {title}=Astro.props;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="robots" content="noindex,nofollow"/><meta name="referrer" content="strict-origin"/><title>{title} · LMH dashboard</title></head><body class="admin-body"><header class="admin-header"><a href="/admin/">LMH <span>Show dashboard</span></a><a href="/bathrobe-moments/">View the website ↗</a></header><main class="admin-main"><slot/></main></body></html>

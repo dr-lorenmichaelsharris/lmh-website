@@ -1,0 +1,2 @@
+import {applications} from '../../src/lib/dashboard/store.ts';import {reconcile,discoverBookings,needsReconciliation} from '../../src/lib/dashboard/calendly.ts';
+const guests=await applications();await discoverBookings(guests);let failed=0;for(const a of guests){if(needsReconciliation(a)){try{await reconcile(a);}catch{failed++;console.warn(JSON.stringify({event:'calendly_reconciliation_failed',application:a.id}));}}}console.log(JSON.stringify({event:'calendly_reconciliation_complete',failed}));process.exit(failed?1:0);

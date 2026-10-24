@@ -4,6 +4,12 @@ import Base from '../../layouts/Base.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import {submit, type Values, type Headshot} from '../../lib/forms';
 import {site} from '../../data/site';
+import {resumeToken,limit} from '../../lib/dashboard/auth';
+import {bookingEnabled,prepareApplication,acceptedApplication} from '../../lib/dashboard/guest';
+import {validate,validateHeadshot} from '../../lib/forms';
+import {saveApplication,type Application} from '../../lib/dashboard/store';
+let guestApplication:Application|undefined;let guestToken='';
+const wantsJson=Astro.request.headers.get('accept')?.includes('application/json');
 Astro.response.headers.set('Cache-Control','no-store');
 const values:Values={};
 let outcome:{status:number;errors?:Values;message?:string;receipt?:string}={status:405,message:'Use the inquiry form to send a message.'};
@@ -21,10 +27,17 @@ if(Astro.request.method==='POST'){
    for(const k of keys){const v=form.get(k);if(typeof v==='string')values[k]=v.trim();}
    const uploaded=form.get('headshot');let headshot:Headshot|undefined;
    if(values.service==='guest'&&uploaded instanceof File)headshot={name:uploaded.name,type:uploaded.type,bytes:new Uint8Array(await uploaded.arrayBuffer())};
-   outcome=await submit(values,{headshot,ip:Astro.clientAddress,origin:Astro.url.origin,env:{INQUIRY_TO:process.env.INQUIRY_TO??import.meta.env.INQUIRY_TO,NEWSLETTER_SEGMENT_ID:process.env.NEWSLETTER_SEGMENT_ID??import.meta.env.NEWSLETTER_SEGMENT_ID,PUBLIC_SITE_URL:process.env.PUBLIC_SITE_URL??import.meta.env.PUBLIC_SITE_URL,RESEND_API_KEY:process.env.RESEND_API_KEY??import.meta.env.RESEND_API_KEY,RESEND_FROM:process.env.RESEND_FROM??import.meta.env.RESEND_FROM,RECEIPT_SECRET:process.env.RECEIPT_SECRET??import.meta.env.RECEIPT_SECRET,SITE_ENV:import.meta.env.SITE_ENV??process.env.SITE_ENV,FORM_ADAPTER:process.env.FORM_ADAPTER??import.meta.env.FORM_ADAPTER,LOCAL_TEST_MODE:process.env.LOCAL_TEST_MODE??import.meta.env.LOCAL_TEST_MODE,FORMS_APPROVED:process.env.FORMS_APPROVED??import.meta.env.FORMS_APPROVED,INQUIRY_WEBHOOK_URL:process.env.INQUIRY_WEBHOOK_URL??import.meta.env.INQUIRY_WEBHOOK_URL,NEWSLETTER_WEBHOOK_URL:process.env.NEWSLETTER_WEBHOOK_URL??import.meta.env.NEWSLETTER_WEBHOOK_URL,FORM_WEBHOOK_TOKEN:process.env.FORM_WEBHOOK_TOKEN??import.meta.env.FORM_WEBHOOK_TOKEN,LOCAL_TEST_OUTCOME:process.env.LOCAL_TEST_OUTCOME??import.meta.env.LOCAL_TEST_OUTCOME}});
-  }catch(error){outcome=error instanceof Error&&error.message==='Submission too large.'?{status:413,message:'This submission is too large. Use a headshot smaller than 2 MB.'}:{status:400,message:'The form could not be read. Please return to the inquiry form.'};}
+   const validGuest=values.service==='guest'&&bookingEnabled()&&!Object.keys(validate(values)).length&&!validateHeadshot(headshot)&&!values.company_url;
+   if(validGuest&&!await limit('guest-application:'+Astro.clientAddress,8,10))outcome={status:429,message:'Too many application attempts. Please wait or email the team.'};else{
+   if(validGuest)guestApplication=await prepareApplication(values,headshot!.bytes);
+   outcome=guestApplication?.delivery==='accepted'?{status:303,receipt:resumeToken(guestApplication.id)}:await submit(values,{headshot,ip:Astro.clientAddress,origin:Astro.url.origin,env:{INQUIRY_TO:process.env.INQUIRY_TO??import.meta.env.INQUIRY_TO,NEWSLETTER_SEGMENT_ID:process.env.NEWSLETTER_SEGMENT_ID??import.meta.env.NEWSLETTER_SEGMENT_ID,PUBLIC_SITE_URL:process.env.PUBLIC_SITE_URL??import.meta.env.PUBLIC_SITE_URL,RESEND_API_KEY:process.env.RESEND_API_KEY??import.meta.env.RESEND_API_KEY,RESEND_FROM:process.env.RESEND_FROM??import.meta.env.RESEND_FROM,RECEIPT_SECRET:process.env.RECEIPT_SECRET??import.meta.env.RECEIPT_SECRET,SITE_ENV:import.meta.env.SITE_ENV??process.env.SITE_ENV,FORM_ADAPTER:process.env.FORM_ADAPTER??import.meta.env.FORM_ADAPTER,LOCAL_TEST_MODE:process.env.LOCAL_TEST_MODE??import.meta.env.LOCAL_TEST_MODE,FORMS_APPROVED:process.env.FORMS_APPROVED??import.meta.env.FORMS_APPROVED,INQUIRY_WEBHOOK_URL:process.env.INQUIRY_WEBHOOK_URL??import.meta.env.INQUIRY_WEBHOOK_URL,NEWSLETTER_WEBHOOK_URL:process.env.NEWSLETTER_WEBHOOK_URL??import.meta.env.NEWSLETTER_WEBHOOK_URL,FORM_WEBHOOK_TOKEN:process.env.FORM_WEBHOOK_TOKEN??import.meta.env.FORM_WEBHOOK_TOKEN,LOCAL_TEST_OUTCOME:process.env.LOCAL_TEST_OUTCOME??import.meta.env.LOCAL_TEST_OUTCOME}});
+   if(guestApplication){if(outcome.receipt)guestToken=await acceptedApplication(guestApplication,Astro.url.origin);else{guestApplication.delivery='failed';await saveApplication(guestApplication);}}
+   }
+  }catch(error){if(outcome.receipt){outcome.message='Your application email was accepted, but booking activation is temporarily unavailable. Please retry safely or contact the team.';console.warn('guest_booking_activation_pending');}else outcome=error instanceof Error&&error.message==='Submission too large.'?{status:413,message:'This submission is too large. Use a headshot smaller than 2 MB.'}:{status:503,message:'Your application could not be processed. No new confirmation is available. Please retry or contact the team.'};}
  }
 }
+if(wantsJson&&values.service==='guest')return new Response(JSON.stringify({accepted:!!outcome.receipt,token:guestToken||undefined,errors:outcome.errors,message:outcome.message||(!guestToken&&outcome.receipt?'Application received. The team will help you arrange your show date.':undefined)}),{status:outcome.receipt?200:outcome.status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
+if(outcome.receipt&&guestToken)return Astro.redirect('/bathrobe-moments/booking/?token='+encodeURIComponent(guestToken),303);
 if(outcome.receipt){Astro.cookies.set('lmh-receipt',outcome.receipt,{path:'/',httpOnly:true,sameSite:'strict',secure:Astro.url.protocol==='https:',maxAge:600});return Astro.redirect('/thank-you-page/',303);}
 Astro.response.status=outcome.status;
 const service=['speaking','coaching','keynote-writing','program','guest','general'].includes(values.service)?values.service:'general';
