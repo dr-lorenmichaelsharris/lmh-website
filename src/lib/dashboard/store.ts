@@ -1,6 +1,9 @@
 import {randomUUID,createHash} from 'node:crypto';
 import {query} from './db.ts';
-export interface Episode {id:string;slug:string;guest:string;title:string;biography:string;description:string;date:string;banner:string;liveUrl:string;replayUrl:string;highlights:string;transcript:string;published:boolean;cancelled:boolean;previousDate?:string;sourceUrl?:string;legacy?:boolean;recordingPublishedAt?:string;}
+export interface Episode {id:string;slug:string;guest:string;title:string;biography:string;description:string;date:string;banner:string;liveUrl:string;replayUrl:string;highlights:string;transcript:string;published:boolean;cancelled:boolean;previousDate?:string;sourceUrl?:string;legacy?:boolean;recordingPublishedAt?:string;trashedAt?:string;trashedBy?:string;}
+export const isPublicEpisode=(e:Episode)=>e.published&&!e.trashedAt;
+export function trashEpisode(e:Episode,actor:string):Episode{return {...e,published:false,trashedAt:new Date().toISOString(),trashedBy:actor};}
+export function restoreEpisode(e:Episode):Episode{return {...e,published:false,trashedAt:undefined,trashedBy:undefined};}
 export interface Booking {eventUri:string;inviteeUri:string;start:string;end:string;status:'active'|'canceled';rescheduled?:boolean;rescheduleUrl?:string;cancelUrl?:string;verifiedAt:string;}
 export interface Application {id:string;name:string;email:string;biography:string;topic:string;phone:string;website:string;delivery:'pending'|'accepted'|'failed';createdAt:string;notes:string;show?:Booking;discovery?:Booking;discoveryCompleted?:boolean;revision?:number;closed?:boolean;}
 export const hash=(s:string)=>createHash('sha256').update(s).digest('hex');

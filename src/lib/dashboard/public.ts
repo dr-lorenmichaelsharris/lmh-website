@@ -1,4 +1,4 @@
-import legacy from '../../data/episodes.json';import {episodes, type Episode} from './store.ts';import {databaseConfigured} from './db.ts';
+import legacy from '../../data/episodes.json' with {type:'json'};import {episodes, isPublicEpisode, type Episode} from './store.ts';import {databaseConfigured} from './db.ts';
 export const legacyEpisodes:Episode[]=legacy.map(e=>({id:e.id,slug:e.id,guest:e.guest,title:e.title,biography:'',description:e.summary,date:'',banner:`/media/episode-${e.id}.jpg`,liveUrl:'',replayUrl:e.watchUrl,highlights:'',transcript:'',published:true,cancelled:false,sourceUrl:e.sourceUrl,legacy:true}));
 let retryAfter=0;
-export async function publicEpisodes(){if(Date.now()<retryAfter||!databaseConfigured())return {items:legacyEpisodes,available:false};try{return {items:(await episodes()).filter(e=>e.published),available:true};}catch{retryAfter=Date.now()+30000;console.warn('episode_database_unavailable');return {items:legacyEpisodes,available:false};}}
+export async function publicEpisodes(){if(!databaseConfigured())return {items:legacyEpisodes,available:false};if(Date.now()<retryAfter)return {items:[],available:false};try{return {items:(await episodes()).filter(isPublicEpisode),available:true};}catch{retryAfter=Date.now()+30000;console.warn('episode_database_unavailable');return {items:[],available:false};}}

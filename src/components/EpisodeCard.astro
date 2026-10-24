@@ -1,6 +1,7 @@
 ---
 import type {Episode} from '../lib/dashboard/store';import {showDate,broadcastStart} from '../lib/dashboard/time';
-interface Props {episode:Episode;}
-const {episode:e}=Astro.props;
+interface Props {episode:Episode;featured?:boolean;}
+const {episode:e,featured=false}=Astro.props;const past=!e.date||Date.parse(broadcastStart(e.date))+3600000<Date.now();const label=e.cancelled?'Cancelled':e.replayUrl?'Watch episode':past?'Replay pending':'View episode';
+const excerpt=e.description.length>160?e.description.slice(0,157).replace(/\s+\S*$/,'')+'…':e.description;
 ---
-<article class="episode-card"><a class="episode-art" href={`/bathrobe-moments/episodes/${e.slug}/`}><img src={e.banner} alt={`${e.guest} · Bathrobe Moments show banner`} width="1280" height="720" loading="lazy"/></a><div class="episode-card-copy"><p class="eyebrow">{e.cancelled?'CANCELED':e.date?showDate(broadcastStart(e.date)):'FROM THE SHOW ARCHIVE'}</p><h3><a href={`/bathrobe-moments/episodes/${e.slug}/`}>{e.title}</a></h3><p>{e.description}</p><a class="text-link" href={`/bathrobe-moments/episodes/${e.slug}/`}>{e.replayUrl?'Watch the conversation':'Episode details'} ↗</a></div></article>
+<article class:list={['episode-card',{'episode-featured':featured}]}><a class="episode-art" href={`/bathrobe-moments/episodes/${e.slug}/`} tabindex="-1" aria-hidden="true"><img src={e.banner} alt="" width="1280" height="720" loading={featured?'eager':'lazy'}/></a><div class="episode-card-copy">{featured&&<p class="eyebrow">NEXT ON BATHROBE MOMENTS</p>}<p class="episode-date">{e.date?showDate(broadcastStart(e.date)):'From the show archive'}</p><p class:list={['episode-badge',{'is-cancelled':e.cancelled}]}>{e.cancelled?'Cancelled':e.replayUrl?'Recording available':past?'Replay pending':e.previousDate?'Rescheduled':'Upcoming broadcast'}</p><h3><a href={`/bathrobe-moments/episodes/${e.slug}/`}>{e.guest}</a></h3><p class="episode-topic">{e.title}</p>{excerpt&&<p class="episode-excerpt">{excerpt}</p>}<a class="text-link" href={`/bathrobe-moments/episodes/${e.slug}/`}>{label} ↗</a></div></article>

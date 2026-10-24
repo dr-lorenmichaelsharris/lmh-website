@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {publicEpisodes} from '../src/lib/dashboard/public.ts';
+test('a configured database outage does not resurrect source episodes',async()=>{process.env.DASHBOARD_LOCAL_DB='false';process.env.MYSQL_DATABASE='unreachable_test';process.env.MYSQL_USER='test';process.env.MYSQL_PASSWORD='test-only';process.env.MYSQL_HOST='127.0.0.1';process.env.MYSQL_PORT='1';const result=await publicEpisodes();assert.equal(result.available,false);assert.deepEqual(result.items,[]);});

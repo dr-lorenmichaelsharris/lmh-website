@@ -1,0 +1,17 @@
+{
+  "testedAt": "2026-10-24T10:33:00.976Z",
+  "adapter": "local fixtures only",
+  "results": [
+    "Publication requirements are identified inline; entered text survives; draft visibility is explicit",
+    "Trash removes public page, schedule and calendar; restore preserves URL and returns as draft",
+    "Manual publication requires no application or booking; private uploaded banner is hidden immediately on Trash",
+    "320px: public layouts and admin have no page overflow",
+    "390px: public layouts and admin have no page overflow",
+    "768px: public layouts and admin have no page overflow",
+    "1024px: public layouts and admin have no page overflow",
+    "1440px: public layouts and admin have no page overflow",
+    "Mobile episode controls move the swipeable row without automatic motion",
+    "No-JavaScript cards and week navigation remain available",
+    "200% equivalent viewport reflow and keyboard week navigation passed"
+  ]
+}
