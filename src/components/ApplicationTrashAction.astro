@@ -1,0 +1,6 @@
+---
+import type {Application} from '../lib/dashboard/store';
+interface Props {guest:Application;csrfToken:string;}
+const {guest,csrfToken}=Astro.props;
+---
+<div class="admin-actions">{guest.trashedAt?<form method="post"><input type="hidden" name="csrf" value={csrfToken}/><input type="hidden" name="id" value={guest.id}/><input type="hidden" name="action" value="restore-application"/><button class="admin-button">Restore application</button></form>:<a class="admin-button danger" href={`/admin/?tab=applications&trash=${guest.id}`}>Move to Trash</a>}</div>
