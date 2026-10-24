@@ -35,3 +35,4 @@ Hosted database, credential, cron and booking verification are recorded during p
 - Added private Calendly reschedule/cancel actions so the team can manage actual reservations without confusing episode-publication changes with calendar changes.
 - Both temporary reservations were cancelled in Calendly; the website independently synchronized both canceled states. The setup application was closed with internal notes, and its episode remains unpublished.
 - Hostinger deployment retains the compiled output below `nodejs/dist/`; the cron command was corrected to `nodejs/dist/server/reconcile-job.mjs` after the first run exposed the missing-path error.
+- Corrected Hostinger cron executed successfully: `booking_reconciliation` status `200` (screenshot retained). Main release deployed successfully and the database records survived the branch/deployment change.
