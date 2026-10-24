@@ -39,7 +39,12 @@ test('provider rejection and timeout do not produce a receipt',async()=>{
  for(const f of [async()=>new Response('',{status:500}),async()=>{throw Error('offline')}]){const r=await submit(base,{...ctx,env},f as typeof fetch);assert.equal(r.status,502);assert.equal(r.receipt,undefined)}
 });
 test('honeypot and repeated requests fail safely',async()=>{
- assert.equal((await submit({...base,company_url:'spam'},ctx)).status,400);
+ assert.equal((await submit({...base,lmh_submission_check:'spam'},ctx)).status,400);
  for(let i=0;i<8;i++)await submit({...base,email:`test${i}@example.test`},{...ctx,env:{}});
  assert.equal((await submit(base,{...ctx,env:{}})).status,429);
+});
+
+test('legacy company URL autofill cannot reject a real guest application',async()=>{
+ const result=await submit({...base,service:'guest',company_url:'https://guest.example',website:'https://guest.example',topic:'A genuine conversation about finding direction.'},{...ctx,headshot:{name:'test.jpg',type:'image/jpeg',bytes:new Uint8Array([255,216,255,1])}});
+ assert.equal(result.status,303);assert.ok(result.receipt);
 });

@@ -45,7 +45,7 @@ export async function submit(values:Values, context:{ip:string;origin:string;env
  for(const [key,v] of accepted)if(v.expires<now)accepted.delete(key);
 
  const errors=validate(values);if(values.service==='guest'){const error=validateHeadshot(context.headshot);if(error)errors.headshot=error;}if(Object.keys(errors).length)return {status:422,errors};
- if(values.company_url)return {status:400,message:'Unable to accept this submission.'};
+ if(values.lmh_submission_check)return {status:400,message:'Unable to accept this submission.'};
  const hash=createHash('sha256').update(JSON.stringify(Object.entries(values).sort())).update(context.headshot?.bytes||'').digest('hex');
  const previous=accepted.get(hash);if(previous)return {status:303,receipt:previous.token,duplicate:true};
  if(inflight.has(hash))return inflight.get(hash)!;
@@ -66,7 +66,7 @@ export async function submit(values:Values, context:{ip:string;origin:string;env
    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(env.INQUIRY_TO||'hello@lorenmichaelsharris.com'))return {status:503,message:'Online delivery is unavailable. Please use email.'};
    try{
     const attachment=context.headshot;const ext=attachment?.type==='image/png'?'png':attachment?.type==='image/webp'?'webp':'jpg';
-    const body={from:env.RESEND_FROM,to:[env.INQUIRY_TO||'hello@lorenmichaelsharris.com'],reply_to:values.email,subject:`LMH inquiry: ${values.service}`,text:Object.entries(values).filter(([key])=>!['company_url'].includes(key)).map(([key,value])=>`${key==='message'&&values.service==='guest'?'Biography':key}: ${value}`).join('\n\n'),...(attachment?{attachments:[{filename:`guest-headshot.${ext}`,content:Buffer.from(attachment.bytes).toString('base64')}]}:{})};
+    const body={from:env.RESEND_FROM,to:[env.INQUIRY_TO||'hello@lorenmichaelsharris.com'],reply_to:values.email,subject:`LMH inquiry: ${values.service}`,text:Object.entries(values).filter(([key])=>!['company_url','lmh_submission_check'].includes(key)).map(([key,value])=>`${key==='message'&&values.service==='guest'?'Biography':key}: ${value}`).join('\n\n'),...(attachment?{attachments:[{filename:`guest-headshot.${ext}`,content:Buffer.from(attachment.bytes).toString('base64')}]}:{})};
     const response=await delivery('https://api.resend.com/emails',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.RESEND_API_KEY}`,'Idempotency-Key':hash},body:JSON.stringify(body),signal:AbortSignal.timeout(10000),redirect:'error'});
     if(!response.ok){console.warn(JSON.stringify({event:'inquiry_provider_rejected',service:values.service,status:response.status}));return {status:502,message:'The delivery service could not accept your inquiry. Please retry or use email.'};}
     const result=await response.json() as {id?:string};if(result.id)console.info(JSON.stringify({event:'inquiry_accepted',service:values.service,providerId:result.id}));if(!result.id)return {status:502,message:'Delivery could not be confirmed. Please retry or use email.'};
