@@ -208,13 +208,7 @@ small, figcaption { font-size: var(--meta-size); line-height: 1.6; }
 .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; max-width: 1280px; padding-top: 30px; border-top: 1px solid #494332; margin: 56px auto 0; }
 .footer-bottom small { margin-right: auto; font-size: var(--meta-size); }
 .footer-bottom a { font-size: var(--meta-size) !important; margin: 0 !important; }
-@media (max-width: 1350px) {
-  .desktop-nav { display: none; }
-  .brand-wording small { display: none; }
-  .header-cta { margin-left: auto; }
-  .mobile-nav { display: block; }
-  .site-header { padding-inline: 40px; gap: 24px; }
-}
+
 @media (max-width: 1023px) {
   .wrap { width: calc(100% - 64px); }
   .site-header { padding-inline: 32px; }

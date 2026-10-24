@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-10-24T11:29:18.793Z",
+  "results": [
+    "320×568: navigation fits; popup stays within viewport with reachable controls",
+    "390×700: navigation fits; popup stays within viewport with reachable controls",
+    "768×768: navigation fits; popup stays within viewport with reachable controls",
+    "1024×768: navigation fits; popup stays within viewport with reachable controls",
+    "1280×720: navigation fits; popup stays within viewport with reachable controls",
+    "1366×768: navigation fits; popup stays within viewport with reachable controls",
+    "1440×900: navigation fits; popup stays within viewport with reachable controls",
+    "1920×1080: navigation fits; popup stays within viewport with reachable controls",
+    "Both service rows move independently in opposite directions and continue over card hover",
+    "Pause/resume controls both service rows; dragging suppresses accidental navigation",
+    "/the-mindset-revolution/: hover does not pause; explicit pause controls movement and previews",
+    "/about/: hover does not pause; explicit pause controls movement and previews",
+    "/bathrobe-moments/: hover does not pause; explicit pause controls movement and previews",
+    "Real timed popup restores focus and remains dismissed for the session",
+    "No-JavaScript desktop navigation retains access through the Resources overview",
+    "ArrowDown submenu navigation, popup focus containment, and 200% equivalent 683×384 reflow passed"
+  ]
+}

@@ -1,0 +1,5 @@
+---
+interface Props {id:string;label:string;href:string;items:string[][];descriptions?:string[];eyebrow:string;}
+const {id,label,href,items,descriptions=[],eyebrow}=Astro.props;const path=Astro.url.pathname;
+---
+<div class="work-menu" data-navigation-menu data-menu-label={label}><div class="work-menu-trigger"><a href={href} aria-current={path===href?'page':undefined}>{label}</a><button type="button" class="work-menu-toggle" aria-expanded="false" aria-controls={id} aria-label={`Show ${label} menu`} hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div id={id} class="work-menu-panel" hidden><p class="eyebrow">{eyebrow}</p>{items.map(([text,url],i)=><a href={url} aria-current={path===url?'page':undefined}><strong>{text}</strong>{descriptions[i]&&<span>{descriptions[i]}</span>}</a>)}</div></div>
