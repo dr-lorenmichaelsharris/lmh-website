@@ -1,2 +1,5 @@
 minimumReleaseAgeExclude:
   - astro@7.4.1
+
+overrides:
+  'zod@>=4.0.0 <4.6.6': 4.6.7

@@ -2,13 +2,13 @@
 
 Local multipage implementation of the 41-entry WordPress migration register. Marketing/archive pages are prerendered; inquiry, guest application, receipt and submission routes use the Node adapter. Nothing has been deployed or changed on WordPress.
 
-## Deploy on Vercel
+## Deploy on Hostinger
 
-Import `dr-lorenmichaelsharris/lmh-website` into Vercel. Select production branch `main`, root directory `./`, framework Astro, and Node.js 24.x. Keep the Output Directory override disabled. The committed `vercel.json` supplies install/build commands; no generated folder needs to be uploaded. Future pushes to `main` deploy automatically once the Git integration is connected.
+Connect `dr-lorenmichaelsharris/lmh-website` as a Hostinger Node.js web application using branch `main`, root directory `./`, and Node.js 24.x. Install with `pnpm install --frozen-lockfile`, build with `pnpm build:hostinger`, and start with `pnpm start`. In hPanel, use Output directory `dist` and Entry file `server/entry.mjs`. Keep both `dist/server` and `dist/client`.
 
-The build automatically selects the Vercel adapter on Vercel; local builds retain the standalone Node adapter. For a local Vercel artifact check, set `DEPLOY_TARGET=vercel` before `pnpm build`. Output is generated in `.vercel/output` and stays untracked.
+Hostinger and local builds use the standalone Node adapter. The obsolete Vercel adapter and configuration have been removed. See `docs/HOSTINGER-SETUP.md` for environment settings and verified activation evidence.
 
-No environment variables are required for the initial review deployment. It retains the current noindex/review state and honest delivery-unavailable form behavior. Do not set `SITE_ENV=production` merely to deploy: that flag enables the separate editorial release checks. Live form delivery still requires the provider configuration described below. Never enable local test delivery on Vercel.
+Keep `SITE_ENV=staging` during review. Do not set `SITE_ENV=production` merely to deploy: that flag enables the separate editorial release checks. Preserve the existing Hostinger provider and database settings. Never enable local test delivery on a public host.
 
 ## Run locally
 
@@ -81,6 +81,7 @@ pnpm check
 pnpm test
 pnpm build
 pnpm test:http
+pnpm test:deployment
 $env:PREVIEW_URL='http://127.0.0.1:4324'
 pnpm verify
 pnpm test:browser
@@ -94,6 +95,8 @@ Browser scripts use isolated headless Google Chrome, not the user's profile. Evi
 Default staging uses noindex, disallow-all robots, an empty sitemap and a design-preview label. Canonicals target intended live URLs. Production includes approved article/policy records and builds the sitemap from approved routes. Success/error routes remain noindex.
 
 `SITE_ENV=production pnpm build` is gated by `scripts/release-check.mjs` and `docs/release-approvals.json`. It fails deliberately until content, assets, identity, forms and hosting approvals are recorded. Do not bypass this gate. Confirm HTTPS/proxy behavior and the exact host allowlist in `astro.config.mjs`; normalize HTTP/alternate hosts at the deployment edge while preserving paths. The proxy must sanitize forwarded headers before Node receives them.
+
+Build configuration loads `.env`, `.env.local`, and the active mode's env files before selecting the adapter or enforcing release checks. Mode-specific and local values take precedence; exported hosting variables take highest priority. `astro build` defaults to production mode, and `--mode review` selects `.env.review` and `.env.review.local`. The sitemap bundles the approval register at build time, so changes to that register require a rebuild. `pnpm test:deployment` checks the built Node server from an empty working directory, including the staging sitemap and indexing protections.
 
 Remaining inputs: `docs/launch-blockers.md`. Host setup, credentials, real delivery checks and replacing WordPress require separate work/authorization. No DNS, deployment, live test message or payment was performed.
 
