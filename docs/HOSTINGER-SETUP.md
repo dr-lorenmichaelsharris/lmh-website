@@ -1,6 +1,6 @@
 # Hostinger deployment and delivery setup
 
-The site is an Astro application with a Node server, not a static upload. Vercel configuration remains available; do not remove the current deployment until the Hostinger copy has been verified.
+The site is an Astro application with a Node server, not a static upload. Hostinger is the active deployment target; the deleted Vercel project is no longer part of the publishing setup.
 
 ## Hostinger Business/Cloud
 
@@ -36,7 +36,7 @@ Create a dedicated newsletter segment in Resend and set NEWSLETTER_SEGMENT_ID. S
 2. Configure secrets and verified sender. Submit a clearly labelled inquiry and guest application to the owner inbox, then verify arrival, Reply-To and attachment. A provider acceptance response alone is not proof of inbox arrival.
 3. Use an owner-controlled address to verify newsletter confirmation, segment membership, and unsubscribe suppression. Do not test with visitor addresses.
 4. Verify HTTPS, final-domain confirmation links, secure cookies, and all migration routes before DNS cutover.
-5. Keep the existing Vercel deployment and prior DNS values for rollback.
+5. Keep prior DNS values and a known working Hostinger release for rollback.
 
 ## Activation verified — 24 October 2026
 
